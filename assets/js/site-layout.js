@@ -5,6 +5,29 @@
    ========================================================= */
 
 (function () {
+    /* =========================================================
+     GOOGLE ANALYTICS — FLOWTHERAPY WEBSITE
+     ========================================================= */
+
+  if (!window.gtag) {
+    const googleTag = document.createElement("script");
+
+    googleTag.async = true;
+    googleTag.src =
+      "https://www.googletagmanager.com/gtag/js?id=G-N1Q7YEW5MF";
+
+    document.head.appendChild(googleTag);
+
+    window.dataLayer = window.dataLayer || [];
+
+    window.gtag = function () {
+      window.dataLayer.push(arguments);
+    };
+
+    window.gtag("js", new Date());
+
+    window.gtag("config", "G-N1Q7YEW5MF");
+  }
   const currentPath = window.location.pathname.toLowerCase();
 
   function getActiveSection() {
