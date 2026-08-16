@@ -253,7 +253,7 @@ if (flowNote.readTime) {
   });
 }
   function initializeHomepageCMS() {
-    const cms = window.FlowHubCMS;
+    const cms = window.FlowHub;
 
     if (!cms) {
       console.warn(
@@ -264,8 +264,8 @@ if (flowNote.readTime) {
     }
 
     const featuredFlowNote = getNewestFeaturedItem(
-      cms.flowNotes,
-    );
+  cms.articles,
+   );
 
     const featuredFlowResource = getNewestFeaturedItem(
       cms.flowResources,
@@ -276,7 +276,7 @@ if (flowNote.readTime) {
 renderFeaturedFlowResource(featuredFlowResource);
 
 const recentlyAddedFlowNotes = getRecentlyAdded(
-  cms.flowNotes,
+  cms.articles,
   3,
 );
 
