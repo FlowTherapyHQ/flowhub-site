@@ -107,36 +107,71 @@ if (currentPath.includes("/body-map.html")) {
   }
 
   const headerHTML = `
-    <header class="header">
-      <div class="logo">
-        <a href="/index.html" aria-label="Return to the FlowHub homepage">
-          <img
-            src="/assets/images/flowhub-horizontal.png"
-            alt="FlowHub wellness portal logo"
-            title="FlowHub"
-          />
+  <header class="flowhub-site-header">
+
+    <div class="flowhub-site-header-inner">
+
+      <div class="flowhub-site-brand">
+
+        <a
+          href="/index.html"
+          class="flowhub-site-brand-link"
+          aria-label="Return to the FlowHub homepage"
+        >
+          <span class="flowhub-site-brand-main">
+            FlowHub
+          </span>
+
+          <span class="flowhub-site-brand-sub">
+            by FlowTherapy
+          </span>
         </a>
+
+        <p class="flowhub-site-tagline">
+          Prepare • Recover • Learn • Continue
+        </p>
+
       </div>
 
-      <div class="subtitle">Your Wellness Portal</div>
 
-      <nav class="nav" aria-label="Main navigation">
-        <a href="/index.html"${activeClass("home")}>Home</a>
+      <nav
+        class="flowhub-site-nav"
+        aria-label="Main navigation"
+      >
 
-        <a href="/pages/forms.html"${activeClass("forms")}>
+        <a
+          href="/index.html"
+          ${activeClass("home")}
+        >
+          Home
+        </a>
+
+        <a
+          href="/pages/forms.html"
+          ${activeClass("forms")}
+        >
           Forms
         </a>
 
-        <a href="/pages/aftercare.html"${activeClass("aftercare")}>
-       Aftercare
-      </a>
+        <a
+          href="/pages/aftercare.html"
+          ${activeClass("aftercare")}
+        >
+          Aftercare
+        </a>
 
-      <a href="/pages/body-map.html"${activeClass("flowmap")}>
-      FlowMap
-      </a>
+        <a
+          href="/pages/body-map.html"
+          ${activeClass("flowmap")}
+        >
+          FlowMap
+        </a>
 
-      <a href="/pages/flownotes.html"${activeClass("flownotes")}>
-       FlowNotes
+        <a
+          href="/pages/flownotes.html"
+          ${activeClass("flownotes")}
+        >
+          FlowNotes
         </a>
 
         <a
@@ -153,16 +188,26 @@ if (currentPath.includes("/body-map.html")) {
           Wellness Programs
         </a>
 
-        <a href="/pages/faq.html"${activeClass("faq")}>
+        <a
+          href="/pages/faq.html"
+          ${activeClass("faq")}
+        >
           FAQ
         </a>
 
-        <a href="/pages/contact.html"${activeClass("contact")}>
-          Contact FlowTherapy
+        <a
+          href="/pages/contact.html"
+          ${activeClass("contact")}
+        >
+          Contact
         </a>
+
       </nav>
-    </header>
-  `;
+
+    </div>
+
+  </header>
+`;
 
   const footerHTML = `
     <footer class="footer">

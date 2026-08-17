@@ -194,3 +194,270 @@
   margin-right: auto;
   margin-left: auto;
 }
+/* ==========================================================================
+   FLOWHUB PREMIUM SHARED HEADER
+   ========================================================================== */
+
+.flowhub-site-header {
+  width:
+    min(100% - 20px, 1180px);
+
+  margin:
+    18px auto 0;
+
+  border:
+    1px solid
+    rgba(142, 220, 255, 0.20);
+
+  border-radius:
+    26px;
+
+  background:
+    radial-gradient(
+      circle at 12% 20%,
+      rgba(56, 182, 255, 0.18),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #1b5d89 0%,
+      #124c78 38%,
+      #0c3d65 68%,
+      #082d4e 100%
+    );
+
+  box-shadow:
+    0 20px 44px
+    rgba(9, 40, 75, 0.18),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.08);
+}
+
+.flowhub-site-header-inner {
+  display: grid;
+
+  grid-template-columns:
+    320px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 24px;
+
+  padding:
+    24px 28px;
+}
+
+
+/* --------------------------------------------------------------------------
+   BRAND
+   -------------------------------------------------------------------------- */
+
+.flowhub-site-brand {
+  flex: 0 0 auto;
+}
+
+.flowhub-site-brand-link {
+  display: inline-flex;
+
+  align-items: baseline;
+
+  gap: 10px;
+
+  text-decoration: none;
+}
+
+.flowhub-site-brand-main {
+  color:
+    #ffffff;
+
+  font-size:
+    clamp(
+      1.8rem,
+      3vw,
+      2.3rem
+    );
+
+  font-weight:
+    800;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    -0.045em;
+
+  text-shadow:
+    0 8px 22px
+    rgba(3, 25, 52, 0.20);
+}
+
+.flowhub-site-brand-sub {
+  color:
+    rgba(91, 202, 255, 0.88);
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.05em;
+}
+
+.flowhub-site-tagline {
+  margin:
+    8px 0 0;
+
+  color:
+    #58c8ff;
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.13em;
+
+  text-transform:
+    uppercase;
+}
+/* --------------------------------------------------------------------------
+   NAV
+   -------------------------------------------------------------------------- */
+
+.flowhub-site-nav {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  flex-wrap: nowrap;
+
+  gap: 18px;
+
+  width: 100%;
+
+  min-width: 0;
+
+  white-space: nowrap;
+}
+
+.flowhub-site-nav a {
+  position: relative;
+
+  padding:
+    8px 0;
+
+  color:
+    rgba(239, 249, 255, 0.88);
+
+  font-size:
+    0.86rem;
+
+  font-weight:
+    700;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease;
+}
+
+.flowhub-site-nav a:hover,
+.flowhub-site-nav a.active {
+  color:
+    #5bcaff;
+}
+
+.flowhub-site-nav a.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 2px;
+
+  height: 2px;
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #49c5ff,
+      transparent
+    );
+
+  box-shadow:
+    0 0 8px
+    rgba(56, 182, 255, 0.40);
+}
+
+
+/* --------------------------------------------------------------------------
+   TABLET / MOBILE
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .flowhub-site-header-inner {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+
+    padding:
+      22px 24px;
+  }
+
+  .flowhub-site-brand {
+    text-align: center;
+  }
+
+  .flowhub-site-brand-link {
+    justify-content: center;
+  }
+
+  .flowhub-site-nav {
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    white-space: normal;
+
+    gap:
+      6px 14px;
+  }
+
+  .flowhub-site-nav a {
+    font-size:
+      0.78rem;
+  }
+}
+
+@media (max-width: 620px) {
+
+  .flowhub-site-header {
+    width:
+      min(100% - 20px, 1120px);
+
+    border-radius:
+      22px;
+  }
+
+  .flowhub-site-nav {
+    gap:
+      6px 14px;
+  }
+
+  .flowhub-site-nav a {
+    font-size:
+      0.82rem;
+  }
+}

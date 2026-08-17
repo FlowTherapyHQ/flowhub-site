@@ -1824,3 +1824,16 @@ border: 1px solid #dcecff;
   font-size: 0.78rem;
   white-space: nowrap;
 }
+/* ==========================================================================
+   FLOWHUB INTERIOR PAGE BACKGROUND
+   ========================================================================== */
+
+.flowhub-interior {
+  background:
+    linear-gradient(
+      180deg,
+      #b7d5e5 0%,
+      #91b9cf 38%,
+      #6f9bb6 100%
+    );
+}
