@@ -47,68 +47,117 @@
     <meta name="theme-color" content="#1677c8" />
   </head>
 
-  <body>
-    <div id="site-header"></div>
-
+  <body class="flowhub-home">
     <main class="home-shell">
       <!-- ===================================================
            HERO
            =================================================== -->
 
-      <section class="home-hero">
-        <div class="home-hero-copy">
-          <span class="home-kicker">Your Wellness Portal</span>
+      <section class="home-hero" aria-labelledby="home-hero-title">
+        <div class="home-hero-inner">
+          <!-- LEFT: PORTAL INTRO -->
+          <div class="home-hero-copy">
+            <p class="home-eyebrow">Your Wellness Portal</p>
 
-          <h1>Welcome to FlowHub</h1>
+            <h1>
+              Welcome to
+              <span class="home-hero-brand">FlowHub</span>
+            </h1>
 
-          <p>
-            Access client forms, aftercare guidance, wellness education,
-            practical resources, and program information—all in one place to
-            support you before, during, and after every FlowTherapy visit.
-          </p>
-
-          <div class="home-hero-actions">
-            <a
-              class="home-primary-button"
-              href="https://flowtherapy.setmore.com/book"
-              target="_blank"
-              rel="noopener noreferrer"
+            <div
+              class="home-hero-pathline"
+              aria-label="FlowHub wellness pathways"
             >
-              Schedule Your Session
-            </a>
+              <span>Prepare</span>
+              <span>Recover</span>
+              <span>Learn</span>
+              <span>Continue</span>
+            </div>
 
-            <a class="home-secondary-button" href="pages/forms.html">
-              Start with Client Forms
-            </a>
+            <p class="home-hero-intro">
+              Everything you need between FlowTherapy visits, organized around
+              where you are in your wellness journey.
+            </p>
           </div>
-        </div>
 
-        <aside class="home-hero-panel">
-          <span class="home-panel-kicker">Everything in One Place</span>
-          <h2>Use FlowHub to:</h2>
-          <ul>
-            <li>Prepare for your appointment with current client forms.</li>
-            <li>Find practical guidance for recovery after your session.</li>
-            <li>Read evidence-informed wellness education in FlowNotes.</li>
-            <li>Save visual guides and routines from FlowResources.</li>
-            <li>
-              Explore memberships, specialized care, and wellness programs.
-            </li>
-          </ul>
-        </aside>
+          <!-- RIGHT: INTERACTIVE PATHWAYS -->
+          <div class="home-hero-panel">
+            <p class="home-panel-kicker">Choose Your Path</p>
+
+            <h2>Where are you today?</h2>
+
+            <div class="home-pathway-grid">
+              <a class="home-pathway-card" href="/pages/forms.html">
+                <span class="home-pathway-number">01</span>
+
+                <span class="home-pathway-copy">
+                  <strong>Prepare</strong>
+                  <small>Forms + visit guidance</small>
+                </span>
+
+                <span class="home-pathway-arrow" aria-hidden="true">→</span>
+              </a>
+
+              <a class="home-pathway-card" href="/pages/aftercare.html">
+                <span class="home-pathway-number">02</span>
+
+                <span class="home-pathway-copy">
+                  <strong>Recover</strong>
+                  <small>Aftercare + resources</small>
+                </span>
+
+                <span class="home-pathway-arrow" aria-hidden="true">→</span>
+              </a>
+
+              <a class="home-pathway-card" href="/pages/flownotes.html">
+                <span class="home-pathway-number">03</span>
+
+                <span class="home-pathway-copy">
+                  <strong>Learn</strong>
+                  <small>FlowNotes + FlowMap</small>
+                </span>
+
+                <span class="home-pathway-arrow" aria-hidden="true">→</span>
+              </a>
+
+              <a class="home-pathway-card" href="/pages/wellness-programs.html">
+                <span class="home-pathway-number">04</span>
+
+                <span class="home-pathway-copy">
+                  <strong>Continue</strong>
+                  <small>Programs + ongoing care</small>
+                </span>
+
+                <span class="home-pathway-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+          <nav class="home-hero-nav" aria-label="FlowHub navigation">
+            <a href="/" aria-current="page">Home</a>
+            <a href="/pages/forms.html">Forms</a>
+            <a href="/pages/aftercare.html">Aftercare</a>
+            <a href="/pages/body-map.html">FlowMap</a>
+            <a href="/pages/flownotes.html">FlowNotes</a>
+            <a href="/pages/flowresources-redesign.html">FlowResources</a>
+            <a href="/pages/wellness-programs.html">Wellness Programs</a>
+            <a href="/pages/faq.html">FAQ</a>
+            <a href="/pages/contact.html">Contact</a>
+          </nav>
+        </div>
       </section>
 
       <!-- ===================================================
            NEW CLIENT PATH
            =================================================== -->
 
-      <section class="home-section">
-        <div class="section-heading">
-          <h2>New to FlowTherapy?</h2>
+      <section class="home-section flowstart-journey">
+        <div class="section-heading flowstart-heading">
+          <span class="flowstart-kicker">FlowStart</span>
+
+          <h2>Your First Visit</h2>
 
           <p>
-            Follow these four simple steps to prepare for your first appointment
-            and become familiar with your FlowHub resources.
+            Your first FlowTherapy experience, from booking through aftercare.
           </p>
         </div>
 
@@ -116,59 +165,75 @@
           <article class="start-step">
             <span class="start-step-number">1</span>
 
-            <h3>Schedule Your Session</h3>
+            <div class="start-step-copy">
+              <span class="start-step-label">Book</span>
 
-            <p>
-              Choose the service, date, and appointment time that best support
-              your current needs, goals, and schedule.
-            </p>
+              <h3>Schedule Your Session</h3>
 
-            <a
-              href="https://flowtherapy.setmore.com/book"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Book an Appointment →
-            </a>
+              <p>
+                Choose the service, date, and appointment time that best support
+                your current needs, goals, and schedule.
+              </p>
+
+              <a
+                href="https://flowtherapy.setmore.com/book"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book an Appointment →
+              </a>
+            </div>
           </article>
 
           <article class="start-step">
             <span class="start-step-number">2</span>
 
-            <h3>Complete Your Forms</h3>
+            <div class="start-step-copy">
+              <span class="start-step-label">Prepare</span>
 
-            <p>
-              Complete your FlowStart Intake and review any forms or documents
-              that apply so everything is ready before your visit.
-            </p>
+              <h3>Complete Your Forms</h3>
 
-            <a href="pages/forms.html">Visit Client Forms →</a>
+              <p>
+                Complete your FlowStart Intake and review any forms or documents
+                that apply so everything is ready before your visit.
+              </p>
+
+              <a href="/pages/forms.html"> Visit Client Forms → </a>
+            </div>
           </article>
 
           <article class="start-step">
             <span class="start-step-number">3</span>
 
-            <h3>Review What to Expect</h3>
+            <div class="start-step-copy">
+              <span class="start-step-label">Arrive</span>
 
-            <p>
-              Find answers about comfort, preparation, pressure, scheduling,
-              policies, and massage care.
-            </p>
+              <h3>Know What to Expect</h3>
 
-            <a href="pages/faq.html">Browse FAQs →</a>
+              <p>
+                Review comfort, preparation, pressure, scheduling, policies, and
+                what your first FlowTherapy session may be like.
+              </p>
+
+              <a href="/pages/faq.html"> Browse FAQs → </a>
+            </div>
           </article>
 
           <article class="start-step">
             <span class="start-step-number">4</span>
 
-            <h3>Save Your Aftercare</h3>
+            <div class="start-step-copy">
+              <span class="start-step-label">Recover</span>
 
-            <p>
-              Review simple recovery guidance you can use after your appointment
-              and between sessions.
-            </p>
+              <h3>Continue Your Care</h3>
 
-            <a href="pages/aftercare.html">View Aftercare →</a>
+              <p>
+                Access simple aftercare guidance and recovery resources to
+                support your body after your appointment and between sessions.
+              </p>
+
+              <a href="/pages/aftercare.html"> View Aftercare → </a>
+            </div>
           </article>
         </div>
       </section>
@@ -177,154 +242,82 @@
            PORTAL SECTIONS
            =================================================== -->
 
-      <section id="explore-flowhub" class="home-section">
-        <div class="section-heading">
-          <h2>Explore FlowHub</h2>
+      <section id="explore-flowhub" class="home-section explore-hub">
+  <div class="section-heading explore-heading">
+    <span class="explore-kicker">Explore FlowHub</span>
 
-          <p>
-            Find the section that best matches where you are in your wellness
-            journey.
-          </p>
-        </div>
+    <h2>What do you need today?</h2>
 
-        <!-- BEFORE YOUR VISIT -->
+    <p>
+      Jump directly to the tools, education, and support that fit where you are
+      in your wellness journey.
+    </p>
+  </div>
 
-        <div class="pathway-group">
-          <div class="pathway-heading">
-            <span class="pathway-heading-number">1</span>
+  <div class="explore-paths">
 
-            <div class="pathway-heading-copy">
-              <span>Prepare</span>
-              <h3>Before Your Visit</h3>
-            </div>
-          </div>
+    <article class="explore-path">
+      <span class="explore-path-number">01</span>
 
-          <div class="pathway-grid">
-            <article class="portal-card">
-              <span class="portal-card-label">Appointment Preparation</span>
+      <div class="explore-path-copy">
+        <span class="explore-path-label">Prepare</span>
+        <h3>Get ready for your visit.</h3>
+      </div>
 
-              <h3>Client Forms</h3>
+      <div class="explore-path-links">
+        <a href="/pages/forms.html">Client Forms</a>
+        <a href="/pages/faq.html">FAQs</a>
+        <a href="/pages/body-map.html">FlowMap</a>
+      </div>
+    </article>
 
-              <p>
-                Complete intake paperwork, share important health information,
-                review policies, and find current client documents before your
-                appointment.
-              </p>
 
-              <a class="button" href="pages/forms.html">
-                Access Client Forms
-              </a>
-            </article>
+    <article class="explore-path">
+      <span class="explore-path-number">02</span>
 
-            <article class="portal-card">
-              <span class="portal-card-label"
-                >Questions &amp; Expectations</span
-              >
+      <div class="explore-path-copy">
+        <span class="explore-path-label">Recover</span>
+        <h3>Support your body after your session.</h3>
+      </div>
 
-              <h3>Frequently Asked Questions</h3>
+      <div class="explore-path-links">
+        <a href="/pages/aftercare.html">Aftercare</a>
+        <a href="/pages/flowresources-redesign.html">FlowResources</a>
+      </div>
+    </article>
 
-              <p>
-                Find answers about preparation, comfort, pressure, prenatal
-                massage, scheduling, cancellation policies, and what to expect.
-              </p>
 
-              <a class="button" href="pages/faq.html"> View FAQs </a>
-            </article>
-          </div>
-        </div>
+    <article class="explore-path">
+      <span class="explore-path-number">03</span>
 
-        <!-- AFTER YOUR VISIT -->
+      <div class="explore-path-copy">
+        <span class="explore-path-label">Learn</span>
+        <h3>Understand your body and your care.</h3>
+      </div>
 
-        <div class="pathway-group">
-          <div class="pathway-heading">
-            <span class="pathway-heading-number">2</span>
+      <div class="explore-path-links">
+        <a href="/pages/flownotes.html">FlowNotes</a>
+        <a href="/pages/body-map.html">FlowMap</a>
+      </div>
+    </article>
 
-            <div class="pathway-heading-copy">
-              <span>Recover</span>
-              <h3>After Your Visit</h3>
-            </div>
-          </div>
 
-          <div class="pathway-grid">
-            <article class="portal-card">
-              <span class="portal-card-label">Post-Session Support</span>
+    <article class="explore-path">
+      <span class="explore-path-number">04</span>
 
-              <h3>Aftercare</h3>
+      <div class="explore-path-copy">
+        <span class="explore-path-label">Continue</span>
+        <h3>Keep your wellness moving forward.</h3>
+      </div>
 
-              <p>
-                Follow a practical recovery timeline, understand common
-                post-session responses, and find guidance for movement, rest,
-                hydration, soreness, and when to seek care.
-              </p>
+      <div class="explore-path-links">
+        <a href="/pages/wellness-programs.html">Wellness Programs</a>
+        <a href="/pages/flowpass.html">FlowPass</a>
+      </div>
+    </article>
 
-              <a class="button" href="pages/aftercare.html"> View Aftercare </a>
-            </article>
-
-            <article class="portal-card">
-              <span class="portal-card-label">Visual Wellness Tools</span>
-
-              <h3>FlowResources</h3>
-
-              <p>
-                Explore downloadable wellness guides, routines, checklists, and
-                visual tools designed to support movement, recovery, and
-                self-care between appointments.
-              </p>
-
-              <a class="button" href="pages/flowresources-redesign.html">
-                Explore FlowResources
-              </a>
-            </article>
-          </div>
-        </div>
-
-        <!-- LEARN AND CONTINUE -->
-
-        <div class="pathway-group">
-          <div class="pathway-heading">
-            <span class="pathway-heading-number">3</span>
-
-            <div class="pathway-heading-copy">
-              <span>Learn &amp; Continue</span>
-              <h3>Continue Your Wellness Journey</h3>
-            </div>
-          </div>
-
-          <div class="pathway-grid">
-            <article class="portal-card">
-              <span class="portal-card-label">Wellness Education</span>
-
-              <h3>FlowNotes</h3>
-
-              <p>
-                Read evidence-informed articles about massage, movement,
-                recovery, workplace wellness, stress, and practical ways to care
-                for your body.
-              </p>
-
-              <a class="button" href="pages/flownotes.html">
-                Explore FlowNotes
-              </a>
-            </article>
-
-            <article class="portal-card">
-              <span class="portal-card-label">Personalized Pathways</span>
-
-              <h3>Wellness Programs</h3>
-
-              <p>
-                Explore FlowPass memberships, SpaFlow experiences, Veterans
-                resources, and corporate wellness services designed for
-                consistent and specialized support.
-              </p>
-
-              <a class="button" href="pages/wellness-programs.html">
-                Explore Wellness Programs
-              </a>
-            </article>
-          </div>
-        </div>
-      </section>
+  </div>
+</section>
 
       <!-- ===================================================
            FEATURED CONTENT
@@ -332,13 +325,17 @@
 
       <section class="home-section">
         <div class="section-heading">
-          <h2>Featured from FlowHub</h2>
+  <span class="section-heading-eyebrow">
+    Curated for You
+  </span>
 
-          <p>
-            Start with one educational article and one practical visual guide
-            from the growing FlowHub library.
-          </p>
-        </div>
+  <h2>Featured from FlowHub</h2>
+
+  <p>
+    Start with one educational article and one practical visual guide
+    from the growing FlowHub library.
+  </p>
+</div>
 
         <div class="featured-grid">
           <!-- Featured FlowNote -->
@@ -435,35 +432,49 @@
           </article>
         </div>
       </section>
-      <!-- ===================================================
-           RECENTLY ADDED
-           =================================================== -->
+      <!-- =========================================================
+     RECENTLY ADDED
+     ========================================================= -->
 
-      <section class="home-section">
-        <div class="section-heading">
-          <h2>Recently Added</h2>
+<section class="home-section">
 
-          <p>
-            Explore the newest wellness education added to the FlowNotes
-            library.
-          </p>
-        </div>
+  <div class="section-heading">
 
-        <div
-          id="recent-flownotes"
-          class="recent-flownotes-grid"
-          aria-live="polite"
-        >
-          <!-- Cards are generated by homepage-content.js -->
-        </div>
+    <span class="section-heading-eyebrow">
+      Fresh from the Library
+    </span>
 
-        <div class="recent-flownotes-action">
-          <a class="home-secondary-button" href="/pages/flownotes.html">
-            Explore All FlowNotes
-          </a>
-        </div>
-      </section>
+    <h2>Recently Added</h2>
 
+    <p>
+      Explore the newest wellness education added to the FlowNotes library.
+    </p>
+
+  </div>
+
+
+  <div
+    id="recent-flownotes"
+    class="recent-flownotes-grid"
+    aria-live="polite"
+  >
+    <!-- Cards are generated by homepage-content.js -->
+  </div>
+
+
+  <div class="recent-flownotes-action">
+
+    <a
+      class="home-secondary-button"
+      href="/pages/flownotes.html"
+    >
+      Explore All FlowNotes
+    </a>
+
+  </div>
+
+</section>
+     
       <!-- ===================================================
            CLOSING CTA
            =================================================== -->
