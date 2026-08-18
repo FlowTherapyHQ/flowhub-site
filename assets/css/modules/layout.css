@@ -311,6 +311,40 @@
 /* ==========================================================================
    FLOWHUB PREMIUM SHARED HEADER
    ========================================================================== */
+/* --------------------------------------------------------------------------
+   RETURN TO FLOWTHERAPY
+   -------------------------------------------------------------------------- */
+
+.flowhub-site-header-inner {
+  position: relative;
+}
+
+.flowhub-return-link {
+  position: absolute;
+
+  top: 10px;
+  right: 28px;
+
+  color: rgba(174, 224, 249, 0.72);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+.flowhub-return-link:hover {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 10px rgba(91, 202, 255, 0.55);
+}
 
 .flowhub-site-header {
   width:
@@ -438,6 +472,40 @@
 
   text-transform:
     uppercase;
+}
+/* --------------------------------------------------------------------------
+   RETURN TO FLOWTHERAPY
+   -------------------------------------------------------------------------- */
+
+.flowhub-site-header-inner {
+  position: relative;
+}
+
+.flowhub-return-link {
+  position: absolute;
+
+  top: 10px;
+  right: 28px;
+
+  color: rgba(174, 224, 249, 0.72);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+.flowhub-return-link:hover {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 10px rgba(91, 202, 255, 0.55);
 }
 /* --------------------------------------------------------------------------
    NAV
@@ -599,4 +667,15 @@
     font-size:
       0.82rem;
   }
+  .flowhub-return-link {
+  position: static;
+
+  display: block;
+
+  margin-bottom: 10px;
+
+  text-align: center;
+
+  font-size: 0.7rem;
+}
 }
