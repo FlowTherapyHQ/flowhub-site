@@ -3051,9 +3051,438 @@
   white-space: nowrap;
 }
 /* ==========================================================================
-   FLOWHUB INTERIOR PAGE BACKGROUND
+   FLOWHUB INTERIOR — PREMIUM CANVAS
    ========================================================================== */
 
-.flowhub-interior {
-  background: linear-gradient(180deg, #b7d5e5 0%, #91b9cf 38%, #6f9bb6 100%);
+body.flowhub-interior {
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(151, 212, 240, 0.18) 0%,
+      rgba(79, 156, 194, 0.08) 34%,
+      transparent 58%
+    ),
+    linear-gradient(
+      180deg,
+      #78abc4 0%,
+      #5a92af 12%,
+      #3e7897 28%,
+      #2a627f 46%,
+      #1c506a 64%,
+      #143f58 80%,
+      #0d3147 100%
+    );
+
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   FLOWHUB PREMIUM FLOATING SURFACE
+   ========================================================================== */
+
+.flowhub-surface {
+  position: relative;
+
+  border:
+    1px solid
+    rgba(166, 226, 252, 0.2);
+
+  border-radius:
+    24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(21, 75, 101, 0.88),
+      rgba(10, 47, 70, 0.94)
+    );
+
+  box-shadow:
+    0 18px 38px rgba(0, 18, 32, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+/* ==========================================================================
+   FAQ — PREMIUM BOTTOM PANELS
+   ========================================================================== */
+
+/* ==========================================================================
+   08. COMFORT PANEL — OPEN / FLOATING
+   ========================================================================== */
+
+.comfort-panel {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(300px, 0.65fr);
+
+  align-items: center;
+
+  gap: 46px;
+
+  margin-top: 46px;
+
+  padding: 2.2rem 1rem 1.9rem;
+
+  border: 0;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  box-shadow: none;
+}
+
+.comfort-panel-copy {
+  min-width: 0;
+}
+
+.comfort-panel-copy h2 {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+
+  font-size: clamp(1.9rem, 3vw, 2.35rem);
+
+  line-height: 1.1;
+
+  letter-spacing: -0.015em;
+}
+
+.comfort-panel-copy p {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: rgba(226, 240, 248, 0.86);
+
+  font-size: 1rem;
+
+  line-height: 1.75;
+}
+
+
+/* --------------------------------------------------------------------------
+   COMFORT CHECKLIST — SMALL FLOATING DETAIL
+   -------------------------------------------------------------------------- */
+
+.comfort-list {
+  display: grid;
+
+  width: 100%;
+  min-width: 0;
+
+  gap: 12px;
+
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 22px 24px;
+
+  border:
+    1px solid
+    rgba(145, 220, 251, 0.18);
+
+  border-radius:
+    22px 8px 22px 8px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 46, 68, 0.76),
+      rgba(5, 34, 52, 0.88)
+    );
+
+  box-shadow:
+    0 14px 28px rgba(0, 16, 29, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  list-style: none;
+}
+
+.comfort-list li {
+  display: flex;
+
+  width: 100%;
+  min-width: 0;
+
+  align-items: flex-start;
+
+  gap: 11px;
+
+  margin: 0;
+
+  color: rgba(230, 243, 250, 0.88);
+
+  font-size: 0.96rem;
+
+  line-height: 1.5;
+}
+
+.comfort-list li::before {
+  content: "✓";
+
+  display: inline-flex;
+
+  width: 22px;
+  height: 22px;
+
+  flex: 0 0 22px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 1px;
+
+  border:
+    1px solid
+    rgba(118, 214, 253, 0.24);
+
+  border-radius: 50%;
+
+  background:
+    rgba(68, 187, 236, 0.11);
+
+  color: #72d6ff;
+
+  font-size: 0.75rem;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 0 9px rgba(71, 193, 243, 0.12);
+}
+
+
+/* ==========================================================================
+   09. CONTACT PANEL — OPEN PREMIUM CTA
+   ========================================================================== */
+
+.faq-contact-panel {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 32px;
+
+  margin-top: 26px;
+
+  padding: 2.35rem 1rem 1.2rem;
+
+  border: 0;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  box-shadow: none;
+}
+
+
+/* --------------------------------------------------------------------------
+   STATIC GLINT ABOVE FINAL CTA
+   -------------------------------------------------------------------------- */
+
+.faq-contact-panel::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 8%;
+  right: 8%;
+
+  height: 9px;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      #ffffff 0 1px,
+      rgba(218, 247, 255, 0.94) 1.5px,
+      rgba(116, 217, 255, 0.78) 2.5px,
+      rgba(56, 189, 248, 0.34) 4px,
+      transparent 7px
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(149, 222, 250, 0.04) 14%,
+      rgba(175, 234, 255, 0.16) 38%,
+      rgba(207, 245, 255, 0.28) 50%,
+      rgba(175, 234, 255, 0.16) 62%,
+      rgba(149, 222, 250, 0.04) 86%,
+      transparent 100%
+    );
+
+  background-size:
+    18px 9px,
+    100% 1px;
+
+  background-position:
+    center,
+    center;
+
+  background-repeat:
+    no-repeat;
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      rgba(92, 204, 250, 0.32)
+    );
+}
+
+
+.faq-contact-panel h2 {
+  margin: 0 0 9px;
+
+  color: #ffffff;
+
+  font-size: clamp(1.85rem, 3vw, 2.25rem);
+
+  line-height: 1.1;
+
+  letter-spacing: -0.015em;
+}
+
+.faq-contact-panel p {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: rgba(226, 240, 248, 0.86);
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+
+/* --------------------------------------------------------------------------
+   FINAL CTA BUTTON — STATIC GLOW
+   -------------------------------------------------------------------------- */
+
+.faq-contact-panel .faq-secondary-button {
+  min-height: 48px;
+
+  padding: 11px 22px;
+
+  border:
+    1px solid
+    rgba(172, 231, 255, 0.78);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #24a9e6 0%,
+      #1686c5 55%,
+      #0d6da8 100%
+    );
+
+  color: #ffffff;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 0 8px rgba(93, 210, 255, 0.52),
+    0 0 20px rgba(41, 177, 239, 0.28),
+    0 10px 24px rgba(0, 17, 31, 0.22);
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.faq-contact-panel .faq-secondary-button:hover {
+  border-color: #d8f6ff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #35b8f1 0%,
+      #2096d5 55%,
+      #1178b4 100%
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 0 11px rgba(124, 222, 255, 0.72),
+    0 0 26px rgba(53, 190, 248, 0.42),
+    0 12px 28px rgba(0, 17, 31, 0.26);
+}
+
+
+/* ==========================================================================
+   10. FAQ BOTTOM — RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 920px) {
+  .comfort-panel {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .comfort-list {
+    width: min(520px, 100%);
+  }
+
+  .faq-contact-panel {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .faq-contact-panel .faq-secondary-button {
+    justify-self: start;
+  }
+}
+
+
+@media (max-width: 620px) {
+  .comfort-panel {
+    margin-top: 36px;
+
+    padding:
+      1.8rem 0.35rem 1.5rem;
+  }
+
+  .comfort-list {
+    padding:
+      20px 18px;
+  }
+
+  .faq-contact-panel {
+    margin-top: 18px;
+
+    padding:
+      2rem 0.35rem 0.8rem;
+  }
+
+  .faq-contact-panel::before {
+    left: 4%;
+    right: 4%;
+  }
+
+  .faq-contact-panel
+  .faq-secondary-button {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
 }

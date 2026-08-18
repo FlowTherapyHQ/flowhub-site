@@ -44,294 +44,566 @@
     <meta name="theme-color" content="#1677c8" />
 
     <style>
+      /* ==========================================================================
+     01. FAQ — PREMIUM VARIABLES
+     ========================================================================== */
+
       :root {
-        --faq-blue: #1677c8;
-        --faq-blue-dark: #0b3f78;
-        --faq-blue-hover: #0e5fa5;
-        --faq-blue-soft: #eaf4fe;
-        --faq-blue-pale: #f5faff;
-        --faq-ink: #17324d;
-        --faq-muted: #52677b;
-        --faq-border: #cfe2f5;
-        --faq-page: #f3f8fc;
-        --faq-surface: #ffffff;
-        --faq-shadow: 0 12px 30px rgba(27, 67, 103, 0.08);
+        --faq-blue: #59caff;
+        --faq-blue-bright: #8edfff;
+        --faq-blue-deep: #167db8;
+
+        --faq-white: #ffffff;
+        --faq-ice: #dff5ff;
+
+        --faq-muted: rgba(224, 240, 249, 0.86);
+        --faq-muted-soft: rgba(204, 226, 238, 0.72);
+
+        --faq-border: rgba(145, 220, 251, 0.18);
+        --faq-border-strong: rgba(145, 220, 251, 0.36);
+
+        --faq-surface: rgba(17, 67, 91, 0.84);
+        --faq-surface-deep: rgba(8, 42, 63, 0.94);
+
+        --faq-shadow: 0 18px 38px rgba(0, 18, 32, 0.2);
+
+        --faq-shadow-large: 0 24px 48px rgba(0, 16, 30, 0.28);
       }
 
       html {
         scroll-behavior: smooth;
       }
 
-      body {
-        background: var(--faq-page);
-        color: var(--faq-ink);
+      body.flowhub-interior {
+        background:
+          radial-gradient(
+            ellipse at 50% 0%,
+            rgba(143, 211, 241, 0.16) 0%,
+            rgba(69, 151, 191, 0.08) 32%,
+            transparent 58%
+          ),
+          linear-gradient(
+            180deg,
+            #4b86a5 0%,
+            #407a99 12%,
+            #356f8e 28%,
+            #2b6482 44%,
+            #235a76 60%,
+            #1b506b 77%,
+            #15465f 91%,
+            #103b53 100%
+          );
+
+        color: var(--faq-white);
       }
 
       .faq-shell {
         width: min(1180px, calc(100% - 32px));
+
         margin: 0 auto;
-        padding: 42px 0 72px;
+
+        padding: 42px 0 34px;
       }
 
-      /* =====================================================
-         HERO
-         ===================================================== */
+      /* ==========================================================================
+     02. HERO
+     ========================================================================== */
 
       .faq-hero {
         position: relative;
+
         display: grid;
-        grid-template-columns: minmax(0, 1.08fr) minmax(310px, 0.92fr);
+
+        grid-template-columns:
+          minmax(0, 1.08fr)
+          minmax(310px, 0.92fr);
+
         gap: 46px;
+
         align-items: stretch;
+
         overflow: hidden;
+
         padding: 48px;
-        border: 1px solid var(--faq-border);
+
+        border: 1px solid rgba(167, 226, 251, 0.22);
+
         border-radius: 26px;
+
         background:
           radial-gradient(
-            circle at 90% 10%,
-            rgba(22, 119, 200, 0.14),
+            circle at 88% 16%,
+            rgba(91, 202, 255, 0.17),
             transparent 34%
           ),
-          linear-gradient(135deg, #ffffff 0%, #f5faff 100%);
-        box-shadow: var(--faq-shadow);
+          linear-gradient(
+            145deg,
+            rgba(23, 81, 107, 0.92) 0%,
+            rgba(10, 47, 71, 0.97) 100%
+          );
+
+        box-shadow:
+          var(--faq-shadow-large),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
       }
 
       .faq-hero-copy {
         position: relative;
+
         z-index: 2;
+
         display: flex;
+
         flex-direction: column;
         justify-content: center;
       }
 
       .faq-kicker {
         display: inline-flex;
+
         align-self: flex-start;
+
         margin-bottom: 16px;
+
         padding: 7px 12px;
+
+        border: 1px solid rgba(110, 211, 255, 0.22);
+
         border-radius: 999px;
-        background: var(--faq-blue-soft);
-        color: var(--faq-blue);
+
+        background: rgba(66, 185, 238, 0.1);
+
+        color: #9ce4ff;
+
         font-size: 0.75rem;
         font-weight: 800;
-        letter-spacing: 0.08em;
+
+        letter-spacing: 0.1em;
+
         text-transform: uppercase;
       }
 
       .faq-hero h1 {
         margin: 0 0 16px;
-        color: var(--faq-blue);
-        font-size: clamp(2.5rem, 5.7vw, 4.65rem);
+
+        color: #ffffff;
+
+        font-size: clamp(2.7rem, 5.7vw, 4.7rem);
+
         line-height: 1.03;
+
+        letter-spacing: -0.025em;
+
+        text-shadow: 0 12px 28px rgba(0, 15, 28, 0.22);
       }
 
       .faq-hero-copy > p {
         max-width: 690px;
+
         margin: 0;
+
         color: var(--faq-muted);
+
         font-size: 1.08rem;
+
         line-height: 1.75;
       }
 
       .faq-hero-actions {
         display: flex;
+
         flex-wrap: wrap;
+
         gap: 12px;
+
         margin-top: 26px;
       }
+
+      /* ==========================================================================
+     03. BUTTONS
+     ========================================================================== */
 
       .faq-primary-button,
       .faq-secondary-button {
         display: inline-flex;
+
         min-height: 46px;
+
         align-items: center;
         justify-content: center;
+
+        box-sizing: border-box;
+
         padding: 11px 18px;
+
         border-radius: 999px;
+
         font-weight: 800;
+
         text-decoration: none;
+
+        transition:
+          border-color 0.2s ease,
+          background 0.2s ease,
+          color 0.2s ease,
+          box-shadow 0.2s ease;
       }
 
       .faq-primary-button {
-        background: var(--faq-blue);
+        border: 1px solid rgba(172, 231, 255, 0.88);
+
+        background: linear-gradient(
+          135deg,
+          #27afea 0%,
+          #1688c7 56%,
+          #0d6ea8 100%
+        );
+
         color: #ffffff;
+
+        box-shadow:
+          0 0 8px rgba(91, 207, 255, 0.58),
+          0 0 20px rgba(41, 177, 239, 0.3),
+          0 10px 24px rgba(0, 17, 31, 0.25);
       }
 
       .faq-primary-button:hover {
-        background: var(--faq-blue-hover);
+        border-color: #e1f8ff;
+
+        background: linear-gradient(
+          135deg,
+          #38bcf3 0%,
+          #2098d7 56%,
+          #1179b5 100%
+        );
+
+        box-shadow:
+          0 0 11px rgba(124, 222, 255, 0.75),
+          0 0 27px rgba(53, 190, 248, 0.43),
+          0 12px 28px rgba(0, 17, 31, 0.28);
       }
 
       .faq-secondary-button {
-        border: 1px solid var(--faq-border);
-        background: #ffffff;
-        color: var(--faq-blue);
+        border: 1px solid rgba(148, 220, 250, 0.32);
+
+        background: rgba(7, 40, 59, 0.42);
+
+        color: #ccefff;
       }
 
       .faq-secondary-button:hover {
-        border-color: var(--faq-blue);
+        border-color: rgba(182, 235, 255, 0.72);
+
+        background: rgba(36, 108, 139, 0.42);
+
+        color: #ffffff;
       }
 
-      /* =====================================================
-         MOST ASKED QUESTIONS
-         ===================================================== */
+      /* ==========================================================================
+     04. MOST ASKED QUESTIONS
+     ========================================================================== */
 
       .faq-hero-visual {
         display: flex;
+
         min-width: 0;
+
         align-items: center;
         justify-content: center;
       }
 
       .popular-card {
+        position: relative;
+
         width: 100%;
         max-width: 405px;
+
         padding: 30px;
-        border: 7px solid #ffffff;
-        border-radius: 22px;
-        background: #ffffff;
-        box-shadow: 0 20px 42px rgba(27, 67, 103, 0.18);
+
+        border: 1px solid rgba(168, 226, 251, 0.22);
+
+        border-radius: 22px 8px 22px 8px;
+
+        background: linear-gradient(
+          145deg,
+          rgba(12, 55, 78, 0.9),
+          rgba(7, 38, 58, 0.96)
+        );
+
+        box-shadow:
+          0 20px 42px rgba(0, 17, 30, 0.28),
+          0 0 26px rgba(67, 187, 234, 0.08);
       }
 
       .popular-card-label {
-        color: var(--faq-blue);
+        color: #74d7ff;
+
         font-size: 0.7rem;
         font-weight: 800;
-        letter-spacing: 0.08em;
+
+        letter-spacing: 0.09em;
+
         text-transform: uppercase;
       }
 
       .popular-card h2 {
         margin: 11px 0 18px;
-        color: var(--faq-blue-dark);
-        font-size: 1.45rem;
+
+        color: #ffffff;
+
+        font-size: 1.5rem;
+
         line-height: 1.3;
       }
 
       .popular-list {
         display: grid;
+
         gap: 12px;
+
         margin: 0;
         padding: 0;
+
         list-style: none;
       }
 
       .popular-list a {
         display: grid;
-        grid-template-columns: 24px minmax(0, 1fr);
+
+        grid-template-columns: 26px minmax(0, 1fr);
+
         gap: 11px;
+
         align-items: start;
-        color: var(--faq-muted);
+
+        color: rgba(225, 240, 249, 0.84);
+
         line-height: 1.5;
+
         text-decoration: none;
       }
 
       .popular-list a::before {
         content: "?";
+
         display: inline-flex;
+
         width: 24px;
         height: 24px;
+
         align-items: center;
         justify-content: center;
+
+        border: 1px solid rgba(113, 214, 255, 0.26);
+
         border-radius: 50%;
-        background: var(--faq-blue-soft);
-        color: var(--faq-blue);
+
+        background: rgba(63, 185, 237, 0.1);
+
+        color: #73d6ff;
+
         font-size: 0.78rem;
         font-weight: 900;
+
+        box-shadow: 0 0 9px rgba(76, 197, 246, 0.1);
       }
 
       .popular-list a:hover {
-        color: var(--faq-blue-dark);
+        color: #ffffff;
       }
 
-      /* =====================================================
-         SHARED SECTION STYLES
-         ===================================================== */
+      /* ==========================================================================
+     05. FAQ INTRO
+     ========================================================================== */
 
       .faq-section {
-        margin-top: 72px;
+        margin-top: 56px;
       }
 
       .section-heading {
-        margin-bottom: 32px;
+        margin-bottom: 30px;
+
         text-align: center;
       }
 
       .section-heading h2 {
         margin: 0 0 9px;
-        color: var(--faq-blue);
-        font-size: clamp(1.8rem, 3vw, 2.35rem);
+
+        color: #ffffff;
+
+        font-size: clamp(1.9rem, 3vw, 2.45rem);
+
+        text-shadow: 0 8px 18px rgba(0, 18, 32, 0.18);
       }
 
       .section-heading p {
         max-width: 760px;
+
         margin: 0 auto;
+
         color: var(--faq-muted);
+
         line-height: 1.7;
       }
 
+      /* ==========================================================================
+     06. FAQ FLOATING CATEGORIES
+     ========================================================================== */
+
       .faq-category {
-        padding: 32px;
-        border: 1px solid var(--faq-border);
+        position: relative;
+
+        padding: 32px 34px 34px;
+
+        border: 1px solid rgba(149, 220, 250, 0.18);
+
         border-radius: 24px;
-        background: #ffffff;
-        box-shadow: 0 8px 24px rgba(27, 67, 103, 0.05);
+
+        background: linear-gradient(
+          145deg,
+          rgba(18, 70, 95, 0.83),
+          rgba(9, 45, 67, 0.93)
+        );
+
+        box-shadow:
+          0 18px 36px rgba(0, 17, 30, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.035);
       }
 
       .faq-category + .faq-category {
-        margin-top: 28px;
+        margin-top: 34px;
+      }
+
+      /* Static premium glint between categories */
+
+      .faq-category::after {
+        content: "";
+
+        position: absolute;
+
+        left: 8%;
+        right: 8%;
+
+        bottom: -20px;
+
+        height: 9px;
+
+        pointer-events: none;
+
+        background:
+          radial-gradient(
+            circle at 50% 50%,
+            #ffffff 0 1px,
+            rgba(208, 244, 255, 0.92) 1.5px,
+            rgba(103, 211, 255, 0.72) 2.5px,
+            rgba(56, 189, 248, 0.3) 4px,
+            transparent 7px
+          ),
+          linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(151, 224, 252, 0.04) 16%,
+            rgba(174, 232, 253, 0.16) 38%,
+            rgba(206, 244, 255, 0.3) 50%,
+            rgba(174, 232, 253, 0.16) 62%,
+            rgba(151, 224, 252, 0.04) 84%,
+            transparent 100%
+          );
+
+        background-size:
+          18px 9px,
+          100% 1px;
+
+        background-position: center, center;
+
+        background-repeat: no-repeat;
+
+        filter: drop-shadow(0 0 4px rgba(92, 204, 250, 0.38));
+      }
+
+      .faq-category:last-child::after {
+        display: none;
       }
 
       .category-heading {
         display: flex;
-        gap: 14px;
+
         align-items: center;
+
+        gap: 14px;
+
         margin-bottom: 22px;
       }
 
       .category-number {
         display: inline-flex;
-        width: 42px;
-        height: 42px;
-        flex: 0 0 42px;
+
+        width: 44px;
+        height: 44px;
+
+        flex: 0 0 44px;
+
         align-items: center;
         justify-content: center;
+
+        border: 1px solid rgba(173, 232, 255, 0.72);
+
         border-radius: 50%;
-        background: var(--faq-blue);
+
+        background: linear-gradient(145deg, #21a7e1, #126fa9);
+
         color: #ffffff;
+
         font-weight: 900;
+
+        box-shadow:
+          0 0 10px rgba(78, 199, 247, 0.4),
+          0 0 22px rgba(53, 190, 248, 0.16);
       }
 
       .category-heading-copy span {
         display: block;
+
         margin-bottom: 3px;
-        color: var(--faq-blue);
-        font-size: 0.68rem;
+
+        color: #75d8ff;
+
+        font-size: 0.7rem;
+
         font-weight: 800;
-        letter-spacing: 0.08em;
+
+        letter-spacing: 0.1em;
+
         text-transform: uppercase;
       }
 
       .category-heading h2 {
         margin: 0;
-        color: var(--faq-blue-dark);
-        font-size: 1.65rem;
+
+        color: #ffffff;
+
+        font-size: 1.72rem;
       }
 
-      /* =====================================================
-         FAQ ACCORDION
-         ===================================================== */
+      /* ==========================================================================
+     07. ACCORDION — FLOATING ROWS
+     ========================================================================== */
 
       .faq-list {
         display: grid;
-        gap: 13px;
+
+        gap: 11px;
       }
 
       .faq-item {
         overflow: hidden;
-        border: 1px solid var(--faq-border);
-        border-radius: 16px;
-        background: var(--faq-blue-pale);
+
+        border: 1px solid rgba(141, 215, 247, 0.16);
+
+        border-radius: 15px;
+
+        background: rgba(5, 36, 54, 0.4);
+
         transition:
           border-color 0.2s ease,
           background 0.2s ease,
@@ -339,23 +611,34 @@
       }
 
       .faq-item:hover {
-        border-color: #a9cfea;
+        border-color: rgba(119, 215, 252, 0.36);
+
+        background: rgba(28, 93, 122, 0.34);
       }
 
       .faq-item[open] {
-        border-color: #9bc9eb;
-        background: #ffffff;
-        box-shadow: 0 8px 22px rgba(27, 67, 103, 0.07);
+        border-color: rgba(126, 218, 255, 0.4);
+
+        background: rgba(7, 42, 62, 0.62);
+
+        box-shadow: 0 10px 24px rgba(0, 15, 28, 0.16);
       }
 
       .faq-item summary {
         position: relative;
-        padding: 20px 58px 20px 22px;
-        color: var(--faq-blue-dark);
+
+        padding: 18px 58px 18px 20px;
+
+        color: #f5fbff;
+
         font-size: 1rem;
+
         font-weight: 800;
+
         line-height: 1.45;
+
         cursor: pointer;
+
         list-style: none;
       }
 
@@ -365,35 +648,56 @@
 
       .faq-item summary::after {
         content: "+";
+
         position: absolute;
+
         top: 50%;
-        right: 22px;
+        right: 20px;
+
         display: inline-flex;
-        width: 28px;
-        height: 28px;
+
+        width: 29px;
+        height: 29px;
+
         align-items: center;
         justify-content: center;
+
         transform: translateY(-50%);
+
+        border: 1px solid rgba(123, 215, 251, 0.2);
+
         border-radius: 50%;
-        background: var(--faq-blue-soft);
-        color: var(--faq-blue);
-        font-size: 1.2rem;
+
+        background: rgba(74, 188, 235, 0.1);
+
+        color: #73d6ff;
+
+        font-size: 1.15rem;
+
         font-weight: 800;
       }
 
       .faq-item[open] summary::after {
         content: "−";
-        background: var(--faq-blue);
+
+        border-color: rgba(169, 230, 255, 0.5);
+
+        background: linear-gradient(145deg, #209fd9, #116fa9);
+
         color: #ffffff;
+
+        box-shadow: 0 0 10px rgba(74, 196, 246, 0.24);
       }
 
       .faq-answer {
-        padding: 0 22px 22px;
+        padding: 0 20px 20px;
       }
 
       .faq-answer p {
         margin: 0;
-        color: var(--faq-muted);
+
+        color: rgba(222, 239, 248, 0.84);
+
         line-height: 1.75;
       }
 
@@ -402,28 +706,38 @@
       }
 
       .faq-answer strong {
-        color: var(--faq-blue-dark);
+        color: #ffffff;
       }
 
-      /* =====================================================
-   COMFORT PANEL
-   ===================================================== */
+      /* ==========================================================================
+     08. COMFORT PANEL
+     ========================================================================== */
 
       .comfort-panel {
         display: grid;
-        grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+
+        grid-template-columns:
+          minmax(0, 1.35fr)
+          minmax(320px, 0.65fr);
+
         gap: 42px;
+
         align-items: center;
+
         padding: 38px 42px;
-        border: 1px solid var(--faq-border);
+
+        border: 1px solid rgba(149, 220, 250, 0.18);
+
         border-radius: 24px;
+
         background:
           radial-gradient(
             circle at top right,
-            rgba(22, 119, 200, 0.12),
-            transparent 32%
+            rgba(69, 192, 241, 0.12),
+            transparent 34%
           ),
-          linear-gradient(135deg, #ffffff, #f5faff);
+          linear-gradient(145deg, rgba(18, 69, 94, 0.84), rgba(9, 45, 67, 0.94));
+
         box-shadow: var(--faq-shadow);
       }
 
@@ -433,108 +747,174 @@
 
       .comfort-panel-copy h2 {
         margin: 0 0 12px;
-        color: var(--faq-blue-dark);
-        font-size: 1.85rem;
+
+        color: #ffffff;
+
+        font-size: 1.9rem;
       }
 
       .comfort-panel-copy p {
         max-width: 680px;
+
         margin: 0;
+
         color: var(--faq-muted);
+
         line-height: 1.75;
       }
 
       .comfort-list {
         display: grid;
+
         width: 100%;
         min-width: 0;
+
         gap: 13px;
+
+        box-sizing: border-box;
+
         margin: 0;
+
         padding: 24px;
-        border: 1px solid var(--faq-border);
+
+        border: 1px solid rgba(144, 217, 248, 0.18);
+
         border-radius: 18px;
-        background: #ffffff;
+
+        background: rgba(5, 36, 54, 0.4);
+
         list-style: none;
       }
 
       .comfort-list li {
         display: flex;
+
         width: 100%;
         min-width: 0;
+
         gap: 11px;
+
         align-items: flex-start;
+
         margin: 0;
-        color: var(--faq-muted);
+
+        color: rgba(224, 240, 249, 0.84);
+
         line-height: 1.5;
       }
 
       .comfort-list li::before {
         content: "✓";
+
         display: inline-flex;
+
         width: 22px;
         height: 22px;
+
         flex: 0 0 22px;
+
         align-items: center;
         justify-content: center;
+
         margin-top: 1px;
+
+        border: 1px solid rgba(118, 214, 253, 0.2);
+
         border-radius: 50%;
-        background: var(--faq-blue-soft);
-        color: var(--faq-blue);
+
+        background: rgba(68, 187, 236, 0.1);
+
+        color: #72d6ff;
+
         font-size: 0.75rem;
+
         font-weight: 900;
       }
 
-      /* =====================================================
-         CONTACT PANEL
-         ===================================================== */
+      /* ==========================================================================
+     09. CONTACT PANEL
+     ========================================================================== */
 
       .faq-contact-panel {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
+
+        grid-template-columns:
+          minmax(0, 1fr)
+          auto;
+
         gap: 28px;
+
         align-items: center;
+
         padding: 34px 38px;
+
+        border: 1px solid rgba(159, 225, 252, 0.2);
+
         border-radius: 24px;
-        background: var(--faq-blue-dark);
+
+        background:
+          radial-gradient(
+            circle at 85% 35%,
+            rgba(68, 192, 244, 0.12),
+            transparent 34%
+          ),
+          linear-gradient(145deg, #123f5c, #082f48);
+
         color: #ffffff;
-        box-shadow: var(--faq-shadow);
+
+        box-shadow: var(--faq-shadow-large);
       }
 
       .faq-contact-panel h2 {
         margin: 0 0 9px;
+
         color: #ffffff;
+
+        font-size: 1.8rem;
       }
 
       .faq-contact-panel p {
         max-width: 760px;
+
         margin: 0;
-        color: rgba(255, 255, 255, 0.9);
+
+        color: rgba(228, 242, 250, 0.88);
+
         line-height: 1.7;
       }
 
       .faq-contact-panel .faq-secondary-button {
-        border-color: rgba(255, 255, 255, 0.58);
+        border-color: rgba(185, 235, 255, 0.5);
+
         white-space: nowrap;
       }
 
+      /* ==========================================================================
+     10. RETURN LINK
+     ========================================================================== */
+
       .back {
-        margin-top: 38px;
+        margin-top: 22px;
+        margin-bottom: 0;
+
         text-align: center;
       }
 
       .back a {
-        color: var(--faq-blue);
+        color: #91ddff;
+
         font-weight: 800;
+
         text-decoration: none;
       }
 
       .back a:hover {
-        text-decoration: underline;
+        color: #ffffff;
       }
 
-      /* =====================================================
-         RESPONSIVE
-         ===================================================== */
+      /* ==========================================================================
+     11. RESPONSIVE
+     ========================================================================== */
 
       @media (max-width: 920px) {
         .faq-hero {
@@ -549,6 +929,7 @@
       @media (max-width: 720px) {
         .faq-shell {
           width: min(100% - 20px, 1180px);
+
           padding-top: 28px;
         }
 
@@ -557,22 +938,28 @@
         }
 
         .faq-category {
-          padding: 24px;
+          padding: 26px 24px 28px;
         }
 
         .faq-contact-panel {
           grid-template-columns: 1fr;
+
           padding: 28px;
         }
 
         .faq-contact-panel .faq-secondary-button {
           justify-self: start;
         }
+
+        .comfort-panel {
+          padding: 30px 26px;
+        }
       }
 
       @media (max-width: 480px) {
         .faq-hero-actions {
           align-items: stretch;
+
           flex-direction: column;
         }
 
@@ -581,16 +968,38 @@
           width: 100%;
         }
 
-        .popular-card,
-        .faq-category,
-        .comfort-panel {
+        .popular-card {
           padding: 24px;
+        }
+
+        .faq-category {
+          padding: 22px 18px 24px;
         }
 
         .category-heading {
           align-items: flex-start;
         }
+
+        .category-heading h2 {
+          font-size: 1.45rem;
+        }
+
+        .faq-item summary {
+          padding: 17px 54px 17px 17px;
+        }
+
+        .faq-answer {
+          padding: 0 17px 18px;
+        }
+
+        .comfort-panel {
+          padding: 26px 20px;
+        }
       }
+
+      /* ==========================================================================
+     12. PRINT
+     ========================================================================== */
 
       @media print {
         .header,
@@ -601,12 +1010,15 @@
           display: none !important;
         }
 
-        body {
+        body.flowhub-interior {
           background: #ffffff;
+
+          color: #17324d;
         }
 
         .faq-shell {
           width: 100%;
+
           padding: 0;
         }
 
@@ -614,6 +1026,7 @@
         .faq-category,
         .comfort-panel {
           break-inside: avoid;
+
           box-shadow: none;
         }
 
@@ -651,7 +1064,7 @@
 
             <a
               class="faq-secondary-button"
-              href="/pages/contact.html"hello@discoverflowtherapy.com?subject=FlowTherapy%20Question"
+              href="https://hub.discoverflowtherapy.com/pages/contact.html"
             >
               Ask FlowTherapy
             </a>
@@ -1002,14 +1415,14 @@
 
         <a
           class="faq-secondary-button"
-          href="/pages/contact.html"hello@discoverflowtherapy.com?subject=FlowTherapy%20Question"
+          href="https://hub.discoverflowtherapy.com/pages/contact.html"
         >
           Ask FlowTherapy a Question
         </a>
       </section>
 
       <div class="back">
-        <a href="../index.html">← Return to FlowHub</a>
+        <a href="https://hub.discoverflowtherapy.com/"> ← Return to FlowHub </a>
       </div>
     </main>
 
