@@ -48,273 +48,449 @@
 
     <meta name="apple-mobile-web-app-title" content="FlowHub" />
 
-    <meta name="theme-color" content="#1677c8" />
+    <meta name="theme-color" content="#0b3150" />
 
     <style>
-      /* =====================================================
-         FLOWNOTES VARIABLES
-         ===================================================== */
+      /* ==========================================================================
+         01. FLOWNOTES VARIABLES
+         ========================================================================== */
 
       :root {
-        --notes-blue: #1677c8;
-        --notes-blue-dark: #0b3f78;
-        --notes-blue-hover: #0e5fa5;
-        --notes-blue-soft: #eaf4fe;
-        --notes-ink: #17324d;
-        --notes-muted: #52677b;
-        --notes-border: #cfe2f5;
-        --notes-page: #f3f8fc;
-        --notes-surface: #ffffff;
-        --notes-shadow: 0 12px 30px rgba(27, 67, 103, 0.08);
-        --notes-shadow-large: 0 20px 46px rgba(27, 67, 103, 0.12);
+        --notes-blue: #53c7ff;
+        --notes-blue-bright: #8edfff;
+        --notes-blue-deep: #0d6fa8;
+
+        --notes-ice: #dff5ff;
+        --notes-white: #ffffff;
+
+        --notes-muted: rgba(225, 240, 249, 0.84);
+        --notes-muted-soft: rgba(205, 226, 238, 0.68);
+
+        --notes-border: rgba(142, 220, 255, 0.18);
+        --notes-border-strong: rgba(142, 220, 255, 0.34);
+
+        --notes-surface: rgba(15, 60, 84, 0.78);
+        --notes-surface-deep: rgba(9, 43, 64, 0.94);
+
+        --notes-shadow: 0 16px 34px rgba(0, 18, 32, 0.22);
+
+        --notes-shadow-large: 0 24px 48px rgba(0, 16, 30, 0.3);
       }
 
       html {
         scroll-behavior: smooth;
       }
 
-      body {
-        background: var(--notes-page);
-        color: var(--notes-ink);
-      }
+      body.flowhub-interior {
+        background:
+          radial-gradient(
+            ellipse at 50% 0%,
+            rgba(143, 211, 241, 0.18) 0%,
+            rgba(69, 151, 191, 0.08) 32%,
+            transparent 58%
+          ),
+          linear-gradient(
+            180deg,
+            #5f98b5 0%,
+            #437f9f 12%,
+            #2f6d8c 27%,
+            #205772 43%,
+            #17475f 60%,
+            #113a51 76%,
+            #0c3046 90%,
+            #09293d 100%
+          );
 
+        color: var(--notes-white);
+      }
       .flownotes-shell {
         width: min(1180px, calc(100% - 32px));
+
         margin: 0 auto;
+
         padding: 42px 0 72px;
       }
 
-      /* =====================================================
-         HERO
-         ===================================================== */
+      /* ==========================================================================
+         02. HERO
+         ========================================================================== */
 
       .flownotes-hero {
         position: relative;
+
         display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-        gap: 34px;
+
+        grid-template-columns:
+          minmax(0, 1.1fr)
+          minmax(280px, 0.9fr);
+
         align-items: center;
+
+        gap: 34px;
+
         overflow: hidden;
+
         padding: 48px;
-        border: 1px solid var(--notes-border);
+
+        border: 1px solid rgba(174, 228, 252, 0.24);
+
         border-radius: 26px;
+
         background:
           radial-gradient(
-            circle at 90% 10%,
-            rgba(22, 119, 200, 0.14),
+            circle at 88% 18%,
+            rgba(102, 207, 255, 0.18),
             transparent 34%
           ),
-          linear-gradient(135deg, #ffffff 0%, #f5faff 100%);
-        box-shadow: var(--notes-shadow);
+          linear-gradient(
+            145deg,
+            rgba(24, 85, 112, 0.92) 0%,
+            rgba(11, 49, 74, 0.97) 100%
+          );
+
+        box-shadow:
+          0 22px 46px rgba(0, 18, 32, 0.26),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
       }
 
       .flownotes-hero-copy {
         position: relative;
+
         z-index: 2;
       }
 
       .flownotes-kicker {
         display: inline-flex;
+
         margin-bottom: 16px;
+
         padding: 7px 12px;
+
+        border: 1px solid rgba(109, 211, 255, 0.22);
+
         border-radius: 999px;
-        background: var(--notes-blue-soft);
-        color: var(--notes-blue);
+
+        background: rgba(70, 188, 242, 0.1);
+
+        color: #a2e6ff;
+
         font-size: 0.75rem;
         font-weight: 800;
-        letter-spacing: 0.08em;
+
+        letter-spacing: 0.1em;
+
         text-transform: uppercase;
       }
 
       .flownotes-hero h1 {
         margin: 0 0 16px;
-        color: var(--notes-blue);
-        font-size: clamp(2.7rem, 6vw, 4.8rem);
+
+        color: #ffffff;
+
+        font-size: clamp(3rem, 6vw, 4.8rem);
+
         line-height: 1;
+
+        text-shadow: 0 12px 28px rgba(0, 15, 28, 0.22);
       }
 
       .flownotes-hero-copy > p {
         max-width: 690px;
+
         margin: 0;
-        color: var(--notes-muted);
+
+        color: rgba(232, 245, 252, 0.9);
+
         font-size: 1.08rem;
+
         line-height: 1.75;
       }
 
       .flownotes-hero-actions {
         display: flex;
+
         flex-wrap: wrap;
+
         gap: 12px;
+
         margin-top: 26px;
       }
+
+      /* ==========================================================================
+         03. BUTTONS
+         ========================================================================== */
 
       .flownotes-primary-button,
       .flownotes-secondary-button {
         display: inline-flex;
+
         min-height: 46px;
+
         align-items: center;
         justify-content: center;
+
         box-sizing: border-box;
+
         padding: 11px 18px;
+
         border-radius: 999px;
+
         font-weight: 800;
+
         text-decoration: none;
+
         transition:
-          background 0.2s ease,
           border-color 0.2s ease,
+          background 0.2s ease,
           color 0.2s ease,
-          transform 0.2s ease,
           box-shadow 0.2s ease;
       }
 
       .flownotes-primary-button {
-        border: 1px solid var(--notes-blue);
-        background: var(--notes-blue);
+        border: 1px solid rgba(166, 229, 255, 0.9);
+
+        background: linear-gradient(
+          135deg,
+          #24a9e6 0%,
+          #1686c5 55%,
+          #0d6da8 100%
+        );
+
         color: #ffffff;
+
+        box-shadow:
+          0 0 8px rgba(93, 210, 255, 0.58),
+          0 0 20px rgba(41, 177, 239, 0.34),
+          0 10px 24px rgba(0, 17, 31, 0.28);
       }
 
       .flownotes-primary-button:hover {
-        border-color: var(--notes-blue-hover);
-        background: var(--notes-blue-hover);
-        transform: translateY(-1px);
+        border-color: #d8f6ff;
+
+        background: linear-gradient(
+          135deg,
+          #33b8f1 0%,
+          #2096d5 55%,
+          #1178b4 100%
+        );
+
+        box-shadow:
+          0 0 10px rgba(124, 222, 255, 0.78),
+          0 0 26px rgba(53, 190, 248, 0.48),
+          0 12px 28px rgba(0, 17, 31, 0.3);
       }
 
       .flownotes-secondary-button {
-        border: 1px solid var(--notes-border);
-        background: #ffffff;
-        color: var(--notes-blue);
+        border: 1px solid rgba(147, 220, 250, 0.32);
+
+        background: rgba(8, 42, 62, 0.42);
+
+        color: #ccefff;
       }
 
       .flownotes-secondary-button:hover {
-        border-color: var(--notes-blue);
-        box-shadow: 0 8px 20px rgba(22, 119, 200, 0.1);
+        border-color: rgba(175, 232, 255, 0.7);
+
+        background: rgba(37, 111, 143, 0.4);
+
+        color: #ffffff;
       }
+
+      /* ==========================================================================
+         04. HERO ARTICLE PREVIEWS
+         ========================================================================== */
 
       .flownotes-hero-visual {
         position: relative;
+
         min-height: 300px;
       }
 
       .note-preview {
         position: absolute;
+
         display: flex;
+
+        min-height: 185px;
+
         flex-direction: column;
         justify-content: space-between;
-        min-height: 185px;
+
         padding: 24px;
-        border: 7px solid #ffffff;
+
+        border: 1px solid rgba(183, 231, 252, 0.38);
+
         border-radius: 20px;
-        background: #ffffff;
-        box-shadow: 0 20px 42px rgba(27, 67, 103, 0.18);
+
+        background: linear-gradient(
+          145deg,
+          rgba(244, 251, 255, 0.98),
+          rgba(218, 239, 250, 0.96)
+        );
+
+        box-shadow:
+          0 22px 42px rgba(0, 15, 29, 0.28),
+          0 0 24px rgba(70, 184, 231, 0.1);
       }
 
       .note-preview-one {
         inset: 10px 64px 74px 4px;
+
         transform: rotate(-3deg);
       }
 
       .note-preview-two {
         inset: 82px 0 8px 88px;
+
         transform: rotate(4deg);
       }
 
       .note-preview-label {
-        color: var(--notes-blue);
+        color: #126fa7;
+
         font-size: 0.68rem;
         font-weight: 800;
+
         letter-spacing: 0.08em;
+
         text-transform: uppercase;
       }
 
       .note-preview h2 {
         margin: 12px 0;
-        color: var(--notes-blue-dark);
+
+        color: #0a3557;
+
         font-size: 1.2rem;
+
         line-height: 1.3;
       }
 
       .note-preview p {
         margin: 0;
-        color: var(--notes-muted);
+
+        color: #3f5f73;
+
         font-size: 0.83rem;
+
         line-height: 1.5;
       }
 
       .preview-line {
         width: 54%;
-        height: 5px;
+        height: 4px;
+
         margin-top: 18px;
+
         border-radius: 999px;
-        background: linear-gradient(
-          90deg,
-          var(--notes-blue),
-          rgba(22, 119, 200, 0.12)
-        );
+
+        background: linear-gradient(90deg, #188cc9, rgba(22, 119, 200, 0.12));
       }
 
-      /* =====================================================
-         SHARED SECTION STYLES
-         ===================================================== */
+      /* ==========================================================================
+         05. SHARED SECTION STYLES
+         ========================================================================== */
 
       .flownotes-section {
-        margin-top: 42px;
+        margin-top: 44px;
       }
 
       .section-heading {
         display: flex;
-        justify-content: space-between;
-        gap: 24px;
+
         align-items: end;
+        justify-content: space-between;
+
+        gap: 24px;
+
         margin-bottom: 22px;
       }
 
       .section-heading-copy h2,
       .section-heading > h2 {
         margin: 0 0 8px;
-        color: var(--notes-blue);
-        font-size: clamp(1.7rem, 3vw, 2.35rem);
+
+        color: #ffffff;
+
+        font-size: clamp(1.8rem, 3vw, 2.45rem);
+
+        text-shadow: 0 8px 18px rgba(0, 18, 32, 0.18);
       }
 
       .section-heading-copy p,
       .section-heading > p {
         max-width: 720px;
+
         margin: 0;
+
         color: var(--notes-muted);
+
         line-height: 1.7;
+      }
+
+      .section-badge,
+      .article-label {
+        display: inline-flex;
+
+        padding: 7px 11px;
+
+        border: 1px solid rgba(110, 212, 255, 0.18);
+
+        border-radius: 999px;
+
+        background: rgba(83, 199, 255, 0.11);
+
+        color: #8edfff;
+
+        font-size: 0.7rem;
+        font-weight: 800;
+
+        letter-spacing: 0.08em;
+
+        text-transform: uppercase;
       }
 
       .section-badge {
         flex: 0 0 auto;
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: var(--notes-blue-soft);
-        color: var(--notes-blue);
-        font-size: 0.78rem;
-        font-weight: 800;
       }
 
-      /* =====================================================
-         FEATURED FLOWNOTE
-         ===================================================== */
+      /* ==========================================================================
+         06. FEATURED FLOWNOTE
+         ========================================================================== */
 
       .featured-flownote {
         display: grid;
-        grid-template-columns: minmax(240px, 0.78fr) minmax(0, 1.22fr);
+
+        grid-template-columns:
+          minmax(240px, 0.78fr)
+          minmax(0, 1.22fr);
+
         overflow: hidden;
-        border: 1px solid var(--notes-border);
+
+        border: 1px solid rgba(146, 218, 248, 0.18);
+
         border-radius: 24px;
-        background: #ffffff;
+
+        background: linear-gradient(
+          145deg,
+          rgba(17, 64, 88, 0.9),
+          rgba(10, 46, 69, 0.96)
+        );
+
         box-shadow: var(--notes-shadow);
       }
 
       .featured-flownote-visual {
         display: grid;
+
         min-height: 330px;
+
         place-items: center;
+
         background:
           radial-gradient(
             circle at center,
-            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.12),
             transparent 42%
           ),
           linear-gradient(145deg, #0b3f78, #1677c8 68%, #45aaf2);
@@ -322,14 +498,21 @@
 
       .featured-symbol {
         display: grid;
+
         width: 116px;
         height: 116px;
+
         place-items: center;
+
         border: 2px solid rgba(255, 255, 255, 0.42);
+
         border-radius: 50%;
+
         color: #ffffff;
+
         font-size: 4.5rem;
         font-weight: 800;
+
         box-shadow:
           0 0 0 16px rgba(255, 255, 255, 0.08),
           0 20px 36px rgba(7, 38, 70, 0.2);
@@ -337,121 +520,165 @@
 
       .featured-flownote-body {
         display: flex;
+
         flex-direction: column;
         justify-content: center;
+
         padding: 42px;
       }
 
       .article-label {
-        display: inline-flex;
         align-self: flex-start;
+
         margin-bottom: 14px;
-        padding: 7px 11px;
-        border-radius: 999px;
-        background: var(--notes-blue-soft);
-        color: var(--notes-blue);
-        font-size: 0.7rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
       }
 
       .featured-flownote-body h2 {
         margin: 0 0 15px;
-        color: var(--notes-blue-dark);
+
+        color: #ffffff;
+
         font-size: clamp(1.9rem, 4vw, 2.8rem);
+
         line-height: 1.12;
       }
 
       .featured-flownote-body > p {
         margin: 0;
+
         color: var(--notes-muted);
+
         font-size: 1rem;
+
         line-height: 1.75;
       }
 
       .featured-article-meta {
         display: flex;
+
         flex-wrap: wrap;
+
         gap: 8px;
+
         margin-top: 18px;
-        color: #708498;
+
+        color: rgba(205, 228, 240, 0.72);
+
         font-size: 0.82rem;
         font-weight: 700;
       }
 
       .featured-action {
         align-self: flex-start;
+
         margin-top: 24px;
       }
 
-      /* =====================================================
-         CATEGORIES + START HERE
-         ===================================================== */
+      /* ==========================================================================
+         07. CATEGORIES + START HERE
+         ========================================================================== */
 
       .discovery-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-        gap: 22px;
+
+        grid-template-columns:
+          minmax(0, 0.85fr)
+          minmax(0, 1.15fr);
+
         align-items: stretch;
+
+        gap: 22px;
       }
 
       .discovery-panel {
         padding: 34px;
-        border: 1px solid var(--notes-border);
+
+        border: 1px solid rgba(146, 218, 248, 0.18);
+
         border-radius: 22px;
-        background: #ffffff;
-        box-shadow: 0 9px 24px rgba(27, 67, 103, 0.05);
+
+        background: linear-gradient(
+          145deg,
+          rgba(19, 70, 95, 0.82),
+          rgba(11, 49, 72, 0.92)
+        );
+
+        box-shadow: 0 12px 28px rgba(0, 18, 32, 0.16);
       }
 
       .discovery-panel h2 {
         margin: 0 0 10px;
-        color: var(--notes-blue);
-        font-size: 1.65rem;
+
+        color: #ffffff;
+
+        font-size: 1.7rem;
       }
 
       .discovery-panel > p {
         margin: 0;
+
         color: var(--notes-muted);
+
         line-height: 1.7;
       }
 
       .category-grid {
         display: grid;
+
         gap: 10px;
+
         margin-top: 22px;
       }
 
       .category-link {
         position: relative;
+
         display: flex;
+
         min-height: 48px;
+
         align-items: center;
         justify-content: space-between;
+
         box-sizing: border-box;
+
         padding: 13px 16px;
-        border: 1px solid var(--notes-border);
+
+        border: 1px solid rgba(143, 216, 247, 0.18);
+
         border-radius: 13px;
-        background: #f8fbfe;
-        color: var(--notes-blue-dark);
+
+        background: rgba(7, 38, 57, 0.46);
+
+        color: #e2f7ff;
+
         font-weight: 800;
+
         text-decoration: none;
+
         transition:
-          transform 0.2s ease,
           border-color 0.2s ease,
-          background 0.2s ease;
+          background 0.2s ease,
+          color 0.2s ease,
+          box-shadow 0.2s ease;
       }
 
       .category-link::after {
         content: "→";
+
         margin-left: 12px;
-        color: var(--notes-blue);
+
+        color: #64d0ff;
       }
 
       .category-link:hover {
-        transform: translateX(3px);
-        border-color: #9fc8ea;
-        background: #ffffff;
+        border-color: rgba(114, 211, 251, 0.48);
+
+        background: rgba(37, 111, 143, 0.42);
+
+        color: #ffffff;
+
+        box-shadow: 0 0 16px rgba(53, 190, 248, 0.1);
       }
 
       .start-here-intro {
@@ -460,40 +687,58 @@
 
       .start-here-links {
         display: grid;
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
         gap: 12px;
+
         margin-top: 22px;
       }
 
       .start-here-link {
         display: flex;
+
         min-height: 100px;
+
         flex-direction: column;
         justify-content: space-between;
+
         padding: 18px;
-        border: 1px solid var(--notes-border);
+
+        border: 1px solid rgba(143, 216, 247, 0.18);
+
         border-radius: 15px;
-        background: #f8fbfe;
-        color: var(--notes-blue-dark);
+
+        background: rgba(7, 38, 57, 0.46);
+
+        color: #e5f7ff;
+
         text-decoration: none;
+
         transition:
-          transform 0.2s ease,
           border-color 0.2s ease,
+          background 0.2s ease,
           box-shadow 0.2s ease;
       }
 
       .start-here-link:hover {
-        transform: translateY(-3px);
-        border-color: #9fc8ea;
-        box-shadow: 0 10px 24px rgba(27, 67, 103, 0.08);
+        border-color: rgba(114, 211, 251, 0.48);
+
+        background: rgba(37, 111, 143, 0.42);
+
+        box-shadow: 0 12px 26px rgba(0, 17, 30, 0.16);
       }
 
       .start-here-category {
         margin-bottom: 18px;
-        color: var(--notes-blue);
-        font-size: 0.66rem;
+
+        color: #64d0ff;
+
+        font-size: 0.68rem;
         font-weight: 800;
+
         letter-spacing: 0.08em;
+
         text-transform: uppercase;
       }
 
@@ -501,44 +746,65 @@
         line-height: 1.4;
       }
 
-      /* =====================================================
-         DYNAMIC LATEST FLOWNOTES
-         ===================================================== */
+      /* ==========================================================================
+         08. LATEST FLOWNOTES
+         ========================================================================== */
 
       .latest-flownotes-section > .section-heading {
         display: block;
+
         margin-bottom: 30px;
+
         text-align: center;
       }
 
       .latest-flownotes-section > .section-heading h2 {
         margin: 0 0 10px;
-        color: var(--notes-blue);
-        font-size: clamp(1.8rem, 3vw, 2.2rem);
+
+        color: #ffffff;
+
+        font-size: clamp(1.9rem, 3vw, 2.4rem);
       }
 
       .latest-flownotes-section > .section-heading p {
         max-width: 720px;
+
         margin: 0 auto;
+
         color: var(--notes-muted);
+
         line-height: 1.7;
       }
 
       #flownotes-library.flownotes-grid {
         display: grid;
+
         grid-template-columns: repeat(3, minmax(0, 1fr));
+
         gap: 22px;
       }
 
       #flownotes-library .flownote-card {
         display: flex;
+
         min-width: 0;
+
         flex-direction: column;
+
         padding: 26px;
-        border: 1px solid var(--notes-border);
+
+        border: 1px solid rgba(145, 217, 248, 0.18);
+
         border-radius: 20px;
-        background: #ffffff;
-        box-shadow: 0 8px 24px rgba(27, 67, 103, 0.05);
+
+        background: linear-gradient(
+          145deg,
+          rgba(18, 68, 92, 0.84),
+          rgba(10, 46, 68, 0.94)
+        );
+
+        box-shadow: 0 10px 24px rgba(0, 17, 30, 0.14);
+
         transition:
           transform 0.2s ease,
           border-color 0.2s ease,
@@ -547,98 +813,152 @@
 
       #flownotes-library .flownote-card:hover {
         transform: translateY(-4px);
-        border-color: #a9cfea;
-        box-shadow: 0 14px 32px rgba(27, 67, 103, 0.1);
+
+        border-color: rgba(129, 215, 250, 0.42);
+
+        box-shadow: 0 16px 34px rgba(0, 18, 32, 0.22);
       }
 
       #flownotes-library .flownote-category {
         display: inline-flex;
+
         align-self: flex-start;
+
         margin-bottom: 14px;
+
         padding: 6px 10px;
+
+        border: 1px solid rgba(83, 199, 255, 0.16);
+
         border-radius: 999px;
-        background: var(--notes-blue-soft);
-        color: var(--notes-blue);
+
+        background: rgba(83, 199, 255, 0.1);
+
+        color: #73d6ff;
+
         font-size: 0.67rem;
         font-weight: 800;
+
         letter-spacing: 0.075em;
+
         text-transform: uppercase;
       }
 
       #flownotes-library .flownote-card h3 {
         margin: 0 0 10px;
-        color: var(--notes-blue-dark);
+
+        color: #ffffff;
+
         font-size: 1.25rem;
+
         line-height: 1.4;
       }
 
       #flownotes-library .flownote-card .meta {
         margin: 0 0 14px;
-        color: var(--notes-muted);
+
+        color: rgba(205, 226, 238, 0.72);
+
         font-size: 0.8rem;
         font-weight: 700;
       }
 
       #flownotes-library .flownote-card > p:not(.meta) {
         flex: 1;
+
         margin: 0;
+
         color: var(--notes-muted);
+
         line-height: 1.7;
       }
 
       #flownotes-library .flownote-card .button {
         display: inline-flex;
+
         align-self: flex-start;
+
         min-height: 42px;
+
         align-items: center;
         justify-content: center;
+
         box-sizing: border-box;
+
         margin-top: 20px;
+
         padding: 10px 17px;
+
+        border: 1px solid rgba(158, 226, 255, 0.72);
+
         border-radius: 999px;
-        background: var(--notes-blue);
+
+        background: linear-gradient(135deg, #219fdb, #1179b4);
+
         color: #ffffff;
+
         font-weight: 800;
+
         text-decoration: none;
+
+        box-shadow: 0 0 14px rgba(53, 190, 248, 0.22);
       }
 
       #flownotes-library .flownote-card .button:hover {
-        background: var(--notes-blue-hover);
+        background: linear-gradient(135deg, #2db4ef, #1688c6);
+
+        box-shadow: 0 0 20px rgba(53, 190, 248, 0.38);
       }
 
-      /* =====================================================
-         FLOWRESOURCES PROMOTION
-         ===================================================== */
+      /* ==========================================================================
+         09. FLOWRESOURCES PROMOTION
+         ========================================================================== */
 
       .resource-promotion {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 28px;
+
+        grid-template-columns:
+          minmax(0, 1fr)
+          auto;
+
         align-items: center;
+
+        gap: 28px;
+
         margin-top: 34px;
+
         padding: 30px;
-        border: 1px solid var(--notes-border);
+
+        border: 1px solid rgba(148, 219, 249, 0.18);
+
         border-radius: 20px;
+
         background:
           radial-gradient(
             circle at 100% 50%,
-            rgba(22, 119, 200, 0.08),
-            transparent 36%
+            rgba(82, 193, 240, 0.12),
+            transparent 38%
           ),
-          #ffffff;
-        box-shadow: 0 8px 24px rgba(27, 67, 103, 0.05);
+          linear-gradient(145deg, rgba(18, 68, 93, 0.86), rgba(9, 45, 67, 0.96));
+
+        box-shadow: 0 12px 28px rgba(0, 18, 32, 0.16);
       }
 
       .resource-promotion-copy h2 {
         margin: 0 0 10px;
-        color: var(--notes-blue);
-        font-size: 1.55rem;
+
+        color: #ffffff;
+
+        font-size: 1.6rem;
       }
 
       .resource-promotion-copy p {
         max-width: 760px;
+
         margin: 0;
+
         color: var(--notes-muted);
+
         line-height: 1.7;
       }
 
@@ -646,94 +966,130 @@
         white-space: nowrap;
       }
 
-      /* =====================================================
-         FLOWNOTES ARTICLE SUGGESTION FORM
-         ===================================================== */
+      /* ==========================================================================
+         10. ARTICLE SUGGESTION
+         ========================================================================== */
 
       .topic-suggestion-section {
         width: 100%;
+
         margin-top: 46px;
       }
 
       .topic-suggestion-card {
         width: min(780px, 100%);
+
         box-sizing: border-box;
+
         margin: 0 auto;
+
         padding: 48px;
-        border: 1px solid var(--notes-border);
+
+        border: 1px solid rgba(146, 219, 250, 0.18);
+
         border-radius: 26px;
+
         background:
           radial-gradient(
             circle at 100% 0%,
-            rgba(22, 119, 200, 0.1),
+            rgba(74, 190, 238, 0.12),
             transparent 34%
           ),
-          linear-gradient(145deg, #ffffff, #f9fcff);
+          linear-gradient(145deg, rgba(18, 68, 93, 0.9), rgba(9, 44, 66, 0.97));
+
         box-shadow: var(--notes-shadow-large);
       }
 
       .topic-suggestion-heading {
         max-width: 660px;
+
         margin: 0 auto 34px;
+
         text-align: center;
       }
 
       .topic-suggestion-label {
         display: inline-flex;
+
         margin-bottom: 15px;
+
         padding: 7px 12px;
+
+        border: 1px solid rgba(90, 204, 251, 0.18);
+
         border-radius: 999px;
-        background: var(--notes-blue-soft);
-        color: var(--notes-blue);
+
+        background: rgba(83, 199, 255, 0.1);
+
+        color: #83ddff;
+
         font-size: 0.69rem;
         font-weight: 900;
+
         letter-spacing: 0.08em;
+
         text-transform: uppercase;
       }
 
       .topic-suggestion-heading h2 {
         margin: 0 0 15px;
-        color: var(--notes-blue-dark);
+
+        color: #ffffff;
+
         font-size: clamp(2rem, 4vw, 2.75rem);
+
         line-height: 1.12;
       }
 
       .topic-suggestion-heading p {
         margin: 0;
+
         color: var(--notes-muted);
+
         font-size: 1rem;
+
         line-height: 1.75;
       }
 
       .topic-suggestion-form {
         display: grid;
+
         gap: 20px;
       }
 
       .topic-form-row {
         display: grid;
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
         gap: 16px;
       }
 
       .topic-form-field {
         display: grid;
+
         gap: 8px;
+
         text-align: left;
       }
 
       .topic-form-field label {
-        color: var(--notes-ink);
+        color: #ffffff;
+
         font-size: 0.88rem;
         font-weight: 800;
       }
 
       .topic-form-field label span {
         margin-left: 5px;
-        color: #708498;
+
+        color: rgba(210, 230, 241, 0.68);
+
         font-size: 0.7rem;
         font-weight: 700;
+
         letter-spacing: 0.03em;
+
         text-transform: uppercase;
       }
 
@@ -741,14 +1097,23 @@
       .topic-form-field select,
       .topic-form-field textarea {
         width: 100%;
+
         box-sizing: border-box;
+
         padding: 14px 15px;
+
         border: 1px solid #bfd8ef;
+
         border-radius: 12px;
-        background: #fbfdff;
-        color: var(--notes-ink);
+
+        background: #f7fbfe;
+
+        color: #17324d;
+
         font: inherit;
+
         line-height: 1.45;
+
         transition:
           border-color 0.2s ease,
           background 0.2s ease,
@@ -758,125 +1123,175 @@
       .topic-form-field input:hover,
       .topic-form-field select:hover,
       .topic-form-field textarea:hover {
-        border-color: #9fc8ea;
+        border-color: #8cc5e7;
+
         background: #ffffff;
       }
 
       .topic-form-field input:focus,
       .topic-form-field select:focus,
       .topic-form-field textarea:focus {
-        border-color: var(--notes-blue);
+        border-color: #2baee9;
+
         outline: none;
+
         background: #ffffff;
-        box-shadow: 0 0 0 4px rgba(22, 119, 200, 0.12);
+
+        box-shadow: 0 0 0 4px rgba(52, 180, 237, 0.14);
       }
 
       .topic-form-field textarea {
         min-height: 155px;
+
         resize: vertical;
       }
 
       .topic-form-field small {
-        color: #6d8194;
+        color: rgba(211, 230, 240, 0.72);
+
         font-size: 0.75rem;
+
         line-height: 1.5;
       }
 
       .topic-form-consent {
         display: flex;
-        gap: 11px;
+
         align-items: flex-start;
+
+        gap: 11px;
+
         padding: 14px 15px;
+
         border: 1px solid #deebf7;
+
         border-radius: 12px;
+
         background: #f5f9fd;
-        color: var(--notes-muted);
+
+        color: #52677b;
+
         font-size: 0.82rem;
+
         line-height: 1.55;
+
         text-align: left;
+
         cursor: pointer;
       }
 
       .topic-form-consent input {
         width: 18px;
         height: 18px;
+
         flex: 0 0 18px;
+
         margin: 2px 0 0;
-        accent-color: var(--notes-blue);
+
+        accent-color: #1686c5;
       }
 
       .topic-form-submit {
         width: 100%;
+
         min-height: 50px;
+
         padding: 14px 22px;
-        border: 0;
+
+        border: 1px solid rgba(179, 234, 255, 0.84);
+
         border-radius: 999px;
-        background: linear-gradient(135deg, var(--notes-blue), #0e69b8);
+
+        background: linear-gradient(135deg, #24a9e6, #1178b4);
+
         color: #ffffff;
+
         font: inherit;
+
         font-size: 1rem;
         font-weight: 850;
+
         cursor: pointer;
-        box-shadow: 0 9px 20px rgba(22, 119, 200, 0.22);
+
+        box-shadow:
+          0 0 10px rgba(93, 210, 255, 0.42),
+          0 0 24px rgba(41, 177, 239, 0.24),
+          0 10px 24px rgba(0, 17, 31, 0.26);
+
         transition:
-          transform 0.2s ease,
-          box-shadow 0.2s ease,
-          background 0.2s ease;
+          border-color 0.2s ease,
+          background 0.2s ease,
+          box-shadow 0.2s ease;
       }
 
       .topic-form-submit:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 13px 27px rgba(22, 119, 200, 0.28);
-      }
+        border-color: #d8f6ff;
 
-      .topic-form-submit:active {
-        transform: translateY(0);
+        background: linear-gradient(135deg, #35b8f1, #198ac7);
+
+        box-shadow:
+          0 0 12px rgba(124, 222, 255, 0.62),
+          0 0 28px rgba(53, 190, 248, 0.38),
+          0 12px 28px rgba(0, 17, 31, 0.28);
       }
 
       .topic-form-submit:focus-visible {
-        outline: 3px solid rgba(22, 119, 200, 0.25);
+        outline: 3px solid rgba(151, 225, 255, 0.3);
+
         outline-offset: 3px;
       }
 
       .topic-form-privacy {
         margin: -6px 0 0;
-        color: #708498;
+
+        color: rgba(211, 230, 240, 0.68);
+
         font-size: 0.74rem;
+
         line-height: 1.5;
+
         text-align: center;
       }
 
       .topic-suggestion-note {
         width: min(720px, calc(100% - 32px));
+
         margin: 20px auto 0;
-        color: var(--notes-muted);
+
+        color: var(--notes-muted-soft);
+
         font-size: 0.84rem;
+
         line-height: 1.65;
+
         text-align: center;
       }
 
-      /* =====================================================
-         RETURN LINK
-         ===================================================== */
+      /* ==========================================================================
+         11. RETURN LINK
+         ========================================================================== */
 
       .back {
         margin-top: 38px;
+
         text-align: center;
       }
 
       .back a {
-        color: var(--notes-blue);
+        color: #91ddff;
+
         font-weight: 800;
+
         text-decoration: none;
       }
 
       .back a:hover {
-        text-decoration: underline;
+        color: #ffffff;
       }
 
-      /* =====================================================
-         RESPONSIVE
-         ===================================================== */
+      /* ==========================================================================
+         12. RESPONSIVE
+         ========================================================================== */
 
       @media (max-width: 960px) {
         .flownotes-hero {
@@ -904,6 +1319,7 @@
       @media (max-width: 720px) {
         .flownotes-shell {
           width: min(calc(100% - 20px), 1180px);
+
           padding-top: 28px;
         }
 
@@ -938,6 +1354,7 @@
 
         .resource-promotion {
           grid-template-columns: 1fr;
+
           padding: 26px;
         }
 
@@ -947,6 +1364,7 @@
 
         .section-heading {
           align-items: flex-start;
+
           flex-direction: column;
         }
 
@@ -968,6 +1386,7 @@
       @media (max-width: 480px) {
         .flownotes-hero-actions {
           align-items: stretch;
+
           flex-direction: column;
         }
 
@@ -990,6 +1409,7 @@
 
         .topic-suggestion-card {
           padding: 28px 18px;
+
           border-radius: 20px;
         }
 
@@ -1002,6 +1422,10 @@
         }
       }
 
+      /* ==========================================================================
+         13. PRINT
+         ========================================================================== */
+
       @media print {
         .flownotes-hero-actions,
         .resource-promotion,
@@ -1012,6 +1436,7 @@
 
         .flownotes-shell {
           width: 100%;
+
           padding: 0;
         }
 
@@ -1020,6 +1445,7 @@
         .discovery-panel,
         #flownotes-library .flownote-card {
           break-inside: avoid;
+
           box-shadow: none;
         }
       }
@@ -1027,7 +1453,7 @@
   </head>
 
   <body class="flowhub-interior">
-    <!-- Shared header is generated by site-layout.js -->
+    <!-- Shared header generated by site-layout.js -->
 
     <div id="site-header"></div>
 
@@ -1055,7 +1481,7 @@
 
             <a
               class="flownotes-secondary-button"
-              href="../pages/flowresources-redesign.html"
+              href="https://hub.discoverflowtherapy.com/pages/flowresources-redesign.html"
             >
               Explore FlowResources
             </a>
@@ -1110,7 +1536,7 @@
             </p>
           </div>
 
-          <span class="section-badge">Featured</span>
+          <span class="section-badge"> Featured </span>
         </div>
 
         <article class="featured-flownote">
@@ -1145,7 +1571,7 @@
 
             <a
               class="flownotes-primary-button featured-action"
-              href="../articles/should-i-go-to-the-er.html"
+              href="https://hub.discoverflowtherapy.com/articles/should-i-go-to-the-er.html"
             >
               Read Article
             </a>
@@ -1169,29 +1595,35 @@
           <div class="category-grid">
             <a
               class="category-link"
-              href="../categories/massage-education.html"
+              href="https://hub.discoverflowtherapy.com/categories/massage-education.html"
             >
               Massage Education
             </a>
 
             <a
               class="category-link"
-              href="../categories/movement-mobility.html"
+              href="https://hub.discoverflowtherapy.com/categories/movement-mobility.html"
             >
               Movement &amp; Mobility
             </a>
 
-            <a class="category-link" href="../categories/recovery.html">
+            <a
+              class="category-link"
+              href="https://hub.discoverflowtherapy.com/categories/recovery.html"
+            >
               Recovery
             </a>
 
-            <a class="category-link" href="../categories/stress-wellness.html">
+            <a
+              class="category-link"
+              href="https://hub.discoverflowtherapy.com/categories/stress-wellness.html"
+            >
               Stress &amp; Wellness
             </a>
 
             <a
               class="category-link"
-              href="../categories/workplace-wellness.html"
+              href="https://hub.discoverflowtherapy.com/categories/workplace-wellness.html"
             >
               Workplace Wellness
             </a>
@@ -1209,7 +1641,7 @@
           <div class="start-here-links">
             <a
               class="start-here-link"
-              href="../articles/what-to-expect-during-your-first-massage.html"
+              href="https://hub.discoverflowtherapy.com/articles/what-to-expect-during-your-first-massage.html"
             >
               <span class="start-here-category"> Massage Education </span>
 
@@ -1218,16 +1650,16 @@
 
             <a
               class="start-here-link"
-              href="../articles/the-truth-about-muscle-knots.html"
+              href="https://hub.discoverflowtherapy.com/articles/the-truth-about-muscle-knots.html"
             >
               <span class="start-here-category"> Massage Education </span>
 
-              <strong>The Truth About Muscle Knots</strong>
+              <strong> The Truth About Muscle Knots </strong>
             </a>
 
             <a
               class="start-here-link"
-              href="../articles/massage-soreness-what-is-normal.html"
+              href="https://hub.discoverflowtherapy.com/articles/massage-soreness-what-is-normal.html"
             >
               <span class="start-here-category"> Recovery </span>
 
@@ -1236,7 +1668,7 @@
 
             <a
               class="start-here-link"
-              href="../articles/why-desk-work-can-cause-neck-and-shoulder-tension.html"
+              href="https://hub.discoverflowtherapy.com/articles/why-desk-work-can-cause-neck-and-shoulder-tension.html"
             >
               <span class="start-here-category"> Workplace Wellness </span>
 
@@ -1260,7 +1692,7 @@
         </div>
 
         <div id="flownotes-library" class="flownotes-grid" aria-live="polite">
-          <!-- Cards are generated by flownotes-library.js -->
+          <!-- Cards generated by flownotes-library.js -->
         </div>
       </section>
 
@@ -1281,7 +1713,7 @@
 
         <a
           class="flownotes-primary-button resource-promotion-action"
-          href="../pages/flowresources-redesign.html"
+          href="https://hub.discoverflowtherapy.com/pages/flowresources-redesign.html"
         >
           Browse FlowResources
         </a>
@@ -1316,8 +1748,6 @@
             action="https://formsubmit.co/hello@discoverflowtherapy.com"
             method="POST"
           >
-            <!-- FormSubmit settings -->
-
             <input type="hidden" name="_captcha" value="false" />
 
             <input
@@ -1340,8 +1770,6 @@
               value="FlowNotes Article Suggestion"
             />
 
-            <!-- Email -->
-
             <div class="topic-form-field">
               <label for="topic-email"> Email address </label>
 
@@ -1354,8 +1782,6 @@
                 required
               />
             </div>
-
-            <!-- First name and category -->
 
             <div class="topic-form-row">
               <div class="topic-form-field">
@@ -1395,8 +1821,6 @@
               </div>
             </div>
 
-            <!-- Suggestion -->
-
             <div class="topic-form-field">
               <label for="topic-idea">
                 What would you like Brandy to write about?
@@ -1416,8 +1840,6 @@
               </small>
             </div>
 
-            <!-- Contact permission -->
-
             <label class="topic-form-consent" for="topic-contact-permission">
               <input
                 id="topic-contact-permission"
@@ -1431,8 +1853,6 @@
                 needed.
               </span>
             </label>
-
-            <!-- Submit -->
 
             <button class="topic-form-submit" type="submit">
               Send Suggestion
@@ -1453,15 +1873,15 @@
       <!-- Return link -->
 
       <div class="back">
-        <a href="../index.html"> ← Return to FlowHub </a>
+        <a href="https://hub.discoverflowtherapy.com/"> ← Return to FlowHub </a>
       </div>
     </main>
 
-    <!-- Shared footer is generated by site-layout.js -->
+    <!-- Shared footer generated by site-layout.js -->
 
     <div id="site-footer"></div>
 
-    <!-- CMS registry must load before the library renderer -->
+    <!-- CMS registry must load before library renderer -->
 
     <script src="/assets/js/content-registry.js"></script>
 
