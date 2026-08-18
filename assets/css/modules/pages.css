@@ -120,14 +120,13 @@
   max-width: 1300px;
   margin: 2rem auto 0;
   text-align: center;
-
-}   
+}
 
 .resource-meta {
-    font-size: .82rem;
-    color: #7d8795;
-    margin: .35rem 0 .75rem;
-    font-weight: 500;
+  font-size: 0.82rem;
+  color: #7d8795;
+  margin: 0.35rem 0 0.75rem;
+  font-weight: 500;
 }
 
 @media (max-width: 800px) {
@@ -146,15 +145,17 @@
   .resource-image-link img {
     height: 210px;
   }
-}.resource-card {
-    transition: transform .25s ease,
-                box-shadow .25s ease;
+}
+.resource-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .resource-card:hover {
-    transform: translateY(-6px);
+  transform: translateY(-6px);
 
-    box-shadow: 0 18px 36px rgba(0,0,0,.12);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.12);
 }
 
 /* ==================================================
@@ -231,10 +232,10 @@
 }
 
 .seasonal-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  align-items: center;
 }
 
 .seasonal-list p {
@@ -272,13 +273,7 @@
   margin: 0 auto;
   padding: 4rem 2rem;
   text-align: center;
-  background:
-    linear-gradient(
-      135deg,
-      #ffffff 0%,
-      #eef6fd 55%,
-      #dcecff 100%
-    );
+  background: linear-gradient(135deg, #ffffff 0%, #eef6fd 55%, #dcecff 100%);
   border: 1px solid #d6e8f7;
   border-radius: 22px;
   box-shadow: 0 14px 36px rgba(25, 91, 145, 0.1);
@@ -329,7 +324,6 @@
   line-height: 1.75;
 }
 
-
 /* Recognition */
 
 .flowpass-recognition {
@@ -353,8 +347,8 @@
   align-items: flex-start;
   gap: 0.8rem;
   padding: 1.15rem;
-  background:#f4f9fd;
-border: 1px solid #dcecff;
+  background: #f4f9fd;
+  border: 1px solid #dcecff;
   border-radius: 14px;
 }
 
@@ -386,7 +380,6 @@ border: 1px solid #dcecff;
   line-height: 1.7;
   text-align: center;
 }
-
 
 /* Benefits */
 
@@ -425,13 +418,7 @@ border: 1px solid #dcecff;
   height: 3rem;
   margin-bottom: 1rem;
   color: #ffffff;
-  background:
-    linear-gradient(
-      135deg,
-      #1da7f2,
-      #1677c8,
-      #0d2e83
-    );
+  background: linear-gradient(135deg, #1da7f2, #1677c8, #0d2e83);
   border-radius: 50%;
   font-weight: 800;
 }
@@ -447,7 +434,6 @@ border: 1px solid #dcecff;
   color: #435568;
   line-height: 1.65;
 }
-
 
 /* Comparison */
 
@@ -475,12 +461,7 @@ border: 1px solid #dcecff;
 
 .flowpass-comparison-header {
   color: #ffffff;
-  background:
-    linear-gradient(
-      90deg,
-      #125fa5,
-      #1677c8
-    );
+  background: linear-gradient(90deg, #125fa5, #1677c8);
   font-size: 1.08rem;
   font-weight: 800;
 }
@@ -510,7 +491,6 @@ border: 1px solid #dcecff;
 .flowpass-comparison-row div {
   line-height: 1.55;
 }
-
 
 /* Right Fit */
 
@@ -567,12 +547,7 @@ border: 1px solid #dcecff;
 .flowpass-honesty-card {
   align-self: stretch;
   color: #ffffff;
-  background:
-    linear-gradient(
-      145deg,
-      #1677c8,
-      #0d3f86
-    );
+  background: linear-gradient(145deg, #1677c8, #0d3f86);
   box-shadow: 0 12px 28px rgba(13, 63, 134, 0.2);
 }
 
@@ -590,7 +565,6 @@ border: 1px solid #dcecff;
   margin-top: 1rem;
 }
 
-
 /* CTA */
 
 .flowpass-cta {
@@ -598,12 +572,7 @@ border: 1px solid #dcecff;
   margin: 3rem auto 0;
   padding: 3.25rem 2rem;
   text-align: center;
-  background:
-    linear-gradient(
-      135deg,
-      #eef6fd,
-      #ffffff
-    );
+  background: linear-gradient(135deg, #eef6fd, #ffffff);
   border: 1px solid #d6e8f7;
   border-radius: 22px;
   box-shadow: 0 12px 30px rgba(25, 91, 145, 0.1);
@@ -650,11 +619,10 @@ border: 1px solid #dcecff;
   line-height: 1.6;
 }
 
-
 /* Responsive FlowPass */
 
 @media (max-width: 900px) {
-    .flowpass-benefit-grid {
+  .flowpass-benefit-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -718,64 +686,64 @@ border: 1px solid #dcecff;
   .flowpass-comparison-row div + div {
     border-top: 1px solid #d6e8f7;
     border-left: 0;
-    }
+  }
 
-/* Forms page layout fixes */
+  /* Forms page layout fixes */
 
-.logo img {
+  .logo img {
     display: block;
     width: min(340px, 85vw);
     height: auto;
     margin: 0 auto;
-}
+  }
 
-.header {
+  .header {
     padding-top: 1.5rem;
     padding-bottom: 0;
-}
+  }
 
-.subtitle {
+  .subtitle {
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
-}
+  }
 
-.forms-page .cards {
+  .forms-page .cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.25rem;
     align-items: stretch;
-}
+  }
 
-.forms-page .card {
+  .forms-page .card {
     display: flex;
     flex-direction: column;
     min-height: 300px;
-}
+  }
 
-.forms-page .card p {
+  .forms-page .card p {
     flex-grow: 1;
-}
+  }
 
-.forms-page .button {
+  .forms-page .button {
     align-self: center;
     margin-top: auto;
-}
+  }
 
-@media (max-width: 900px){
+  @media (max-width: 900px) {
     .forms-page .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
-@media (max-width: 600px){
-  .forms-page .cards {
-        grid-template-columns: 1fr;
+  @media (max-width: 600px) {
+    .forms-page .cards {
+      grid-template-columns: 1fr;
     }
   }
-    .logo img {
-        width: min(280px, 90vw);
-    }
+  .logo img {
+    width: min(280px, 90vw);
   }
+}
 .welcome-subtitle {
   margin-bottom: 0.5rem;
   color: #1677c8;
@@ -791,10 +759,10 @@ border: 1px solid #dcecff;
 }
 
 .wellness-programs-page .cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: 900px;
-    margin-right: auto;
-    margin-left: auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 900px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (max-width: 700px) {
@@ -803,21 +771,21 @@ border: 1px solid #dcecff;
   }
 }
 .back {
-    max-width: 900px;
-    margin: 2.5rem auto 1.5rem;
-    text-align: center;
+  max-width: 900px;
+  margin: 2.5rem auto 1.5rem;
+  text-align: center;
 }
 
 .back a {
-    color: #1677c8;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s ease;
+  color: #1677c8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
 }
 
 .back a:hover {
-    text-decoration: underline;
-}/* -------------------------------------------------
+  text-decoration: underline;
+} /* -------------------------------------------------
    FlowPass
 ------------------------------------------------- */
 
@@ -1045,65 +1013,1322 @@ border: 1px solid #dcecff;
   .reward-divider {
     transform: rotate(90deg);
   }
-}.seasonal-spaflow{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:2.5rem;
-    align-items:center;
-
-    max-width:950px;
-    margin:3rem auto;
-    padding:2.5rem;
-
-    background:#eaf5ff;
-    border-radius:20px;
 }
 
-.season-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:1rem;
+/* ==========================================================================
+   01. SPAFLOW — PREMIUM ATMOSPHERE
+   ========================================================================== */
+
+.spaflow-luxury {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    /* upper ice-blue illumination */
+    radial-gradient(
+      ellipse at 50% 6%,
+      rgba(228, 244, 252, 0.34) 0%,
+      rgba(180, 220, 241, 0.22) 18%,
+      rgba(116, 180, 215, 0.1) 36%,
+      transparent 58%
+    ),
+    /* left-side reflected light */
+    radial-gradient(
+        ellipse at 12% 34%,
+        rgba(137, 200, 232, 0.12) 0%,
+        rgba(83, 157, 198, 0.055) 32%,
+        transparent 58%
+      ),
+    /* right-side depth */
+    radial-gradient(
+        ellipse at 92% 58%,
+        rgba(100, 177, 218, 0.1) 0%,
+        rgba(47, 119, 158, 0.05) 34%,
+        transparent 60%
+      ),
+    /* subtle lower sapphire illumination */
+    radial-gradient(
+        ellipse at 50% 92%,
+        rgba(42, 123, 173, 0.13) 0%,
+        rgba(21, 77, 114, 0.06) 32%,
+        transparent 62%
+      ),
+    /* main SpaFlow blue progression */
+    linear-gradient(
+        180deg,
+        #b7d5e5 0%,
+        #a1c8dc 2.5%,
+        #88b9d2 5.5%,
+        #70a8c6 9%,
+
+        #5997b9 14%,
+        #4786a8 20%,
+        #397695 28%,
+        #306987 36%,
+
+        #285d79 44%,
+        #22536e 52%,
+        #1c4962 61%,
+        #173f57 70%,
+
+        #13384f 78%,
+        #103247 86%,
+        #0d2c40 93%,
+        #0a2739 100%
+      );
+
+  color: #ffffff;
 }
-.season-card{
-    transition:.2s ease;
+
+/* --------------------------------------------------------------------------
+   SPAFLOW — SILK LIGHT WASH
+   -------------------------------------------------------------------------- */
+
+.spaflow-luxury::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    118deg,
+    transparent 5%,
+    rgba(239, 249, 255, 0.02) 20%,
+    rgba(239, 249, 255, 0.07) 39%,
+    rgba(239, 249, 255, 0.025) 54%,
+    transparent 72%
+  );
+
+  opacity: 0.9;
 }
 
-.season-card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 22px rgba(22,119,200,.15);
+/* --------------------------------------------------------------------------
+   SPAFLOW — PREMIUM AMBIENT GLOW
+   -------------------------------------------------------------------------- */
+
+.spaflow-luxury::after {
+  content: "";
+
+  position: absolute;
+  top: 10%;
+  left: 50%;
+
+  width: min(1200px, 94vw);
+  height: 520px;
+
+  transform: translateX(-50%);
+
+  z-index: 0;
+  pointer-events: none;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(185, 229, 250, 0.08) 0%,
+    rgba(100, 180, 221, 0.04) 35%,
+    transparent 70%
+  );
+
+  filter: blur(28px);
 }
-.season-card{
-    background:white;
-    border-radius:14px;
-    padding:1.35rem;
-    text-align:center;
 
-    box-shadow:0 6px 18px rgba(0,0,0,.06);
+/* Keep all SpaFlow content above atmospheric layers */
+
+.spaflow-luxury > * {
+  position: relative;
+  z-index: 1;
 }
 
-.season-card h3{
-    margin-bottom:1.25rem;
-    
-    color:#1677c8;
+/* ==========================================================================
+   02. SHARED TYPOGRAPHY
+   ========================================================================== */
+
+.spaflow-luxury h1,
+.spaflow-luxury h2 {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-weight: 600;
 }
 
-.season-card p{
-    margin:0;
-    color:#4f6475;
-    font-size:.95rem;
+.spaflow-kicker {
+  margin: 0 0 0.65rem;
+
+  color: var(--spa-ice);
+
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  line-height: 1.4;
+
+  text-transform: uppercase;
 }
 
-@media (max-width:800px){
+/* ==========================================================================
+   03. PRIMARY ACTION — STATIC GLOW
+   ========================================================================== */
 
-    .seasonal-spaflow{
-        grid-template-columns:1fr;
-    }
+.spaflow-primary-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    .season-grid{
-        grid-template-columns:1fr;
-    }
+  min-height: 46px;
 
-}/* -------------------------------------------------
+  padding: 0.78rem 1.55rem;
+
+  border: 1px solid rgba(150, 225, 255, 0.9);
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    #1ea5e6 0%,
+    #1488c8 46%,
+    #0d6fa8 100%
+  );
+
+  color: #ffffff;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 0 0 1px rgba(203, 242, 255, 0.14),
+    0 0 8px rgba(92, 207, 255, 0.68),
+    0 0 18px rgba(48, 183, 255, 0.52),
+    0 0 34px rgba(25, 154, 235, 0.28),
+    0 10px 28px rgba(3, 24, 43, 0.34);
+
+  transition:
+    border-color 0.22s ease,
+    background 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.spaflow-primary-action:hover {
+  border-color: rgba(213, 247, 255, 1);
+
+  background: linear-gradient(
+    135deg,
+    #28b4f2 0%,
+    #1795d5 46%,
+    #0e76ae 100%
+  );
+
+  box-shadow:
+    0 0 0 1px rgba(220, 248, 255, 0.2),
+    0 0 10px rgba(126, 222, 255, 0.88),
+    0 0 22px rgba(62, 193, 255, 0.72),
+    0 0 42px rgba(31, 166, 244, 0.4),
+    0 12px 30px rgba(3, 24, 43, 0.38);
+}
+
+.spaflow-primary-action:focus-visible {
+  outline: none;
+
+  border-color: #d8f6ff;
+
+  box-shadow:
+    0 0 0 3px rgba(163, 230, 255, 0.28),
+    0 0 12px rgba(126, 222, 255, 0.88),
+    0 0 26px rgba(62, 193, 255, 0.68),
+    0 0 44px rgba(31, 166, 244, 0.38);
+}
+/* ==========================================================================
+   04. HERO
+   ========================================================================== */
+
+.spaflow-hero {
+  position: relative;
+
+  padding: 3.6rem 1.5rem 3.4rem;
+}
+
+/* Thin editorial divider only */
+
+.spaflow-hero::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 0;
+
+  width: min(1040px, calc(100% - 3rem));
+
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(165, 243, 252, 0.06) 12%,
+    rgba(165, 243, 252, 0.22) 50%,
+    rgba(165, 243, 252, 0.06) 88%,
+    transparent 100%
+  );
+}
+
+.spaflow-hero-inner {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.92fr)
+    minmax(340px, 0.88fr);
+
+  align-items: center;
+
+  gap: clamp(3rem, 6vw, 5.5rem);
+
+  width: min(1040px, calc(100% - 1rem));
+
+  margin: 0 auto;
+}
+
+.spaflow-hero-copy {
+  min-width: 0;
+}
+
+.spaflow-hero-copy h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(4rem, 6.5vw, 5.8rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.045em;
+
+  text-shadow: 0 16px 34px rgba(0, 10, 22, 0.18);
+}
+
+.spaflow-hero-tagline {
+  max-width: 480px;
+
+  margin: 1rem 0 0;
+
+  color: #f4f8fb;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(1.4rem, 2.35vw, 1.85rem);
+
+  line-height: 1.25;
+}
+
+.spaflow-hero-tagline em {
+  color: var(--spa-ice);
+
+  font-weight: 600;
+}
+
+.spaflow-hero-intro {
+  max-width: 500px;
+
+  margin: 1.25rem 0 0;
+
+  color: var(--spa-soft-white);
+
+  font-size: 0.88rem;
+
+  line-height: 1.7;
+}
+
+.spaflow-hero-copy .spaflow-primary-action {
+  margin-top: 1.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   HERO IMAGE
+   -------------------------------------------------------------------------- */
+
+.spaflow-hero-visual {
+  min-height: 0;
+}
+
+.spaflow-hero-visual img {
+  display: block;
+
+  width: 100%;
+
+  height: 360px;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  box-shadow: 0 24px 50px rgba(0, 11, 24, 0.22);
+}
+
+/* ==========================================================================
+   05. COLLECTION INTRO
+   ========================================================================== */
+
+.spaflow-collection {
+  position: relative;
+}
+
+.spaflow-collection-intro {
+  width: min(700px, calc(100% - 3rem));
+
+  margin: 0 auto;
+
+  padding: 2.45rem 0 1.85rem;
+
+  text-align: center;
+}
+
+.spaflow-collection-intro .spaflow-kicker {
+  margin-bottom: 0.5rem;
+}
+
+.spaflow-collection-intro h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(2.45rem, 4vw, 3.35rem);
+
+  line-height: 0.98;
+
+  letter-spacing: -0.025em;
+
+  text-shadow: 0 10px 24px rgba(0, 12, 25, 0.14);
+}
+
+.spaflow-collection-intro > p:last-child {
+  max-width: 620px;
+  margin: 0.75rem auto 0;
+  color: rgba(226, 232, 240, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   06. TREATMENT ROWS
+   ========================================================================== */
+
+.spaflow-treatment {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    82px
+    minmax(250px, 310px)
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  column-gap: clamp(1.65rem, 3.3vw, 2.6rem);
+
+  width: min(1010px, calc(100% - 4rem));
+
+  min-height: 208px;
+
+  margin: 0 auto;
+
+  padding: 1.35rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   TREATMENT DIVIDER — PREMIUM STATIC GLINT
+   -------------------------------------------------------------------------- */
+
+.spaflow-treatment::after {
+  content: "";
+
+  position: absolute;
+
+  left: 1%;
+  right: 1%;
+
+  bottom: -5px;
+
+  height: 11px;
+
+  pointer-events: none;
+
+  background:
+
+    /* bright central jewel */
+    radial-gradient(
+      circle at 50% 50%,
+      #ffffff 0 1px,
+      rgba(220, 248, 255, 0.98) 1.5px,
+      rgba(122, 218, 255, 0.82) 2.5px,
+      rgba(56, 189, 248, 0.40) 4px,
+      transparent 7px
+    ),
+
+    /* short horizontal flare */
+    linear-gradient(
+      90deg,
+      transparent 43%,
+      rgba(147, 225, 255, 0.05) 46%,
+      rgba(193, 239, 255, 0.38) 49%,
+      rgba(235, 250, 255, 0.82) 50%,
+      rgba(193, 239, 255, 0.38) 51%,
+      rgba(147, 225, 255, 0.05) 54%,
+      transparent 57%
+    ),
+
+    /* full elegant divider */
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(147, 220, 248, 0.03) 8%,
+      rgba(165, 231, 252, 0.11) 24%,
+      rgba(188, 238, 255, 0.22) 40%,
+      rgba(216, 246, 255, 0.34) 50%,
+      rgba(188, 238, 255, 0.22) 60%,
+      rgba(165, 231, 252, 0.11) 76%,
+      rgba(147, 220, 248, 0.03) 92%,
+      transparent 100%
+    );
+
+  background-size:
+    22px 11px,
+    100% 3px,
+    100% 1px;
+
+  background-position:
+    center,
+    center,
+    center;
+
+  background-repeat:
+    no-repeat;
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      rgba(112, 211, 255, 0.42)
+    );
+}
+/* ==========================================================================
+   07. TREATMENT INDEX
+   ========================================================================== */
+
+.spaflow-treatment-index {
+  min-width: 0;
+
+  opacity: 0.82;
+}
+
+.spaflow-treatment-number {
+  display: block;
+  margin: 0;
+  color: rgba(165, 243, 252, 0.62);
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.spaflow-treatment-label {
+  display: block;
+
+  max-width: 90px;
+
+  margin-top: 0.6rem;
+
+  color: rgba(165, 243, 252, 0.9);
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+  line-height: 1.45;
+
+  text-transform: uppercase;
+}
+
+
+.spaflow-treatment-meta {
+  margin: 0.65rem 0 0.85rem;
+
+  color: #ffffff;
+
+  font-size: 0.82rem;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+
+.spaflow-treatment-note,
+.spaflow-treatment-detail {
+  margin: 0.65rem 0 0;
+
+  color: rgba(235, 243, 249, 0.88);
+
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.65;
+}
+
+
+.spaflow-season-list p {
+  margin: 0.4rem 0 0;
+
+  color: rgba(226, 235, 243, 0.84);
+
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+
+.spaflow-seasonal-note {
+  max-width: 760px;
+
+  margin: 1.55rem auto 0;
+
+  color: rgba(226, 235, 243, 0.72);
+
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   08. TREATMENT IMAGES — PREMIUM SCULPTED LIGHT
+   ========================================================================== */
+
+.spaflow-treatment-media {
+  --spaflow-image-shift: 0px;
+
+  position: relative;
+
+  min-height: 0;
+
+  overflow: visible;
+
+  isolation: isolate;
+}
+
+
+/* --------------------------------------------------------------------------
+   AMBIENT LIGHT BEHIND IMAGE
+   -------------------------------------------------------------------------- */
+
+.spaflow-treatment-media::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: -2;
+
+  inset:
+    10%
+    -8%
+    -12%
+    -8%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(190, 235, 255, 0.20) 0%,
+      rgba(100, 198, 240, 0.12) 30%,
+      rgba(42, 151, 207, 0.06) 50%,
+      transparent 72%
+    );
+
+  filter:
+    blur(18px);
+}
+
+
+/* --------------------------------------------------------------------------
+   FINE LUMINOUS CONTOUR
+   -------------------------------------------------------------------------- */
+
+.spaflow-treatment-media::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: 2;
+
+  inset: -1px;
+
+  pointer-events: none;
+
+  border:
+    1px solid
+    rgba(203, 241, 255, 0.48);
+
+  border-radius:
+    34px 8px 34px 8px;
+
+  box-shadow:
+    inset 0 0 0 1px
+      rgba(255, 255, 255, 0.05),
+
+    0 0 7px
+      rgba(165, 230, 255, 0.24),
+
+    0 0 18px
+      rgba(66, 180, 230, 0.12);
+}
+
+
+/* --------------------------------------------------------------------------
+   IMAGE
+   -------------------------------------------------------------------------- */
+
+.spaflow-treatment-media img {
+  display: block;
+
+  width: 100%;
+
+  height: 180px;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  border-radius:
+    34px 8px 34px 8px;
+
+  filter:
+    saturate(0.97)
+    contrast(1.025)
+    brightness(1.015);
+
+  box-shadow:
+    0 20px 38px
+      rgba(1, 19, 34, 0.24),
+
+    0 5px 16px
+      rgba(1, 26, 47, 0.16);
+
+  transform:
+    translate3d(
+      0,
+      var(--spaflow-image-shift),
+      0
+    )
+    scale(1.01);
+
+  transition:
+    transform 0.55s
+      cubic-bezier(0.2, 0.75, 0.25, 1),
+
+    filter 0.4s ease,
+
+    box-shadow 0.4s ease;
+}
+
+
+/* --------------------------------------------------------------------------
+   ALTERNATING SCULPTURE
+   Gives the page an editorial rhythm instead of repeating the same shape.
+   -------------------------------------------------------------------------- */
+
+.spaflow-treatment-reverse
+.spaflow-treatment-media::after,
+
+.spaflow-treatment-reverse
+.spaflow-treatment-media img {
+  border-radius:
+    8px 34px 8px 34px;
+}
+
+
+/* --------------------------------------------------------------------------
+   HOVER — SUBTLE LIFT, NOT ANIMATION-HEAVY
+   -------------------------------------------------------------------------- */
+
+.spaflow-treatment:hover
+.spaflow-treatment-media img {
+  filter:
+    saturate(1.02)
+    contrast(1.035)
+    brightness(1.025);
+
+  transform:
+    translate3d(
+      0,
+      var(--spaflow-image-shift),
+      0
+    )
+    scale(1.025);
+
+  box-shadow:
+    0 24px 44px
+      rgba(1, 18, 34, 0.28),
+
+    0 7px 20px
+      rgba(3, 34, 58, 0.18);
+}
+/* ==========================================================================
+   09. TREATMENT TYPOGRAPHY
+   ========================================================================== */
+
+.spaflow-treatment-note,
+.spaflow-treatment-detail {
+  margin: 0.72rem 0 0;
+
+  color:
+    rgba(235, 243, 249, 0.90);
+
+  font-size:
+    1.02rem;
+
+  font-style:
+    italic;
+
+  line-height:
+    1.65;
+}
+/* ==========================================================================
+   10. TREATMENT LINKS
+   ========================================================================== */
+
+.spaflow-treatment-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  margin-top: 0.78rem;
+
+  color: var(--spa-ice);
+
+  font-size: 0.86rem;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    gap 0.2s ease,
+    color 0.2s ease;
+}
+
+.spaflow-treatment-link:hover {
+  gap: 0.65rem;
+
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   11. ALTERNATING ROWS
+   ========================================================================== */
+
+.spaflow-treatment-reverse {
+  grid-template-columns:
+    82px
+    minmax(0, 1fr)
+    minmax(250px, 310px);
+}
+
+.spaflow-treatment-reverse .spaflow-treatment-index {
+  grid-column: 1;
+}
+
+.spaflow-treatment-reverse .spaflow-treatment-copy {
+  grid-column: 2;
+
+  grid-row: 1;
+}
+
+.spaflow-treatment-reverse .spaflow-treatment-media {
+  grid-column: 3;
+
+  grid-row: 1;
+}
+
+/* ==========================================================================
+   12. SCROLL REVEAL
+   ========================================================================== */
+
+.spaflow-treatment,
+.spaflow-seasonal,
+.spaflow-final-cta {
+  opacity: 0;
+
+  transform: translateY(18px);
+
+  transition:
+    opacity 0.65s ease,
+    transform 0.75s cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.spaflow-treatment.is-visible,
+.spaflow-seasonal.is-visible,
+.spaflow-final-cta.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* Current treatment — subtle emphasis only */
+
+.spaflow-treatment.is-active .spaflow-treatment-number {
+  color: var(--spa-ice);
+}
+
+.spaflow-treatment.is-active .spaflow-treatment-link {
+  color: var(--spa-ice);
+}
+
+/* ==========================================================================
+   13. SEASONAL SPAFLOW
+   ========================================================================== */
+
+.spaflow-seasonal {
+  width: min(1040px, calc(100% - 4rem));
+
+  margin: 0 auto;
+
+  padding: 3.7rem 0 2rem;
+
+  text-align: center;
+}
+
+.spaflow-seasonal-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(2.8rem, 4.5vw, 3.8rem);
+
+  line-height: 1;
+
+  letter-spacing: -0.02em;
+}
+
+.spaflow-seasonal-tagline {
+  margin: 0.55rem 0 0;
+
+  color: var(--spa-ice);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1.05rem;
+
+  font-style: italic;
+}
+
+.spaflow-season-list {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  margin-top: 2rem;
+}
+
+.spaflow-season-list article {
+  position: relative;
+
+  padding: 0.75rem 1rem;
+}
+
+.spaflow-season-list article + article::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 8%;
+  bottom: 8%;
+
+  width: 9px;
+
+  transform: translateX(-50%);
+
+  pointer-events: none;
+
+  background:
+    /* bright stationary glint */
+    radial-gradient(
+      circle at 50% 50%,
+      #ffffff 0 1px,
+      rgba(220, 248, 255, 0.96) 1.5px,
+      rgba(115, 217, 255, 0.8) 2.5px,
+      rgba(56, 189, 248, 0.34) 4px,
+      transparent 6px
+    ),
+
+    /* fine vertical light */
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(165, 243, 252, 0.04) 10%,
+      rgba(185, 236, 255, 0.18) 32%,
+      rgba(221, 248, 255, 0.34) 50%,
+      rgba(185, 236, 255, 0.18) 68%,
+      rgba(165, 243, 252, 0.04) 90%,
+      transparent 100%
+    );
+
+  background-size:
+    9px 16px,
+    1px 100%;
+
+  background-position:
+    center,
+    center;
+
+  background-repeat:
+    no-repeat;
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      rgba(91, 202, 255, 0.55)
+    );
+}
+
+/* ==========================================================================
+   14. FINAL CTA
+   ========================================================================== */
+
+.spaflow-final-cta {
+  width: min(1040px, calc(100% - 4rem));
+
+  margin: 0 auto;
+
+  padding: 2rem 0 3.4rem;
+
+  text-align: center;
+}
+
+.spaflow-final-cta h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(2.55rem, 4.4vw, 3.55rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.spaflow-final-cta > p:not(.spaflow-kicker) {
+  max-width: 620px;
+  margin: 0.85rem auto 0;
+
+  color: rgba(226, 238, 247, 0.88);
+
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+
+/* --------------------------------------------------------------------------
+   FINAL CTA ACTIONS
+   Back link left • Booking button truly centered
+   -------------------------------------------------------------------------- */
+
+.spaflow-final-cta-actions {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  width: 100%;
+
+  margin-top: 1.15rem;
+}
+
+
+/* Glowing booking button */
+
+.spaflow-final-cta-actions .spaflow-primary-action {
+  grid-column: 2;
+  grid-row: 1;
+
+  justify-self: center;
+}
+
+
+/* Back to Wellness Programs */
+
+.spaflow-final-cta-actions > a:not(.spaflow-primary-action) {
+  grid-column: 1;
+  grid-row: 1;
+
+  justify-self: start;
+
+  color: rgba(190, 225, 243, 0.92);
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.spaflow-final-cta-actions > a:not(.spaflow-primary-action):hover {
+  color: #ffffff;
+}
+/* ==========================================================================
+   15. TABLET
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .spaflow-hero {
+    padding: 3.5rem 1.25rem 3rem;
+  }
+
+  .spaflow-hero-inner {
+    grid-template-columns: 1fr;
+
+    gap: 2.25rem;
+
+    width: min(720px, calc(100% - 1rem));
+  }
+
+  .spaflow-hero-copy {
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .spaflow-hero-tagline,
+  .spaflow-hero-intro {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  .spaflow-hero-visual {
+    width: min(620px, 100%);
+
+    margin: 0 auto;
+  }
+
+  .spaflow-hero-visual img {
+    height: 320px;
+  }
+
+  .spaflow-treatment,
+  .spaflow-treatment-reverse {
+    grid-template-columns:
+      70px
+      minmax(0, 1fr);
+
+    column-gap: 1.4rem;
+
+    row-gap: 1.25rem;
+
+    width: min(760px, calc(100% - 3rem));
+
+    padding: 2rem 0;
+  }
+
+  .spaflow-treatment-index,
+  .spaflow-treatment-reverse .spaflow-treatment-index {
+    grid-column: 1;
+
+    grid-row: 1 / span 2;
+  }
+
+  .spaflow-treatment-media,
+  .spaflow-treatment-reverse .spaflow-treatment-media {
+    grid-column: 2;
+
+    grid-row: 1;
+  }
+
+  .spaflow-treatment-copy,
+  .spaflow-treatment-reverse .spaflow-treatment-copy {
+    grid-column: 2;
+
+    grid-row: 2;
+  }
+
+  .spaflow-treatment-media img {
+    height: 270px;
+  }
+
+  .spaflow-season-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .spaflow-season-list article + article::before {
+    display: none;
+  }
+
+  .spaflow-season-list article:nth-child(odd) {
+    border-right: 1px solid rgba(165, 243, 252, 0.12);
+  }
+
+  .spaflow-season-list article:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(165, 243, 252, 0.12);
+  }
+}
+
+/* ==========================================================================
+   16. MOBILE
+   ========================================================================== */
+
+@media (max-width: 620px) {
+  .spaflow-hero {
+    padding: 2.9rem 1rem 2.6rem;
+  }
+
+  .spaflow-hero-copy h1 {
+    font-size: clamp(3.6rem, 17vw, 4.8rem);
+  }
+
+  .spaflow-hero-tagline {
+    font-size: 1.3rem;
+  }
+
+  .spaflow-hero-intro {
+    font-size: 0.9rem;
+  }
+
+  .spaflow-hero-visual img {
+    height: 260px;
+  }
+
+  .spaflow-collection-intro {
+    padding: 2.5rem 0 1.8rem;
+  }
+
+  .spaflow-treatment,
+  .spaflow-treatment-reverse {
+    grid-template-columns: 1fr;
+
+    width: min(100% - 2rem, 1040px);
+
+    row-gap: 1rem;
+
+    padding: 2rem 0;
+  }
+.spaflow-final-cta-actions {
+  flex-direction: column;
+  gap: 0.9rem;
+}
+  .spaflow-treatment-index,
+  .spaflow-treatment-reverse .spaflow-treatment-index,
+  .spaflow-treatment-media,
+  .spaflow-treatment-reverse .spaflow-treatment-media,
+  .spaflow-treatment-copy,
+  .spaflow-treatment-reverse .spaflow-treatment-copy {
+    grid-column: 1;
+
+    grid-row: auto;
+  }
+
+  .spaflow-treatment-index {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.8rem;
+  }
+
+  .spaflow-treatment-number {
+    font-size: 2rem;
+  }
+
+  .spaflow-treatment-label {
+    max-width: none;
+
+    margin-top: 0;
+
+    font-size: 0.62rem;
+  }
+
+  .spaflow-treatment-index::after {
+    display: none;
+  }
+
+  .spaflow-treatment-media img {
+    height: 225px;
+  }
+
+  .spaflow-treatment-copy h2 {
+    font-size: 2.15rem;
+  }
+
+  .spaflow-treatment-copy
+    > p:not(
+      .spaflow-treatment-subtitle,
+      .spaflow-treatment-meta,
+      .spaflow-treatment-note,
+      .spaflow-treatment-detail
+    ) {
+    font-size: 0.95rem;
+  }
+
+  .spaflow-seasonal {
+    width: min(100% - 2rem, 1040px);
+
+    padding: 2.8rem 0 2.5rem;
+  }
+
+  .spaflow-season-list {
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 1.5rem;
+  }
+
+  .spaflow-season-list article {
+    padding: 0.9rem 0.6rem;
+  }
+
+  .spaflow-season-list article:nth-child(odd) {
+    border-right: 1px solid rgba(165, 243, 252, 0.11);
+  }
+
+  .spaflow-season-list article:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(165, 243, 252, 0.11);
+  }
+
+  .spaflow-final-cta {
+    width: min(100% - 2rem, 760px);
+
+    padding: 2.8rem 0.75rem 3rem;
+  }
+}
+
+/* ==========================================================================
+   17. REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .spaflow-treatment,
+  .spaflow-seasonal,
+  .spaflow-final-cta {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+  .spaflow-treatment-media img,
+  .spaflow-treatment:hover .spaflow-treatment-media img {
+    transform: none;
+
+    transition: none;
+  }
+}
+/* -------------------------------------------------
    Corporate Wellness
 ------------------------------------------------- */
 
@@ -1302,7 +2527,8 @@ border: 1px solid #dcecff;
   .corporate-toolkit {
     grid-template-columns: 1fr;
   }
-}.flowpass-notes {
+}
+.flowpass-notes {
   max-width: 850px;
   margin: 4rem auto;
   padding: 2rem;
@@ -1310,7 +2536,7 @@ border: 1px solid #dcecff;
   border-radius: 18px;
   background: #ffffff;
   box-shadow: 0 8px 24px rgba(20, 55, 85, 0.08);
-}/* -------------------------------------------------
+} /* -------------------------------------------------
    Veterans Resource Center
 ------------------------------------------------- */
 
@@ -1384,7 +2610,7 @@ border: 1px solid #dcecff;
 .comfort-section > div:first-child,
 .veteran-summary-section > div:first-child,
 .veteran-resources-section > div:first-child {
-    max-width: 430px;
+  max-width: 430px;
 }
 .veteran-goals,
 .comfort-list,
@@ -1397,30 +2623,30 @@ border: 1px solid #dcecff;
 
 .veteran-goals p,
 .comfort-list ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .comfort-list li {
-    position: relative;
-    padding-left: 2rem;
-    margin-bottom: 1rem;
-    line-height: 1.5;
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
 }
 
 .comfort-list li:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .comfort-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #1677c8;
-    font-weight: 700;
-    font-size: 1.1rem;
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #1677c8;
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
 .veteran-goals p:last-child,
@@ -1553,32 +2779,32 @@ border: 1px solid #dcecff;
   line-height: 1.35;
 }
 
-.resource-arrow{
-    font-size:1.5rem;
-    color:#1677c8;
-    opacity:.7;
+.resource-arrow {
+  font-size: 1.5rem;
+  color: #1677c8;
+  opacity: 0.7;
 }
 
-.veteran-resource-link:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 22px rgba(20,55,85,.10);
+.veteran-resource-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(20, 55, 85, 0.1);
 }
 
-.resource-arrow{
-    transition:.2s;
+.resource-arrow {
+  transition: 0.2s;
 }
 
-.veteran-resource-link:hover .resource-arrow{
-    transform:translateX(5px);
+.veteran-resource-link:hover .resource-arrow {
+  transform: translateX(5px);
 }
 .veteran-resources-section {
-    align-items: center;
+  align-items: center;
 }
 
 .veteran-resources-section > div:first-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .veteran-faq details {
   max-width: 850px;
@@ -1659,137 +2885,137 @@ border: 1px solid #dcecff;
    ========================================================= */
 
 .resource-library-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-    align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
 }
 
 .resource-card {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    background: #ffffff;
-    border: 1px solid #cfe2f5;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 22px rgba(20, 91, 155, 0.07);
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #cfe2f5;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(20, 91, 155, 0.07);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .resource-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(20, 91, 155, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(20, 91, 155, 0.12);
 }
 
 .resource-card-image-link {
-    display: block;
-    background: #f4f9fd;
+  display: block;
+  background: #f4f9fd;
 }
 
 .resource-card-image {
-    display: block;
-    width: 100%;
-    height: 145px;
-    object-fit: cover;
-    object-position: center;
+  display: block;
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .resource-card-content {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding: 15px 16px 16px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 15px 16px 16px;
 }
 
 .resource-card-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
 .resource-card .resource-badge {
-    display: inline-flex;
-    align-items: center;
-    min-height: 24px;
-    padding: 4px 9px;
-    border-radius: 999px;
-    background: #eaf5ff;
-    color: #086fc5;
-    font-size: 0.66rem;
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: 0.045em;
-    text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #eaf5ff;
+  color: #086fc5;
+  font-size: 0.66rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
 }
 
 .resource-card .resource-type {
-    background: #f1f4f7;
-    color: #53677a;
+  background: #f1f4f7;
+  color: #53677a;
 }
 
 .resource-card-title {
-    margin: 0;
-    color: #0875ca;
-    font-size: 1.04rem;
-    line-height: 1.3;
+  margin: 0;
+  color: #0875ca;
+  font-size: 1.04rem;
+  line-height: 1.3;
 }
 
 .resource-card-title a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .resource-card-title a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Hide the extra content currently making cards tall */
 .resource-card-description,
 .resource-card-meta {
-    display: none;
+  display: none;
 }
 
 .resource-card-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 14px;
-    margin-top: auto;
-    padding-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: auto;
+  padding-top: 14px;
 }
 
 .resource-card-actions a {
-    color: #0875ca;
-    font-size: 0.88rem;
-    font-weight: 750;
-    text-decoration: none;
+  color: #0875ca;
+  font-size: 0.88rem;
+  font-weight: 750;
+  text-decoration: none;
 }
 
 .resource-card-actions a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Remove large button styling inside library cards */
 .resource-card-actions .button,
 .resource-card-actions .resource-button {
-    display: inline;
-    min-width: 0;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    color: #0875ca;
-    box-shadow: none;
+  display: inline;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #0875ca;
+  box-shadow: none;
 }
 
 .resource-card-actions .button:hover,
 .resource-card-actions .resource-button:hover {
-    background: transparent;
-    color: #075fa2;
-    transform: none;
+  background: transparent;
+  color: #075fa2;
+  transform: none;
 }
 .library-card-body {
   display: block;
@@ -1829,11 +3055,5 @@ border: 1px solid #dcecff;
    ========================================================================== */
 
 .flowhub-interior {
-  background:
-    linear-gradient(
-      180deg,
-      #b7d5e5 0%,
-      #91b9cf 38%,
-      #6f9bb6 100%
-    );
+  background: linear-gradient(180deg, #b7d5e5 0%, #91b9cf 38%, #6f9bb6 100%);
 }

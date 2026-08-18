@@ -158,41 +158,155 @@
     padding: 20px;
 }
 /* ==========================================================================
-   12. Footer
-========================================================================== */
+   12. Footer — Compact FlowHub
+   ========================================================================== */
 
 .footer {
-    margin-top: auto;
-    padding: 30px;
-    background: #ffffff;
-    color: #6b7280;
-    border-top: 1px solid #dbeafe;
-    text-align: center;
+  margin-top: auto;
+
+  padding:
+    20px 24px 16px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7fbfe 0%,
+      #edf5fa 100%
+    );
+
+  color:
+    #31516a;
+
+  border-top:
+    1px solid rgba(18, 76, 120, 0.14);
+
+  text-align:
+    center;
 }
 
 .footer-nav {
-    margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap:
+    8px 22px;
+
+  margin-bottom:
+    10px;
 }
 
 .footer-nav a {
-    margin: 0 10px;
-    color: #1677c8;
-    text-decoration: none;
-    font-weight: bold;
+  margin: 0;
+
+  color:
+    #123f65;
+
+  font-size:
+    0.9rem;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
 }
 
 .footer-nav a:hover {
-    text-decoration: underline;
+  color:
+    #1677c8;
+
+  text-decoration:
+    none;
+}
+.footer {
+  margin-top: auto;
+
+  padding:
+    20px 24px 16px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7fbfe 0%,
+      #edf5fa 100%
+    );
+
+  color:
+    #31516a;
+
+  border-top:
+    1px solid rgba(18, 76, 120, 0.14);
+
+  text-align:
+    center;
+}
+
+
+/* STATIC FOOTER ACCENT */
+
+.footer::before {
+  content: "";
+
+  display: block;
+
+  width: 54px;
+  height: 2px;
+
+  margin:
+    0 auto 14px;
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #1677c8,
+      transparent
+    );
+}
+
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap:
+    8px 22px;
+
+  margin-bottom:
+    10px;
 }
 
 .footer-nav a.active {
-    color: #125fa5;
-    text-decoration: underline;
+  color:
+    #0b315e;
+
+  text-decoration:
+    underline;
+
+  text-decoration-color:
+    rgba(22, 119, 200, 0.42);
+
+  text-underline-offset:
+    4px;
 }
-.container {
-  width: min(1100px, calc(100% - 2rem));
-  margin-right: auto;
-  margin-left: auto;
+
+.footer p {
+  margin:
+    0;
+
+  color:
+    #587187;
+
+  font-size:
+    0.82rem;
+
+  line-height:
+    1.4;
 }
 /* ==========================================================================
    FLOWHUB PREMIUM SHARED HEADER
@@ -399,7 +513,36 @@
     0 0 8px
     rgba(56, 182, 255, 0.40);
 }
+/* --------------------------------------------------------------------------
+   SMALL DESKTOP / LARGE TABLET
+   -------------------------------------------------------------------------- */
 
+@media (max-width: 1100px) {
+
+  .flowhub-site-header-inner {
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 20px;
+
+    padding:
+      22px 24px;
+  }
+
+  .flowhub-site-nav {
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    white-space: normal;
+
+    gap:
+      6px 14px;
+  }
+
+  .flowhub-site-nav a {
+    font-size:
+      0.82rem;
+  }
+}
 
 /* --------------------------------------------------------------------------
    TABLET / MOBILE
@@ -426,10 +569,6 @@
 
   .flowhub-site-nav {
     justify-content: center;
-
-    flex-wrap: wrap;
-
-    white-space: normal;
 
     gap:
       6px 14px;
