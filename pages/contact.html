@@ -278,15 +278,17 @@
       }
 
       .section-heading h2 {
-        margin: 0 0 9px;
-        color: var(--contact-blue);
-        font-size: clamp(1.8rem, 3vw, 2.35rem);
+        margin-top: 0.35rem;
+
+        color: #ffffff;
+
+        text-shadow: 0 2px 8px rgba(5, 45, 72, 0.22);
       }
 
       .section-heading p {
         max-width: 760px;
         margin: 0 auto;
-        color: var(--contact-muted);
+        color: rgba(238, 249, 255, 0.92);
         line-height: 1.7;
       }
 
@@ -691,11 +693,26 @@
         grid-template-columns: minmax(0, 1fr) auto;
         gap: 28px;
         align-items: center;
+
         padding: 34px 38px;
+
+        border: 1px solid rgba(132, 211, 246, 0.2);
+
         border-radius: 24px;
-        background: var(--contact-blue-dark);
+
+        background:
+          radial-gradient(
+            ellipse at 88% 20%,
+            rgba(86, 196, 241, 0.12) 0%,
+            transparent 34%
+          ),
+          linear-gradient(135deg, #1f5d80 0%, #174d6c 45%, #103f5c 100%);
+
         color: #ffffff;
-        box-shadow: var(--contact-shadow);
+
+        box-shadow:
+          0 16px 34px rgba(4, 34, 52, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
       }
 
       .contact-closing-panel h2 {
@@ -810,50 +827,38 @@
    GENERAL CONTACT HEADING — CONTRAST REFINEMENT
    ========================================================= */
 
-#contact-form .section-heading p {
-  max-width: 760px;
+      #contact-form .section-heading p {
+        max-width: 760px;
 
-  margin:
-    0 auto;
+        margin: 0 auto;
 
-  color:
-    #244b68;
+        color: rgba(238, 249, 255, 0.92);
 
-  font-size:
-    1rem;
+        font-size: 1rem;
 
-  font-weight:
-    500;
+        font-weight: 500;
 
-  line-height:
-    1.7;
+        line-height: 1.7;
 
-  text-shadow:
-    0 1px 0
-    rgba(255, 255, 255, 0.28);
-}
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.28);
+      }
 
-#contact-form .section-heading::after {
-  width:
-    140px;
+      #contact-form .section-heading::after {
+        width: 140px;
 
-  height:
-    2px;
+        height: 2px;
 
-  background:
-    linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(56, 182, 255, 0.35) 15%,
-      rgba(56, 182, 255, 0.95) 50%,
-      rgba(56, 182, 255, 0.35) 85%,
-      transparent 100%
-    );
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(56, 182, 255, 0.35) 15%,
+          rgba(56, 182, 255, 0.95) 50%,
+          rgba(56, 182, 255, 0.35) 85%,
+          transparent 100%
+        );
 
-  box-shadow:
-    0 0 10px
-    rgba(56, 182, 255, 0.28);
-}
+        box-shadow: 0 0 10px rgba(56, 182, 255, 0.28);
+      }
     </style>
   </head>
 
