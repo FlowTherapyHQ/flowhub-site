@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta
@@ -12,31 +11,23 @@
 
     <title>FlowPass | FlowTherapy</title>
 
-    <!-- Shared FlowHub stylesheet -->
     <link rel="stylesheet" href="../assets/css/style.css" />
-
-    <!-- Shared FlowHub header and footer -->
     <script src="/assets/js/site-layout.js" defer></script>
 
-    <!-- PWA -->
     <link rel="manifest" href="../manifest.webmanifest" />
-
     <link rel="icon" href="../assets/icons/favicon.ico" sizes="any" />
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="../assets/icons/favicon-32x32.png"
     />
-
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
       href="../assets/icons/favicon-16x16.png"
     />
-
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -44,40 +35,28 @@
     />
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
-
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-
     <meta name="apple-mobile-web-app-title" content="FlowHub" />
-
     <meta name="theme-color" content="#0b4d73" />
 
     <style>
-      /* =====================================================
+      /* ==========================================================================
          FLOWPASS — PREMIUM MEMBERSHIP EXPERIENCE
-         ===================================================== */
+         ========================================================================== */
 
       :root {
-        --flowpass-white: #ffffff;
-        --flowpass-ice: #edf8fd;
-        --flowpass-ice-2: #dceef7;
-
-        --flowpass-blue: #1785c8;
-        --flowpass-blue-bright: #24a9e4;
-        --flowpass-blue-deep: #0f5f92;
-
-        --flowpass-navy: #073b5a;
-        --flowpass-navy-2: #0c4c6e;
-        --flowpass-navy-3: #185f7f;
-
-        --flowpass-ink: #083f78;
-        --flowpass-copy: #355d78;
-        --flowpass-muted: #5a7385;
-
-        --flowpass-border: rgba(181, 220, 240, 0.78);
-
-        --flowpass-shadow: 0 18px 42px rgba(6, 48, 75, 0.13);
-
-        --flowpass-shadow-large: 0 28px 58px rgba(5, 39, 61, 0.2);
+        --fp-white: #ffffff;
+        --fp-ice: #edf8fd;
+        --fp-blue: #1788cc;
+        --fp-blue-bright: #29afe8;
+        --fp-navy: #073b59;
+        --fp-navy-2: #0d4b69;
+        --fp-ink: #083f78;
+        --fp-copy: #345d78;
+        --fp-muted: #597286;
+        --fp-border: rgba(185, 223, 241, 0.82);
+        --fp-shadow: 0 18px 40px rgba(5, 46, 71, 0.12);
+        --fp-shadow-large: 0 26px 58px rgba(3, 35, 54, 0.2);
       }
 
       html {
@@ -85,793 +64,690 @@
       }
 
       body.flowhub-interior {
-        color: var(--flowpass-copy);
-
+        color: var(--fp-copy);
         background:
           radial-gradient(
             ellipse at 50% 0%,
-            rgba(139, 211, 241, 0.18) 0%,
-            transparent 34%
+            rgba(157, 220, 245, 0.18) 0%,
+            transparent 32%
           ),
           linear-gradient(
             180deg,
-            #73acc8 0%,
-            #5a98b7 13%,
-            #397b9b 31%,
-            #245f7f 52%,
-            #174b69 73%,
-            #0d3d59 100%
+            #77aec8 0%,
+            #5b99b7 15%,
+            #3d7f9f 33%,
+            #2b6a89 50%,
+            #1d5875 68%,
+            #124763 84%,
+            #0b3953 100%
           );
       }
 
       .flowpass-shell {
         width: min(1180px, calc(100% - 32px));
-
         margin: 0 auto;
-
         padding: 42px 0 72px;
       }
 
-      /* =====================================================
-         SHARED PREMIUM DETAILS
-         ===================================================== */
+      /* ==========================================================================
+         SHARED DETAILS
+         ========================================================================== */
 
       .flowpass-kicker {
         display: inline-flex;
-
         margin-bottom: 13px;
-
         padding: 7px 13px;
-
-        border: 1px solid rgba(144, 221, 251, 0.36);
-
+        border: 1px solid rgba(154, 224, 252, 0.38);
         border-radius: 999px;
-
-        background: rgba(228, 246, 253, 0.1);
-
-        color: #8cddff;
-
-        font-size: 0.72rem;
-
+        background: rgba(232, 248, 255, 0.1);
+        color: #a9e7ff;
+        font-size: 0.74rem;
         font-weight: 900;
-
         letter-spacing: 0.11em;
-
         text-transform: uppercase;
+        text-shadow: 0 0 12px rgba(91, 202, 250, 0.2);
       }
 
       .flowpass-section-heading {
         position: relative;
-
-        max-width: 760px;
-
-        margin: 0 auto 36px;
-
+        max-width: 780px;
+        margin: 0 auto 34px;
         text-align: center;
-      }
-
-      .flowpass-section-heading::after {
-        display: block;
-
-        width: 118px;
-
-        height: 2px;
-
-        margin: 24px auto 0;
-
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(94, 201, 244, 0.28),
-          rgba(219, 246, 255, 0.95),
-          rgba(94, 201, 244, 0.28),
-          transparent
-        );
-
-        box-shadow: 0 0 10px rgba(95, 208, 250, 0.4);
-
-        content: "";
       }
 
       .flowpass-section-heading h2 {
         margin: 0 0 10px;
-
         color: #ffffff;
-
         font-size: clamp(2rem, 4vw, 2.85rem);
-
         line-height: 1.06;
-
         letter-spacing: -0.035em;
-
-        text-shadow: 0 10px 24px rgba(2, 34, 53, 0.2);
+        text-shadow: 0 8px 24px rgba(2, 31, 49, 0.2);
       }
 
       .flowpass-section-heading p {
+        max-width: 720px;
         margin: 0 auto;
-
-        color: rgba(239, 248, 253, 0.92);
-
-        font-size: 1rem;
-
+        color: rgba(245, 251, 255, 0.95);
+        font-size: 1.05rem;
         line-height: 1.75;
       }
 
-      /* =====================================================
-         BUTTONS — GLOW, NO MOVEMENT
-         ===================================================== */
+      .flowpass-section-heading::after {
+        display: block;
+        width: 126px;
+        height: 1px;
+        margin: 24px auto 0;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(124, 216, 253, 0.3),
+          rgba(227, 249, 255, 0.95),
+          rgba(124, 216, 253, 0.3),
+          transparent
+        );
+        box-shadow: 0 0 8px rgba(105, 210, 252, 0.32);
+        content: "";
+      }
+
+      .flowpass-section-heading::before {
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        z-index: 2;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #ffffff;
+        box-shadow:
+          0 0 4px #ffffff,
+          0 0 10px rgba(174, 235, 255, 0.95),
+          0 0 18px rgba(77, 192, 245, 0.72);
+        content: "";
+        transform: translateX(-50%);
+        animation: fp-divider-glisten 3.8s ease-in-out infinite;
+      }
+
+      @keyframes fp-divider-glisten {
+        0%,
+        100% {
+          opacity: 0.38;
+          transform: translateX(-50%) scale(0.72);
+        }
+
+        50% {
+          opacity: 1;
+          transform: translateX(-50%) scale(1.35);
+        }
+      }
+
+      /* ==========================================================================
+         BUTTONS — STATIC GLOW
+         ========================================================================== */
 
       .flowpass-button {
         display: inline-flex;
-
         min-height: 48px;
-
         align-items: center;
-
         justify-content: center;
-
+        box-sizing: border-box;
         padding: 11px 21px;
-
-        border: 1px solid rgba(134, 222, 255, 0.86);
-
+        border: 1px solid rgba(139, 224, 255, 0.88);
         border-radius: 999px;
-
         background: linear-gradient(
           135deg,
-          #22abe8 0%,
-          #1788c9 48%,
-          #0d6da8 100%
+          #24ace8 0%,
+          #1889cb 48%,
+          #0e6da8 100%
         );
-
         color: #ffffff;
-
         font-weight: 850;
-
         text-decoration: none;
-
         box-shadow:
-          0 0 9px rgba(89, 205, 251, 0.5),
-          0 0 24px rgba(45, 171, 229, 0.24),
-          0 11px 24px rgba(3, 39, 61, 0.22);
-
+          0 0 9px rgba(89, 205, 251, 0.52),
+          0 0 24px rgba(45, 171, 229, 0.25),
+          0 11px 24px rgba(3, 39, 61, 0.2);
         transition:
           background 0.2s ease,
-          box-shadow 0.2s ease,
-          border-color 0.2s ease;
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
       }
 
       .flowpass-button:hover,
       .flowpass-button:focus-visible {
-        border-color: rgba(173, 233, 255, 0.98);
-
+        border-color: rgba(184, 237, 255, 0.98);
         outline: none;
-
         background: linear-gradient(
           135deg,
-          #32b8ef 0%,
-          #1b96d5 48%,
-          #1079b4 100%
+          #33b9ef 0%,
+          #1b97d6 48%,
+          #107ab5 100%
         );
-
         box-shadow:
-          0 0 12px rgba(122, 219, 255, 0.7),
-          0 0 30px rgba(52, 186, 239, 0.38),
-          0 12px 26px rgba(3, 39, 61, 0.24);
+          0 0 12px rgba(124, 221, 255, 0.72),
+          0 0 30px rgba(52, 186, 239, 0.4),
+          0 12px 26px rgba(3, 39, 61, 0.22);
       }
 
       .flowpass-button-light {
-        border-color: rgba(175, 230, 251, 0.9);
-
-        background: rgba(255, 255, 255, 0.94);
-
-        color: #0869a6;
-
+        border-color: rgba(185, 232, 251, 0.94);
+        background: rgba(255, 255, 255, 0.97);
+        color: #0867a1;
         box-shadow:
           0 0 10px rgba(146, 219, 248, 0.32),
-          0 10px 22px rgba(5, 44, 68, 0.15);
+          0 10px 22px rgba(5, 44, 68, 0.14);
       }
 
       .flowpass-button-light:hover,
       .flowpass-button-light:focus-visible {
         background: #ffffff;
-
-        color: #07598e;
+        color: #07588c;
       }
 
-      /* =====================================================
+      /* ==========================================================================
          HERO
-         ===================================================== */
+         ========================================================================== */
 
       .flowpass-hero {
         position: relative;
-
         overflow: hidden;
-
-        padding: 70px 60px;
-
-        border: 1px solid rgba(125, 210, 246, 0.22);
-
+        padding: 68px 58px;
+        border: 1px solid rgba(126, 212, 247, 0.24);
         border-radius: 30px 12px 30px 12px;
-
         background:
           radial-gradient(
-            ellipse at 78% 16%,
-            rgba(104, 211, 250, 0.2),
+            ellipse at 80% 14%,
+            rgba(109, 214, 251, 0.2),
             transparent 34%
           ),
           radial-gradient(
-            ellipse at 12% 82%,
-            rgba(116, 193, 227, 0.12),
+            ellipse at 13% 84%,
+            rgba(124, 200, 231, 0.12),
             transparent 35%
           ),
           linear-gradient(
             135deg,
-            #246d91 0%,
-            #155979 40%,
-            #0b4564 72%,
-            #073951 100%
+            #286f91 0%,
+            #195d7c 40%,
+            #0d4866 72%,
+            #073a52 100%
           );
-
-        box-shadow: var(--flowpass-shadow-large);
-
+        box-shadow: var(--fp-shadow-large);
         color: #ffffff;
-
         text-align: center;
       }
 
-      .flowpass-hero::before {
+      .flowpass-hero::before,
+      .flowpass-final-cta::before {
         position: absolute;
-
         top: 0;
-
         left: 50%;
-
         width: 160px;
-
         height: 2px;
-
         transform: translateX(-50%);
-
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(120, 218, 255, 0.3),
+          rgba(123, 219, 255, 0.3),
           #ffffff,
-          rgba(120, 218, 255, 0.3),
+          rgba(123, 219, 255, 0.3),
           transparent
         );
-
-        box-shadow: 0 0 12px rgba(98, 215, 255, 0.68);
-
+        box-shadow: 0 0 12px rgba(102, 216, 255, 0.65);
         content: "";
-
         pointer-events: none;
       }
 
       .flowpass-hero h1 {
-        margin: 0 0 16px;
-
+        margin: 0 0 15px;
         color: #ffffff;
-
-        font-size: clamp(3.5rem, 8vw, 6.4rem);
-
+        font-size: clamp(3.6rem, 8vw, 6.4rem);
         line-height: 0.95;
-
         letter-spacing: -0.055em;
-
-        text-shadow: 0 14px 34px rgba(2, 28, 43, 0.26);
+        text-shadow: 0 14px 34px rgba(2, 28, 43, 0.27);
       }
 
       .flowpass-hero h2 {
         max-width: 850px;
-
         margin: 0 auto 18px;
-
-        color: #dff5ff;
-
+        color: #e1f6ff;
         font-size: clamp(1.3rem, 2.8vw, 1.9rem);
-
         line-height: 1.35;
       }
 
       .flowpass-hero-copy {
-        max-width: 780px;
-
+        max-width: 790px;
         margin: 0 auto;
-
-        color: rgba(240, 250, 255, 0.9);
-
-        font-size: 1.05rem;
-
-        line-height: 1.8;
+        color: rgba(244, 251, 255, 0.94);
+        font-size: 1.06rem;
+        line-height: 1.82;
       }
 
-      .flowpass-hero-actions {
+      .flowpass-hero-actions,
+      .flowpass-final-actions {
         display: flex;
-
         flex-wrap: wrap;
-
         justify-content: center;
-
         gap: 14px;
-
         margin-top: 30px;
       }
 
       .flowpass-commitment-note {
-        max-width: 690px;
-
+        max-width: 700px;
         margin: 26px auto 0;
-
         padding: 14px 18px;
-
-        border: 1px solid rgba(154, 225, 252, 0.23);
-
+        border: 1px solid rgba(155, 226, 253, 0.25);
         border-radius: 14px 6px 14px 6px;
-
-        background: rgba(2, 35, 52, 0.18);
-
-        color: rgba(234, 247, 253, 0.88);
-
-        font-size: 0.86rem;
-
-        line-height: 1.6;
+        background: rgba(2, 35, 52, 0.2);
+        color: rgba(241, 250, 255, 0.92);
+        font-size: 0.9rem;
+        line-height: 1.65;
       }
 
-      /* =====================================================
-         WHY FLOWPASS
-         ===================================================== */
+      /* ==========================================================================
+         VALUE
+         ========================================================================== */
 
       .flowpass-value-section {
-        padding: 72px 0 26px;
+        padding: 72px 0 28px;
       }
 
       .flowpass-value-grid {
         display: grid;
-
         grid-template-columns: repeat(3, minmax(0, 1fr));
-
         gap: 20px;
       }
 
       .flowpass-value-card {
         position: relative;
-
         overflow: hidden;
-
-        padding: 31px 29px;
-
-        border: 1px solid rgba(200, 229, 244, 0.76);
-
+        padding: 30px 28px;
+        border: 1px solid rgba(199, 229, 244, 0.82);
         border-radius: 22px 9px 22px 9px;
-
         background: linear-gradient(
           145deg,
-          rgba(255, 255, 255, 0.98) 0%,
-          rgba(247, 252, 255, 0.98) 68%,
-          rgba(231, 245, 252, 0.97) 100%
+          rgba(255, 255, 255, 0.99) 0%,
+          rgba(248, 252, 255, 0.99) 66%,
+          rgba(232, 246, 252, 0.98) 100%
         );
-
-        box-shadow: var(--flowpass-shadow);
+        box-shadow: var(--fp-shadow);
       }
 
-      .flowpass-value-card::before {
+      .flowpass-value-card::before,
+      .flowpass-card::before {
         position: absolute;
-
         top: -1px;
-
         left: 50%;
-
-        width: 70px;
-
+        width: 74px;
         height: 2px;
-
         transform: translateX(-50%);
-
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(91, 201, 246, 0.35),
+          rgba(90, 200, 245, 0.35),
           #ffffff,
-          rgba(91, 201, 246, 0.35),
+          rgba(90, 200, 245, 0.35),
           transparent
         );
-
         box-shadow: 0 0 8px rgba(89, 207, 251, 0.42);
-
         content: "";
       }
 
       .flowpass-value-number {
-        margin: 0 0 13px;
-
-        color: #1596d7;
-
-        font-size: 0.75rem;
-
+        margin: 0 0 12px;
+        color: #148bd0;
+        font-size: 0.76rem;
         font-weight: 900;
-
-        letter-spacing: 0.13em;
-
+        letter-spacing: 0.12em;
         text-transform: uppercase;
       }
 
       .flowpass-value-card h3 {
-        margin: 0 0 11px;
-
-        color: var(--flowpass-ink);
-
-        font-size: 1.35rem;
+        margin: 0 0 10px;
+        color: var(--fp-ink);
+        font-size: 1.36rem;
       }
 
-      .flowpass-value-card p {
+      .flowpass-value-card p:not(.flowpass-value-number) {
         margin: 0;
-
-        color: var(--flowpass-copy);
-
-        line-height: 1.7;
+        color: var(--fp-copy);
+        line-height: 1.72;
       }
 
-      /* =====================================================
-         MEMBERSHIP OPTIONS
-         ===================================================== */
+      /* ==========================================================================
+         MEMBERSHIPS
+         ========================================================================== */
 
       .flowpass-memberships {
-        padding: 66px 0;
+        padding: 64px 0;
       }
 
       .flowpass-options {
         display: grid;
-
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
         gap: 24px;
-
-        max-width: 960px;
-
+        max-width: 970px;
         margin: 0 auto;
       }
 
       .flowpass-card {
         position: relative;
-
         display: flex;
-
         flex-direction: column;
-
         overflow: hidden;
-
         padding: 38px 36px;
-
-        border: 1px solid rgba(183, 225, 244, 0.82);
-
+        border: 1px solid rgba(183, 225, 244, 0.86);
         border-radius: 28px 10px 28px 10px;
-
         background:
           radial-gradient(
-            ellipse at 85% 5%,
-            rgba(114, 210, 249, 0.12),
+            ellipse at 86% 5%,
+            rgba(114, 210, 249, 0.13),
             transparent 32%
           ),
-          linear-gradient(145deg, #ffffff 0%, #f8fcff 58%, #e9f6fc 100%);
-
+          linear-gradient(145deg, #ffffff 0%, #f9fdff 58%, #eaf7fc 100%);
         box-shadow: 0 22px 48px rgba(5, 45, 70, 0.15);
-
-        isolation: isolate;
-      }
-
-      .flowpass-card::before {
-        position: absolute;
-
-        top: 0;
-
-        left: 8%;
-
-        right: 8%;
-
-        height: 2px;
-
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(81, 195, 241, 0.32),
-          rgba(255, 255, 255, 0.98),
-          rgba(81, 195, 241, 0.32),
-          transparent
-        );
-
-        box-shadow: 0 0 10px rgba(90, 208, 251, 0.48);
-
-        content: "";
       }
 
       .flowpass-card-label {
         margin: 0 0 12px;
-
         color: #167fc2;
-
-        font-size: 0.76rem;
-
+        font-size: 0.78rem;
         font-weight: 900;
-
         letter-spacing: 0.12em;
-
         text-transform: uppercase;
       }
 
       .flowpass-card h3 {
         margin: 0 0 8px;
-
-        color: var(--flowpass-ink);
-
-        font-size: clamp(2.7rem, 6vw, 4rem);
-
+        color: var(--fp-ink);
+        font-size: clamp(2.8rem, 6vw, 4rem);
         line-height: 1;
       }
 
       .flowpass-card h3 span {
-        color: var(--flowpass-copy);
-
+        color: var(--fp-copy);
         font-size: 1rem;
-
         font-weight: 700;
-
-        letter-spacing: 0;
       }
 
       .flowpass-session {
         margin: 16px 0 0;
-
-        color: var(--flowpass-ink);
-
+        color: var(--fp-ink);
         font-size: 1.08rem;
-
         font-weight: 800;
-
         line-height: 1.5;
       }
 
       .flowpass-standard-value {
         margin: 8px 0 0;
-
-        color: var(--flowpass-muted);
-
-        font-size: 0.88rem;
+        color: var(--fp-muted);
+        font-size: 0.9rem;
       }
 
       .flowpass-benefit-list {
         display: grid;
-
         gap: 11px;
-
         margin: 28px 0 30px;
-
         padding: 25px 0 0;
-
-        border-top: 1px solid rgba(190, 220, 238, 0.78);
-
+        border-top: 1px solid rgba(190, 220, 238, 0.8);
         list-style: none;
       }
 
       .flowpass-benefit-list li {
         position: relative;
-
         padding-left: 22px;
-
-        color: var(--flowpass-copy);
-
-        line-height: 1.55;
+        color: var(--fp-copy);
+        line-height: 1.58;
       }
 
       .flowpass-benefit-list li::before {
         position: absolute;
-
         top: 0.65em;
-
         left: 2px;
-
         width: 7px;
-
         height: 7px;
-
         border-radius: 50%;
-
         background: #22a7e3;
-
         box-shadow: 0 0 8px rgba(48, 181, 235, 0.38);
-
         content: "";
       }
 
       .flowpass-card .flowpass-button {
         align-self: flex-start;
-
         margin-top: auto;
       }
 
       .flowpass-card-note {
         margin: 17px 0 0;
-
-        color: #617989;
-
-        font-size: 0.78rem;
-
-        line-height: 1.55;
+        color: #587285;
+        font-size: 0.82rem;
+        line-height: 1.58;
       }
 
-      /* =====================================================
-         MEMBER DIFFERENCE
-         ===================================================== */
+      /* ==========================================================================
+         MEMBER BENEFITS — PREMIUM ROWS + GLISTEN
+         ========================================================================== */
 
       .flowpass-difference {
         padding: 58px 0;
       }
 
       .flowpass-perk-list {
+        overflow: hidden;
         max-width: 1000px;
-
         margin: 0 auto;
-
-        border-top: 1px solid rgba(151, 215, 241, 0.3);
-
-        border-bottom: 1px solid rgba(151, 215, 241, 0.3);
+        border: 1px solid rgba(173, 225, 248, 0.2);
+        border-radius: 24px 9px 24px 9px;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.018)
+        );
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.05),
+          0 22px 54px rgba(2, 28, 47, 0.12);
       }
 
       .flowpass-perk {
+        position: relative;
         display: grid;
-
-        grid-template-columns:
-          minmax(210px, 0.42fr)
-          minmax(0, 1fr);
-
+        grid-template-columns: minmax(230px, 0.42fr) minmax(0, 1fr);
         gap: 34px;
-
         align-items: center;
+        min-height: 96px;
+        overflow: hidden;
+        padding: 23px 22px;
+        border-bottom: 1px solid rgba(185, 230, 250, 0.17);
+        background: transparent;
+        transition:
+          background 0.2s ease,
+          box-shadow 0.2s ease;
+      }
 
-        padding: 26px 18px;
-
-        border-bottom: 1px solid rgba(166, 220, 242, 0.23);
+      .flowpass-perk:nth-child(even) {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.012),
+          rgba(101, 203, 253, 0.038),
+          rgba(255, 255, 255, 0.012)
+        );
       }
 
       .flowpass-perk:last-child {
         border-bottom: 0;
       }
 
+      .flowpass-perk:hover {
+        background: linear-gradient(
+          90deg,
+          rgba(72, 182, 238, 0.05),
+          rgba(255, 255, 255, 0.065),
+          rgba(72, 182, 238, 0.04)
+        );
+        box-shadow: inset 3px 0 0 rgba(119, 218, 255, 0.68);
+      }
+
       .flowpass-perk h3 {
         margin: 0;
-
         color: #ffffff;
-
-        font-size: 1.15rem;
-
-        line-height: 1.35;
+        font-size: 1.12rem;
+        line-height: 1.4;
+        text-shadow: 0 1px 8px rgba(0, 27, 49, 0.25);
       }
 
       .flowpass-perk p {
         margin: 0;
-
-        color: rgba(234, 247, 253, 0.88);
-
-        line-height: 1.7;
+        color: rgba(247, 252, 255, 0.96);
+        font-size: 1.02rem;
+        line-height: 1.72;
       }
 
-      /* =====================================================
-         FLEXIBILITY + COMMITMENT
-         ===================================================== */
+      .flowpass-perk::after {
+        position: absolute;
+        top: -1px;
+        left: -18%;
+        width: 14%;
+        height: 2px;
+        opacity: 0;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(210, 245, 255, 0.5),
+          #ffffff,
+          rgba(210, 245, 255, 0.5),
+          transparent
+        );
+        box-shadow: 0 0 7px rgba(157, 227, 255, 0.65);
+        content: "";
+        pointer-events: none;
+        animation: fp-row-glisten 7.5s ease-in-out infinite;
+      }
+
+      .flowpass-perk:nth-child(2)::after {
+        animation-delay: 1s;
+      }
+
+      .flowpass-perk:nth-child(3)::after {
+        animation-delay: 2s;
+      }
+
+      .flowpass-perk:nth-child(4)::after {
+        animation-delay: 3s;
+      }
+
+      .flowpass-perk:nth-child(5)::after {
+        animation-delay: 4s;
+      }
+
+      .flowpass-perk:nth-child(6)::after {
+        animation-delay: 5s;
+      }
+
+      @keyframes fp-row-glisten {
+        0%,
+        72%,
+        100% {
+          left: -18%;
+          opacity: 0;
+        }
+
+        76% {
+          opacity: 0.45;
+        }
+
+        82% {
+          left: 102%;
+          opacity: 0.95;
+        }
+
+        85% {
+          opacity: 0;
+        }
+      }
+
+      /* ==========================================================================
+         COMMITMENT
+         ========================================================================== */
 
       .flowpass-commitment {
-        position: relative;
-
         display: grid;
-
-        grid-template-columns:
-          minmax(0, 1.18fr)
-          minmax(280px, 0.82fr);
-
+        grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.82fr);
         gap: 38px;
-
         align-items: center;
-
-        overflow: hidden;
-
         margin: 60px 0;
-
-        padding: 46px;
-
-        border: 1px solid rgba(176, 224, 244, 0.84);
-
+        padding: 44px;
+        border: 1px solid rgba(176, 224, 244, 0.88);
         border-radius: 28px 10px 28px 10px;
-
         background: linear-gradient(
           145deg,
-          rgba(255, 255, 255, 0.98),
-          rgba(235, 247, 253, 0.98)
+          rgba(255, 255, 255, 0.99),
+          rgba(235, 247, 253, 0.99)
         );
+        box-shadow: var(--fp-shadow);
+      }
 
-        box-shadow: var(--flowpass-shadow);
+      .flowpass-kicker-light {
+        border-color: #c6e4f3;
+        background: #eaf6fc;
+        color: #0b79b9;
+        text-shadow: none;
       }
 
       .flowpass-commitment-copy h2 {
         margin: 0 0 14px;
-
-        color: var(--flowpass-ink);
-
+        color: var(--fp-ink);
         font-size: clamp(2rem, 4vw, 2.8rem);
-
         letter-spacing: -0.035em;
       }
 
       .flowpass-commitment-copy p {
         margin: 0 0 14px;
-
-        color: var(--flowpass-copy);
-
+        color: var(--fp-copy);
         line-height: 1.75;
       }
 
       .flowpass-commitment-box {
-        padding: 28px;
-
-        border: 1px solid rgba(190, 222, 239, 0.9);
-
+        padding: 27px;
+        border: 1px solid rgba(190, 222, 239, 0.92);
         border-radius: 20px 8px 20px 8px;
-
-        background: rgba(255, 255, 255, 0.76);
+        background: rgba(255, 255, 255, 0.82);
       }
 
       .flowpass-commitment-box strong {
         display: block;
-
         margin-bottom: 14px;
-
         color: #0a75b5;
-
         font-size: 1.2rem;
       }
 
       .flowpass-mini-list {
         display: grid;
-
         gap: 10px;
-
         margin: 0;
-
         padding: 0;
-
         list-style: none;
       }
 
       .flowpass-mini-list li {
         position: relative;
-
         padding-left: 18px;
-
-        color: var(--flowpass-copy);
-
+        color: var(--fp-copy);
         line-height: 1.55;
       }
 
       .flowpass-mini-list li::before {
         position: absolute;
-
         top: 0.65em;
-
         left: 0;
-
         width: 6px;
-
         height: 6px;
-
         border-radius: 50%;
-
         background: #1aa0df;
-
         content: "";
       }
 
-      /* =====================================================
+      /* ==========================================================================
          TERMS
-         ===================================================== */
+         ========================================================================== */
 
       .flowpass-terms {
         padding: 50px 0;
@@ -879,211 +755,179 @@
 
       .flowpass-terms-card {
         max-width: 860px;
-
         margin: 0 auto;
-
-        padding: 34px 38px;
-
-        border: 1px solid rgba(190, 226, 243, 0.82);
-
+        padding: 32px 36px;
+        border: 1px solid rgba(190, 226, 243, 0.86);
         border-radius: 22px 9px 22px 9px;
-
         background: linear-gradient(145deg, #ffffff, #f4faff);
-
         box-shadow: 0 16px 34px rgba(5, 46, 70, 0.1);
       }
 
       .flowpass-terms-card ul {
         display: grid;
-
-        gap: 10px;
-
+        gap: 9px;
         margin: 0;
-
         padding-left: 22px;
-
-        color: var(--flowpass-copy);
-
+        color: var(--fp-copy);
         line-height: 1.65;
       }
 
-      /* =====================================================
-         FAQ
-         ===================================================== */
+      /* ==========================================================================
+         FAQ — COMPACT
+         ========================================================================== */
 
       .flowpass-faq {
-        padding: 54px 0 64px;
+        width: min(100%, 900px);
+        margin: 0 auto;
+        padding: 52px 0 62px;
       }
 
       .flowpass-faq-list {
         display: grid;
-
-        gap: 11px;
-
-        max-width: 900px;
-
-        margin: 0 auto;
+        gap: 8px;
+        margin-top: 28px;
       }
 
       .flowpass-faq details {
         overflow: hidden;
+        border: 1px solid rgba(185, 225, 245, 0.65);
+        border-radius: 13px 6px 13px 6px;
+        background: rgba(249, 252, 255, 0.97);
+        box-shadow: 0 7px 18px rgba(2, 31, 51, 0.06);
+        transition:
+          border-color 0.18s ease,
+          box-shadow 0.18s ease;
+      }
 
-        border: 1px solid rgba(194, 226, 243, 0.82);
-
-        border-radius: 15px 7px 15px 7px;
-
-        background: rgba(255, 255, 255, 0.96);
-
-        box-shadow: 0 8px 18px rgba(6, 47, 72, 0.06);
+      .flowpass-faq details:hover {
+        border-color: rgba(95, 193, 239, 0.72);
+        box-shadow: 0 9px 22px rgba(2, 31, 51, 0.09);
       }
 
       .flowpass-faq summary {
-        padding: 18px 20px;
-
-        color: var(--flowpass-ink);
-
+        position: relative;
+        display: flex;
+        min-height: 0;
+        align-items: center;
+        padding: 14px 46px 14px 18px;
+        color: #06457d;
+        font-size: 0.98rem;
         font-weight: 800;
-
+        line-height: 1.4;
         cursor: pointer;
+        list-style: none;
+      }
+
+      .flowpass-faq summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .flowpass-faq summary::before {
+        margin-right: 10px;
+        color: #1687cf;
+        content: "›";
+        font-size: 1.2rem;
+        font-weight: 900;
+        transition: transform 0.18s ease;
+      }
+
+      .flowpass-faq details[open] summary::before {
+        transform: rotate(90deg);
+      }
+
+      .flowpass-faq summary::after {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        color: #1687cf;
+        content: "+";
+        font-size: 1.25rem;
+        font-weight: 500;
+        transform: translateY(-50%);
+        transition:
+          opacity 0.18s ease,
+          transform 0.18s ease;
+      }
+
+      .flowpass-faq details[open] summary::after {
+        opacity: 0.62;
+        transform: translateY(-50%) rotate(45deg);
       }
 
       .flowpass-faq details p {
         margin: 0;
-
-        padding: 0 20px 20px;
-
-        color: var(--flowpass-copy);
-
+        padding: 0 44px 16px 47px;
+        color: #365a73;
+        font-size: 0.97rem;
         line-height: 1.7;
       }
 
-      /* =====================================================
+      .flowpass-faq details[open] {
+        border-color: rgba(86, 186, 236, 0.62);
+        box-shadow: 0 10px 24px rgba(1, 34, 57, 0.1);
+      }
+
+      /* ==========================================================================
          FINAL CTA
-         ===================================================== */
+         ========================================================================== */
 
       .flowpass-final-cta {
         position: relative;
-
         overflow: hidden;
-
-        margin-top: 56px;
-
-        padding: 54px 40px;
-
-        border: 1px solid rgba(122, 213, 250, 0.28);
-
+        margin-top: 54px;
+        padding: 52px 38px;
+        border: 1px solid rgba(122, 213, 250, 0.3);
         border-radius: 28px 10px 28px 10px;
-
         background:
           radial-gradient(
             ellipse at 84% 12%,
-            rgba(89, 198, 241, 0.16),
+            rgba(89, 198, 241, 0.17),
             transparent 34%
           ),
-          linear-gradient(135deg, #205f80 0%, #124e6e 48%, #073b57 100%);
-
-        box-shadow: var(--flowpass-shadow-large);
-
+          linear-gradient(135deg, #216381 0%, #13506f 48%, #073b57 100%);
+        box-shadow: var(--fp-shadow-large);
         text-align: center;
-      }
-
-      .flowpass-final-cta::before {
-        position: absolute;
-
-        top: 0;
-
-        left: 50%;
-
-        width: 150px;
-
-        height: 2px;
-
-        transform: translateX(-50%);
-
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(113, 220, 255, 0.3),
-          #ffffff,
-          rgba(113, 220, 255, 0.3),
-          transparent
-        );
-
-        box-shadow: 0 0 12px rgba(107, 219, 255, 0.58);
-
-        content: "";
       }
 
       .flowpass-final-cta h2 {
         margin: 0 0 12px;
-
         color: #ffffff;
-
         font-size: clamp(2.2rem, 5vw, 3.35rem);
-
         letter-spacing: -0.04em;
       }
 
       .flowpass-final-cta > p {
         max-width: 700px;
-
         margin: 0 auto;
-
-        color: rgba(237, 249, 254, 0.9);
-
+        color: rgba(243, 251, 255, 0.94);
+        font-size: 1.02rem;
         line-height: 1.75;
       }
 
-      .flowpass-final-actions {
-        display: flex;
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-
-        gap: 14px;
-
-        margin-top: 27px;
-      }
-
-      /* =====================================================
-         RETURN LINK
-         ===================================================== */
-
       .flowpass-back {
-        margin-top: 38px;
-
+        margin-top: 36px;
         text-align: left;
       }
 
       .flowpass-back a {
-        color: #75d7ff;
-
+        color: #83ddff;
         font-weight: 800;
-
         text-decoration: none;
       }
 
       .flowpass-back a:hover,
       .flowpass-back a:focus-visible {
         outline: none;
-
         text-decoration: underline;
       }
 
-      /* =====================================================
+      /* ==========================================================================
          RESPONSIVE
-         ===================================================== */
+         ========================================================================== */
 
       @media (max-width: 900px) {
-        .flowpass-value-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .flowpass-options {
-          grid-template-columns: 1fr;
-        }
-
+        .flowpass-value-grid,
+        .flowpass-options,
         .flowpass-commitment {
           grid-template-columns: 1fr;
         }
@@ -1092,18 +936,16 @@
       @media (max-width: 720px) {
         .flowpass-shell {
           width: min(calc(100% - 20px), 1180px);
-
           padding-top: 28px;
         }
 
         .flowpass-hero {
-          padding: 50px 24px;
+          padding: 48px 24px;
         }
 
         .flowpass-hero-actions,
         .flowpass-final-actions {
           flex-direction: column;
-
           align-items: stretch;
         }
 
@@ -1117,768 +959,53 @@
 
         .flowpass-perk {
           grid-template-columns: 1fr;
-
-          gap: 8px;
-
-          padding: 22px 10px;
+          gap: 7px;
+          min-height: 0;
+          padding: 20px 18px;
         }
 
         .flowpass-commitment {
-          padding: 32px 25px;
+          padding: 31px 24px;
         }
 
         .flowpass-terms-card {
-          padding: 28px 24px;
+          padding: 27px 23px;
+        }
+
+        .flowpass-faq summary {
+          padding: 14px 42px 14px 15px;
+          font-size: 0.94rem;
+        }
+
+        .flowpass-faq details p {
+          padding: 0 17px 16px 41px;
         }
 
         .flowpass-final-cta {
-          padding: 44px 24px;
+          padding: 42px 23px;
         }
       }
 
       @media (max-width: 440px) {
         .flowpass-hero h1 {
-          font-size: 3.4rem;
+          font-size: 3.5rem;
         }
 
         .flowpass-card h3 {
           font-size: 3rem;
         }
       }
-      /* ==========================================================================
-   FLOWPASS — PREMIUM FINISH
-   FINAL OVERRIDE
-   ========================================================================== */
-
-      /* ==========================================================================
-   01. FLOWPASS CANVAS
-   ========================================================================== */
-
-      .flowpass-page {
-        position: relative;
-        overflow: hidden;
-
-        background:
-          radial-gradient(
-            circle at 50% 14%,
-            rgba(68, 174, 235, 0.18),
-            transparent 28%
-          ),
-          radial-gradient(
-            circle at 82% 48%,
-            rgba(42, 145, 210, 0.1),
-            transparent 30%
-          ),
-          linear-gradient(
-            180deg,
-            #397d9e 0%,
-            #2c6e8f 18%,
-            #235f7f 38%,
-            #194d6a 62%,
-            #123e58 82%,
-            #0b3047 100%
-          );
-      }
-
-      /* ==========================================================================
-   02. SECTION HEADINGS
-   ========================================================================== */
-
-      .flowpass-page .section-heading,
-      .flowpass-page .flowpass-section-heading {
-        position: relative;
-        text-align: center;
-      }
-
-      .flowpass-page .section-heading h2,
-      .flowpass-page .flowpass-section-heading h2 {
-        color: #ffffff;
-
-        text-shadow:
-          0 2px 12px rgba(0, 28, 55, 0.22),
-          0 0 26px rgba(91, 198, 255, 0.12);
-      }
-
-      /* eyebrow / tertiary heading */
-
-      .flowpass-page .eyebrow,
-      .flowpass-page .section-kicker,
-      .flowpass-page .flowpass-eyebrow {
-        color: #aee4ff !important;
-
-        font-weight: 800;
-        letter-spacing: 0.13em;
-
-        text-shadow: 0 0 12px rgba(78, 190, 255, 0.2);
-      }
-
-      /* secondary / tertiary paragraph text */
-
-      .flowpass-page .section-heading p,
-      .flowpass-page .flowpass-section-heading p {
-        color: rgba(239, 249, 255, 0.92) !important;
-
-        font-size: 1.05rem;
-        line-height: 1.75;
-      }
-
-      /* ==========================================================================
-   03. PREMIUM SECTION DIVIDER + GLINT
-   ========================================================================== */
-
-      .flowpass-page .section-heading::after,
-      .flowpass-page .flowpass-section-heading::after {
-        content: "";
-
-        position: relative;
-        display: block;
-
-        width: 126px;
-        height: 1px;
-
-        margin: 26px auto 8px;
-
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(128, 217, 255, 0.25),
-          rgba(213, 246, 255, 0.95),
-          rgba(128, 217, 255, 0.25),
-          transparent
-        );
-
-        box-shadow: 0 0 8px rgba(111, 211, 255, 0.32);
-      }
-
-      /* glint sitting on divider */
-
-      .flowpass-page .section-heading::before,
-      .flowpass-page .flowpass-section-heading::before {
-        content: "";
-
-        position: absolute;
-
-        left: 50%;
-        bottom: 5px;
-
-        width: 5px;
-        height: 5px;
-
-        border-radius: 50%;
-
-        background: #ffffff;
-
-        box-shadow:
-          0 0 4px #ffffff,
-          0 0 9px rgba(173, 232, 255, 0.95),
-          0 0 17px rgba(77, 190, 255, 0.72);
-
-        transform: translateX(-50%);
-
-        animation: flowpass-divider-glint 3.8s ease-in-out infinite;
-      }
-
-      @keyframes flowpass-divider-glint {
-        0%,
-        100% {
-          opacity: 0.45;
-          transform: translateX(-50%) scale(0.7);
-        }
-
-        50% {
-          opacity: 1;
-          transform: translateX(-50%) scale(1.35);
-        }
-      }
-
-      /* ==========================================================================
-   04. FLOWPASS MEMBER BENEFITS
-   ========================================================================== */
-
-      .flowpass-benefits {
-        position: relative;
-
-        width: min(100% - 32px, 1000px);
-
-        margin-inline: auto;
-      }
-
-      /* remove chunky card appearance if old styling remains */
-
-      .flowpass-benefit-grid,
-      .flowpass-benefits-grid {
-        display: block !important;
-
-        overflow: hidden;
-
-        margin-top: 34px;
-
-        border: 1px solid rgba(162, 221, 250, 0.22);
-
-        border-radius: 22px;
-
-        background: linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.055),
-          rgba(255, 255, 255, 0.018)
-        );
-
-        box-shadow:
-          inset 0 1px 0 rgba(255, 255, 255, 0.05),
-          0 24px 60px rgba(2, 28, 48, 0.12);
-      }
-
-      /* individual benefit row */
-
-      .flowpass-benefit,
-      .flowpass-benefit-row {
-        position: relative;
-
-        display: grid;
-
-        grid-template-columns:
-          minmax(230px, 0.42fr)
-          minmax(0, 1fr);
-
-        gap: 36px;
-
-        align-items: center;
-
-        min-height: 104px;
-
-        padding: 25px 18px;
-
-        border: 0;
-        border-bottom: 1px solid rgba(178, 226, 250, 0.17);
-
-        background: transparent;
-
-        transition:
-          background 220ms ease,
-          transform 220ms ease,
-          box-shadow 220ms ease;
-      }
-
-      .flowpass-benefit:last-child,
-      .flowpass-benefit-row:last-child {
-        border-bottom: 0;
-      }
-
-      /* quiet alternating depth */
-
-      .flowpass-benefit:nth-child(even),
-      .flowpass-benefit-row:nth-child(even) {
-        background: linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.012),
-          rgba(100, 202, 255, 0.035),
-          rgba(255, 255, 255, 0.012)
-        );
-      }
-
-      /* premium hover */
-
-      .flowpass-benefit:hover,
-      .flowpass-benefit-row:hover {
-        background: linear-gradient(
-          90deg,
-          rgba(74, 183, 239, 0.045),
-          rgba(255, 255, 255, 0.065),
-          rgba(74, 183, 239, 0.035)
-        );
-
-        box-shadow: inset 3px 0 0 rgba(117, 215, 255, 0.65);
-      }
-
-      /* benefit titles */
-
-      .flowpass-benefit h3,
-      .flowpass-benefit-row h3 {
-        margin: 0;
-
-        color: #ffffff;
-
-        font-size: 1.08rem;
-        line-height: 1.4;
-        font-weight: 800;
-
-        text-shadow: 0 1px 8px rgba(0, 27, 49, 0.25);
-      }
-
-      /* benefit descriptions */
-
-      .flowpass-benefit p,
-      .flowpass-benefit-row p {
-        margin: 0;
-
-        color: rgba(245, 251, 255, 0.94) !important;
-
-        font-size: 1.01rem;
-        line-height: 1.7;
-      }
-
-      /* highlight money / strong text */
-
-      .flowpass-benefit strong,
-      .flowpass-benefit-row strong {
-        color: #aee8ff;
-      }
-
-      /* ==========================================================================
-   05. GLISTENING BENEFIT ROWS
-   ========================================================================== */
-
-      /*
-   Tiny glint.
-   It appears briefly, crosses a small portion of the row,
-   then disappears.
-
-   This is NOT the old giant left-to-right light beam.
-*/
-
-      .flowpass-benefit::after,
-      .flowpass-benefit-row::after {
-        content: "";
-
-        position: absolute;
-
-        top: 0;
-        left: -18%;
-
-        width: 15%;
-        height: 1px;
-
-        opacity: 0;
-
-        pointer-events: none;
-
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(213, 244, 255, 0.45),
-          #ffffff,
-          rgba(213, 244, 255, 0.45),
-          transparent
-        );
-
-        box-shadow: 0 0 5px rgba(151, 224, 255, 0.55);
-
-        animation: flowpass-row-glisten 7s ease-in-out infinite;
-      }
-
-      .flowpass-benefit:nth-child(2)::after,
-      .flowpass-benefit-row:nth-child(2)::after {
-        animation-delay: 1s;
-      }
-
-      .flowpass-benefit:nth-child(3)::after,
-      .flowpass-benefit-row:nth-child(3)::after {
-        animation-delay: 2s;
-      }
-
-      .flowpass-benefit:nth-child(4)::after,
-      .flowpass-benefit-row:nth-child(4)::after {
-        animation-delay: 3s;
-      }
-
-      .flowpass-benefit:nth-child(5)::after,
-      .flowpass-benefit-row:nth-child(5)::after {
-        animation-delay: 4s;
-      }
-
-      .flowpass-benefit:nth-child(6)::after,
-      .flowpass-benefit-row:nth-child(6)::after {
-        animation-delay: 5s;
-      }
-
-      @keyframes flowpass-row-glisten {
-        0%,
-        70%,
-        100% {
-          left: -18%;
-          opacity: 0;
-        }
-
-        74% {
-          opacity: 0.3;
-        }
-
-        80% {
-          left: 102%;
-          opacity: 0.85;
-        }
-
-        83% {
-          opacity: 0;
-        }
-      }
-
-      /* ==========================================================================
-   06. SMALL STATIC SPARKS
-   ========================================================================== */
-
-      .flowpass-benefits::before {
-        content: "✦";
-
-        position: absolute;
-
-        top: 28%;
-        right: -7px;
-
-        color: rgba(218, 247, 255, 0.9);
-
-        font-size: 0.65rem;
-
-        text-shadow:
-          0 0 5px #ffffff,
-          0 0 12px rgba(93, 204, 255, 0.8);
-
-        animation: flowpass-spark 3.2s ease-in-out infinite;
-
-        pointer-events: none;
-      }
-
-      .flowpass-benefits::after {
-        content: "✦";
-
-        position: absolute;
-
-        bottom: 17%;
-        left: -5px;
-
-        color: rgba(218, 247, 255, 0.75);
-
-        font-size: 0.45rem;
-
-        text-shadow:
-          0 0 5px #ffffff,
-          0 0 10px rgba(93, 204, 255, 0.7);
-
-        animation: flowpass-spark 3.2s ease-in-out 1.5s infinite;
-
-        pointer-events: none;
-      }
-
-      @keyframes flowpass-spark {
-        0%,
-        100% {
-          opacity: 0.25;
-          transform: scale(0.7) rotate(0deg);
-        }
-
-        50% {
-          opacity: 1;
-          transform: scale(1.35) rotate(35deg);
-        }
-      }
-
-      /* ==========================================================================
-   07. FLOWPASS FAQ — REMOVE THE CHUNKINESS
-   ========================================================================== */
-
-      .flowpass-faq {
-        width: min(100% - 32px, 860px);
-
-        margin-inline: auto;
-      }
-
-      /* old FAQ wrapper */
-
-      .flowpass-faq-list,
-      .faq-list {
-        display: grid;
-
-        gap: 8px;
-
-        margin-top: 30px;
-      }
-
-      /* individual FAQ */
-
-      .flowpass-faq details,
-      .flowpass-faq .faq-item {
-        overflow: hidden;
-
-        margin: 0 !important;
-
-        border: 1px solid rgba(177, 225, 248, 0.22) !important;
-
-        border-radius: 12px !important;
-
-        background: rgba(246, 251, 255, 0.965) !important;
-
-        box-shadow: 0 7px 20px rgba(2, 31, 51, 0.07) !important;
-
-        transition:
-          border-color 180ms ease,
-          box-shadow 180ms ease,
-          transform 180ms ease;
-      }
-
-      .flowpass-faq details:hover,
-      .flowpass-faq .faq-item:hover {
-        border-color: rgba(94, 193, 240, 0.52) !important;
-
-        box-shadow: 0 10px 24px rgba(2, 31, 51, 0.11) !important;
-      }
-
-      /* QUESTION ROW */
-
-      .flowpass-faq summary,
-      .flowpass-faq .faq-question {
-        position: relative;
-
-        display: flex;
-
-        align-items: center;
-
-        min-height: 0 !important;
-
-        padding: 17px 48px 17px 20px !important;
-
-        color: #06457d !important;
-
-        font-size: 1rem !important;
-        line-height: 1.4;
-        font-weight: 800;
-
-        cursor: pointer;
-
-        list-style: none;
-      }
-
-      .flowpass-faq summary::-webkit-details-marker {
-        display: none;
-      }
-
-      /* smaller arrow */
-
-      .flowpass-faq summary::before {
-        content: "›";
-
-        display: inline-block;
-
-        margin-right: 11px;
-
-        color: #1687cf;
-
-        font-size: 1.25rem;
-        font-weight: 900;
-
-        transform: rotate(0deg);
-
-        transition: transform 180ms ease;
-      }
-
-      .flowpass-faq details[open] summary::before {
-        transform: rotate(90deg);
-      }
-
-      /* subtle + on right */
-
-      .flowpass-faq summary::after {
-        content: "+";
-
-        position: absolute;
-
-        right: 20px;
-
-        top: 50%;
-
-        color: #1687cf;
-
-        font-size: 1.3rem;
-        font-weight: 500;
-
-        transform: translateY(-50%) rotate(0deg);
-
-        transition:
-          transform 180ms ease,
-          opacity 180ms ease;
-      }
-
-      .flowpass-faq details[open] summary::after {
-        transform: translateY(-50%) rotate(45deg);
-
-        opacity: 0.65;
-      }
-
-      /* ANSWER */
-
-      .flowpass-faq details > p,
-      .flowpass-faq .faq-answer {
-        margin: 0 !important;
-
-        padding: 0 48px 18px 52px !important;
-
-        color: #365a73 !important;
-
-        font-size: 0.98rem !important;
-        line-height: 1.7;
-      }
-
-      /* open state */
-
-      .flowpass-faq details[open] {
-        border-color: rgba(86, 186, 236, 0.48) !important;
-
-        box-shadow: 0 12px 28px rgba(1, 34, 57, 0.12) !important;
-      }
-
-      .flowpass-faq details[open] summary {
-        color: #063e70 !important;
-      }
-
-      /* ==========================================================================
-   08. PREMIUM BUTTON GLOW
-   ========================================================================== */
-
-      .flowpass-page .button,
-      .flowpass-page .primary-button,
-      .flowpass-page .flowpass-button {
-        position: relative;
-
-        overflow: hidden;
-
-        border: 1px solid rgba(177, 230, 255, 0.32);
-
-        box-shadow:
-          0 8px 22px rgba(0, 68, 114, 0.2),
-          0 0 18px rgba(54, 178, 242, 0.17);
-
-        transition:
-          transform 180ms ease,
-          box-shadow 180ms ease;
-      }
-
-      .flowpass-page .button:hover,
-      .flowpass-page .primary-button:hover,
-      .flowpass-page .flowpass-button:hover {
-        transform: translateY(-2px);
-
-        box-shadow:
-          0 12px 28px rgba(0, 58, 100, 0.25),
-          0 0 24px rgba(81, 197, 255, 0.3);
-      }
-
-      /* tiny button glisten */
-
-      .flowpass-page .button::after,
-      .flowpass-page .primary-button::after,
-      .flowpass-page .flowpass-button::after {
-        content: "";
-
-        position: absolute;
-
-        top: -35%;
-        left: -45%;
-
-        width: 28%;
-        height: 170%;
-
-        opacity: 0;
-
-        pointer-events: none;
-
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.52),
-          transparent
-        );
-
-        transform: rotate(18deg);
-
-        animation: flowpass-button-glisten 5.5s ease-in-out infinite;
-      }
-
-      @keyframes flowpass-button-glisten {
-        0%,
-        74%,
-        100% {
-          left: -45%;
-          opacity: 0;
-        }
-
-        78% {
-          opacity: 0.5;
-        }
-
-        84% {
-          left: 118%;
-          opacity: 0.9;
-        }
-
-        87% {
-          opacity: 0;
-        }
-      }
-
-      /* ==========================================================================
-   09. REDUCED MOTION
-   ========================================================================== */
 
       @media (prefers-reduced-motion: reduce) {
-        .flowpass-benefit::after,
-        .flowpass-benefit-row::after,
-        .flowpass-benefits::before,
-        .flowpass-benefits::after,
-        .flowpass-page .button::after,
-        .flowpass-page .primary-button::after,
-        .flowpass-page .flowpass-button::after,
-        .flowpass-page .section-heading::before,
-        .flowpass-page .flowpass-section-heading::before {
+        .flowpass-section-heading::before,
+        .flowpass-perk::after {
           animation: none !important;
-        }
-      }
-
-      /* ==========================================================================
-   10. MOBILE
-   ========================================================================== */
-
-      @media (max-width: 720px) {
-        .flowpass-benefit,
-        .flowpass-benefit-row {
-          grid-template-columns: 1fr;
-
-          gap: 8px;
-
-          min-height: 0;
-
-          padding: 21px 18px;
-        }
-
-        .flowpass-benefit h3,
-        .flowpass-benefit-row h3 {
-          font-size: 1.02rem;
-        }
-
-        .flowpass-benefit p,
-        .flowpass-benefit-row p {
-          font-size: 0.96rem;
-        }
-
-        .flowpass-faq {
-          width: min(100% - 24px, 860px);
-        }
-
-        .flowpass-faq summary,
-        .flowpass-faq .faq-question {
-          padding: 15px 44px 15px 16px !important;
-
-          font-size: 0.95rem !important;
-        }
-
-        .flowpass-faq details > p,
-        .flowpass-faq .faq-answer {
-          padding: 0 18px 17px 43px !important;
         }
       }
     </style>
   </head>
 
   <body class="flowhub-interior">
-    <!-- Shared FlowHub header -->
     <div id="site-header"></div>
 
     <main class="flowpass-shell">
@@ -1887,7 +1014,7 @@
            =================================================== -->
 
       <section class="flowpass-hero">
-        <span class="flowpass-kicker"> Wellness Made Routine </span>
+        <span class="flowpass-kicker">Wellness Made Routine</span>
 
         <h1>FlowPass</h1>
 
@@ -1929,7 +1056,7 @@
 
       <section class="flowpass-value-section">
         <div class="flowpass-section-heading">
-          <span class="flowpass-kicker"> The FlowPass Difference </span>
+          <span class="flowpass-kicker">The FlowPass Difference</span>
 
           <h2>Care that is easier to keep consistent</h2>
 
@@ -1943,9 +1070,7 @@
         <div class="flowpass-value-grid">
           <article class="flowpass-value-card">
             <p class="flowpass-value-number">Consistency</p>
-
             <h3>A regular rhythm of care</h3>
-
             <p>
               One Full Body Flow massage is included each month, creating a
               predictable opportunity to check in with your body and address
@@ -1955,9 +1080,7 @@
 
           <article class="flowpass-value-card">
             <p class="flowpass-value-number">Member Value</p>
-
             <h3>Savings that grow with your routine</h3>
-
             <p>
               Receive savings on your included monthly session, preferred
               pricing on additional qualifying sessions, and reduced pricing on
@@ -1967,9 +1090,7 @@
 
           <article class="flowpass-value-card">
             <p class="flowpass-value-number">Flexibility</p>
-
             <h3>Room for real life</h3>
-
             <p>
               One unused monthly session may roll into the immediately following
               month, giving you a little breathing room when schedules change.
@@ -1979,12 +1100,12 @@
       </section>
 
       <!-- ===================================================
-           MEMBERSHIP OPTIONS
+           MEMBERSHIPS
            =================================================== -->
 
       <section class="flowpass-memberships" id="flowpass-memberships">
         <div class="flowpass-section-heading">
-          <span class="flowpass-kicker"> Choose Your Flow </span>
+          <span class="flowpass-kicker">Choose Your Flow</span>
 
           <h2>FlowPass Memberships</h2>
 
@@ -1995,8 +1116,6 @@
         </div>
 
         <div class="flowpass-options">
-          <!-- FLOWPASS 75 -->
-
           <article class="flowpass-card">
             <p class="flowpass-card-label">FlowPass 75</p>
 
@@ -2013,17 +1132,12 @@
 
             <ul class="flowpass-benefit-list">
               <li>Save $10 on your included monthly session</li>
-
               <li>Save $25 on additional 75-minute Full Body Flow sessions</li>
-
               <li>Eligible FlowBoost enhancements available for $15</li>
-
               <li>
                 One unused monthly session may roll into the following month
               </li>
-
               <li>Birthday FlowBoost benefit</li>
-
               <li>
                 Access to selected member-only offers and scheduling
                 opportunities
@@ -2045,8 +1159,6 @@
             </p>
           </article>
 
-          <!-- FLOWPASS 90 -->
-
           <article class="flowpass-card">
             <p class="flowpass-card-label">FlowPass 90</p>
 
@@ -2063,17 +1175,12 @@
 
             <ul class="flowpass-benefit-list">
               <li>Save $10 on your included monthly session</li>
-
               <li>Save $25 on additional 90-minute Full Body Flow sessions</li>
-
               <li>Eligible FlowBoost enhancements available for $15</li>
-
               <li>
                 One unused monthly session may roll into the following month
               </li>
-
               <li>Birthday FlowBoost benefit</li>
-
               <li>
                 Access to selected member-only offers and scheduling
                 opportunities
@@ -2103,7 +1210,7 @@
 
       <section class="flowpass-difference">
         <div class="flowpass-section-heading">
-          <span class="flowpass-kicker"> Beyond the Monthly Session </span>
+          <span class="flowpass-kicker">Beyond the Monthly Session</span>
 
           <h2>FlowPass Member Benefits</h2>
 
@@ -2116,7 +1223,6 @@
         <div class="flowpass-perk-list">
           <article class="flowpass-perk">
             <h3>Member FlowBoost Pricing</h3>
-
             <p>
               Eligible FlowBoost enhancements may be added to qualifying massage
               sessions for $15 each. Crown Flow and Time Boost are excluded.
@@ -2125,7 +1231,6 @@
 
           <article class="flowpass-perk">
             <h3>Additional Session Savings</h3>
-
             <p>
               Members save $25 when booking additional Full Body Flow sessions
               matching their membership duration.
@@ -2134,7 +1239,6 @@
 
           <article class="flowpass-perk">
             <h3>One-Session Rollover</h3>
-
             <p>
               One unused monthly session may roll into the immediately following
               month, giving you additional flexibility when life gets busy.
@@ -2143,7 +1247,6 @@
 
           <article class="flowpass-perk">
             <h3>Birthday FlowBoost</h3>
-
             <p>
               Celebrate your birthday month with one complimentary eligible
               FlowBoost added to a qualifying massage session.
@@ -2152,7 +1255,6 @@
 
           <article class="flowpass-perk">
             <h3>Priority Scheduling Access</h3>
-
             <p>
               Members may receive early access to selected appointment openings
               and schedule announcements. Appointment availability is not
@@ -2162,7 +1264,6 @@
 
           <article class="flowpass-perk">
             <h3>Member-Only Offers</h3>
-
             <p>
               Enjoy access to occasional membership promotions, seasonal offers,
               and wellness opportunities created for FlowPass members.
@@ -2172,15 +1273,12 @@
       </section>
 
       <!-- ===================================================
-           COMMITMENT + ROLLOVER
+           COMMITMENT
            =================================================== -->
 
       <section class="flowpass-commitment">
         <div class="flowpass-commitment-copy">
-          <span
-            class="flowpass-kicker"
-            style="background: #eaf6fc; color: #0b79b9; border-color: #c6e4f3"
-          >
+          <span class="flowpass-kicker flowpass-kicker-light">
             Built for Consistency
           </span>
 
@@ -2205,19 +1303,14 @@
         </div>
 
         <div class="flowpass-commitment-box">
-          <strong> What that means in practice </strong>
+          <strong>What that means in practice</strong>
 
           <ul class="flowpass-mini-list">
             <li>Initial three-month commitment</li>
-
             <li>Month-to-month after the initial term</li>
-
             <li>30 days’ notice required to cancel</li>
-
             <li>Memberships are nontransferable</li>
-
             <li>One-session rollover allowance</li>
-
             <li>Appointments remain subject to availability</li>
           </ul>
         </div>
@@ -2229,7 +1322,7 @@
 
       <section class="flowpass-terms">
         <div class="flowpass-section-heading">
-          <span class="flowpass-kicker"> Membership Details </span>
+          <span class="flowpass-kicker">Membership Details</span>
 
           <h2>FlowPass Terms</h2>
 
@@ -2242,29 +1335,22 @@
               FlowPass includes one eligible Full Body Flow massage session each
               month at the selected membership duration.
             </li>
-
             <li>An initial three-month membership commitment is required.</li>
-
             <li>
               Membership continues month-to-month after the initial commitment.
             </li>
-
             <li>Cancellation requires 30 days’ advance notice.</li>
-
             <li>
               FlowPass memberships and monthly sessions are nontransferable.
             </li>
-
             <li>
               One unused session may roll into the immediately following month
               only.
             </li>
-
             <li>
               Member benefits cannot be combined with other discounts or
               promotions unless specifically stated.
             </li>
-
             <li>Appointments remain subject to availability.</li>
           </ul>
         </div>
@@ -2276,7 +1362,7 @@
 
       <section class="flowpass-faq">
         <div class="flowpass-section-heading">
-          <span class="flowpass-kicker"> Helpful Information </span>
+          <span class="flowpass-kicker">Helpful Information</span>
 
           <h2>FlowPass FAQ</h2>
 
@@ -2288,7 +1374,6 @@
         <div class="flowpass-faq-list">
           <details>
             <summary>What is included in my monthly membership?</summary>
-
             <p>
               FlowPass includes one Full Body Flow massage each month at the
               duration selected when you enroll, plus the member benefits
@@ -2298,7 +1383,6 @@
 
           <details>
             <summary>Is there a minimum membership commitment?</summary>
-
             <p>
               Yes. FlowPass begins with an initial three-month membership
               commitment. After completing that commitment, membership continues
@@ -2308,7 +1392,6 @@
 
           <details>
             <summary>Can I transfer my session to someone else?</summary>
-
             <p>
               No. FlowPass memberships and monthly membership sessions are
               nontransferable.
@@ -2317,7 +1400,6 @@
 
           <details>
             <summary>What happens if I cannot use my session?</summary>
-
             <p>
               One unused monthly session may roll into the immediately following
               month. Unlimited session accumulation is not permitted.
@@ -2326,7 +1408,6 @@
 
           <details>
             <summary>Can members purchase additional massages?</summary>
-
             <p>
               Yes. Members may purchase additional Full Body Flow sessions
               matching their membership duration and receive $25 off the
@@ -2336,7 +1417,6 @@
 
           <details>
             <summary>Which FlowBoosts are available for $15?</summary>
-
             <p>
               Eligible FlowBoosts receive member pricing of $15. Crown Flow and
               Time Boost are excluded from this benefit.
@@ -2345,7 +1425,6 @@
 
           <details>
             <summary>How do I cancel my membership?</summary>
-
             <p>
               After completing the initial three-month commitment, FlowPass
               continues month-to-month and requires 30 days’ advance
@@ -2360,7 +1439,7 @@
            =================================================== -->
 
       <section class="flowpass-final-cta">
-        <span class="flowpass-kicker"> Wellness Made Routine </span>
+        <span class="flowpass-kicker">Wellness Made Routine</span>
 
         <h2>Ready to make consistency easier?</h2>
 
@@ -2389,10 +1468,6 @@
         </div>
       </section>
 
-      <!-- ===================================================
-           RETURN
-           =================================================== -->
-
       <div class="flowpass-back">
         <a href="../pages/wellness-programs.html">
           ← Return to Wellness Programs
@@ -2400,7 +1475,6 @@
       </div>
     </main>
 
-    <!-- Shared FlowHub footer -->
     <div id="site-footer"></div>
 
     <script>
