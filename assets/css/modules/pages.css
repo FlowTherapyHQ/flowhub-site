@@ -714,20 +714,141 @@
     align-items: stretch;
   }
 
-  .forms-page .card {
-    display: flex;
-    flex-direction: column;
-    min-height: 300px;
-  }
+ .forms-page .card {
+  position: relative;
 
-  .forms-page .card p {
-    flex-grow: 1;
-  }
+  display: flex;
+  flex-direction: column;
 
-  .forms-page .button {
-    align-self: center;
-    margin-top: auto;
-  }
+  min-height: 300px;
+
+  overflow: hidden;
+
+  padding: 30px;
+
+  border:
+    1px solid
+    rgba(205, 229, 244, 0.9);
+
+  border-radius:
+    24px 10px 24px 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #fbfdff 58%,
+      #edf7fc 100%
+    );
+
+  box-shadow:
+    0 16px 34px
+    rgba(8, 53, 82, 0.1),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.92);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.forms-page .card::before {
+  content: "";
+
+  position: absolute;
+
+  top: -1px;
+  left: 50%;
+
+  width: 68px;
+  height: 2px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(168, 226, 250, 0.3),
+      rgba(255, 255, 255, 0.96),
+      rgba(168, 226, 250, 0.3),
+      transparent
+    );
+
+  box-shadow:
+    0 0 8px
+    rgba(102, 207, 250, 0.5);
+
+  pointer-events: none;
+}
+
+.forms-page .card:hover {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(157, 210, 239, 0.95);
+
+  box-shadow:
+    0 20px 42px
+    rgba(8, 53, 82, 0.14),
+    0 0 22px
+    rgba(69, 177, 226, 0.08),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.94);
+}
+
+.forms-page .card p {
+  flex-grow: 1;
+}
+
+.forms-page .button {
+  align-self: flex-start;
+
+  margin-top: auto;
+
+  border:
+    1px solid
+    rgba(126, 218, 255, 0.8);
+
+  background:
+    linear-gradient(
+      135deg,
+      #1da3e4 0%,
+      #167fc4 48%,
+      #0d68a5 100%
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 0 8px
+    rgba(78, 195, 247, 0.42),
+    0 0 20px
+    rgba(38, 158, 220, 0.2),
+    0 9px 20px
+    rgba(5, 48, 78, 0.16);
+}
+
+.forms-page .button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #28afea 0%,
+      #198bd0 48%,
+      #0e72ae 100%
+    );
+
+  box-shadow:
+    0 0 10px
+    rgba(111, 214, 255, 0.6),
+    0 0 24px
+    rgba(47, 179, 238, 0.34),
+    0 10px 24px
+    rgba(5, 48, 78, 0.2);
+}
 
   @media (max-width: 900px) {
     .forms-page .cards {

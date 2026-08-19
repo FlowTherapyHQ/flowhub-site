@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head></head>
+  <head>
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,7 +27,7 @@
 
     <style>
       /* =====================================================
-         FLOWMAP VARIABLES
+         FLOWMAP — CLEAN PREMIUM STYLES
          ===================================================== */
 
       :root {
@@ -39,7 +39,6 @@
         --map-ink: #17324d;
         --map-muted: #52677b;
         --map-border: #cfe2f5;
-        --map-page: #f3f8fc;
         --map-surface: #ffffff;
         --map-shadow: 0 14px 34px rgba(27, 67, 103, 0.09);
         --map-shadow-large: 0 22px 50px rgba(27, 67, 103, 0.13);
@@ -50,7 +49,6 @@
       }
 
       body {
-        background: var(--map-page);
         color: var(--map-ink);
       }
 
@@ -72,23 +70,45 @@
       .flowmap-hero {
         position: relative;
         overflow: hidden;
-        padding: 48px;
-        border: 1px solid var(--map-border);
-        border-radius: 26px;
+        padding: 42px 48px;
+        border: 1px solid rgba(195, 224, 243, 0.86);
+        border-radius: 26px 12px 26px 12px;
         background:
           radial-gradient(
             circle at 90% 10%,
             rgba(22, 119, 200, 0.15),
             transparent 34%
           ),
-          linear-gradient(135deg, #ffffff, #f6fbff);
-        box-shadow: var(--map-shadow);
+          linear-gradient(135deg, #ffffff 0%, #f6fbff 100%);
+        box-shadow:
+          0 18px 40px rgba(8, 53, 82, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.94);
         text-align: center;
+      }
+
+      .flowmap-hero::before {
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        width: 86px;
+        height: 2px;
+        transform: translateX(-50%);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(157, 222, 250, 0.34),
+          rgba(255, 255, 255, 0.96),
+          rgba(157, 222, 250, 0.34),
+          transparent
+        );
+        box-shadow: 0 0 10px rgba(102, 207, 250, 0.5);
+        content: "";
+        pointer-events: none;
       }
 
       .flowmap-kicker {
         display: inline-flex;
-        margin-bottom: 15px;
+        margin-bottom: 14px;
         padding: 7px 12px;
         border-radius: 999px;
         background: var(--map-blue-soft);
@@ -100,10 +120,11 @@
       }
 
       .flowmap-hero h1 {
-        margin: 0 0 16px;
+        margin: 0 0 15px;
         color: var(--map-blue);
         font-size: clamp(2.8rem, 7vw, 5rem);
         line-height: 1;
+        letter-spacing: -0.035em;
       }
 
       .flowmap-trademark {
@@ -116,1113 +137,179 @@
         margin: 0 auto;
         color: var(--map-muted);
         font-size: 1.05rem;
-        line-height: 1.8;
+        line-height: 1.75;
       }
 
       .flowmap-notice {
         display: inline-flex;
         max-width: 760px;
-        margin-top: 22px;
-        padding: 12px 16px;
-        border: 1px solid var(--map-border);
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.82);
+        margin-top: 20px;
+        padding: 11px 16px;
+        border: 1px solid rgba(196, 224, 242, 0.85);
+        border-radius: 13px 6px 13px 6px;
+        background: rgba(255, 255, 255, 0.86);
         color: var(--map-muted);
         font-size: 0.8rem;
         line-height: 1.55;
+        box-shadow: 0 7px 18px rgba(8, 53, 82, 0.05);
       }
 
       /* =====================================================
-         INTERACTIVE LAYOUT
+         INTERACTIVE WORKSPACE
          ===================================================== */
 
       .flowmap-workspace {
         display: grid;
         grid-template-columns: minmax(340px, 0.88fr) minmax(0, 1.12fr);
-        gap: 24px;
-        align-items: stretch;
-        margin-top: 30px;
+        gap: 22px;
+        align-items: start;
+        margin-top: 28px;
       }
 
       .flowmap-panel {
-        border: 1px solid var(--map-border);
-        border-radius: 24px;
-        background: var(--map-surface);
-        box-shadow: var(--map-shadow);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(194, 224, 243, 0.78);
+        border-radius: 22px 10px 22px 10px;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.99) 0%,
+          rgba(247, 251, 254, 0.99) 66%,
+          rgba(236, 246, 251, 0.97) 100%
+        );
+        box-shadow:
+          0 16px 34px rgba(8, 53, 82, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.94);
       }
 
-      /* =====================================================
-         BODY SELECTOR PANEL
-         ===================================================== */
+      .flowmap-panel::before {
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        width: 72px;
+        height: 2px;
+        transform: translateX(-50%);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(166, 226, 251, 0.28),
+          rgba(255, 255, 255, 0.94),
+          rgba(166, 226, 251, 0.28),
+          transparent
+        );
+        box-shadow: 0 0 8px rgba(102, 207, 250, 0.42);
+        content: "";
+        pointer-events: none;
+      }
 
       .body-selector-panel {
-        display: flex;
-        min-height: 790px;
-        flex-direction: column;
-        padding: 30px;
+        align-self: start;
+        min-height: 0;
+        padding: 22px;
+      }
+
+      .body-information-panel {
+        min-height: 0;
+        padding: 28px;
       }
 
       .body-selector-heading {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         text-align: center;
       }
 
       .body-selector-heading h2 {
-        margin: 0 0 8px;
+        margin: 0 0 6px;
         color: var(--map-blue-dark);
-        font-size: 1.65rem;
+        font-size: 1.5rem;
+        line-height: 1.15;
       }
 
       .body-selector-heading p {
         margin: 0;
         color: var(--map-muted);
-        font-size: 0.9rem;
-        line-height: 1.65;
-      }
-
-      .body-view-controls {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-        margin-bottom: 20px;
-        padding: 5px;
-        border: 1px solid var(--map-border);
-        border-radius: 999px;
-        background: var(--map-blue-pale);
-      }
-
-      .body-view-button {
-        min-height: 42px;
-        padding: 9px 16px;
-        border: 0;
-        border-radius: 999px;
-        background: transparent;
-        color: var(--map-blue);
-        font-weight: 800;
-        cursor: pointer;
-        transition:
-          background 0.2s ease,
-          color 0.2s ease,
-          box-shadow 0.2s ease;
-      }
-
-      .body-view-button:hover {
-        background: #ffffff;
-      }
-
-      .body-view-button.is-active {
-        background: var(--map-blue);
-        color: #ffffff;
-        box-shadow: 0 7px 17px rgba(22, 119, 200, 0.22);
-      }
-
-      .body-view-button:focus-visible {
-        outline: 3px solid rgba(22, 119, 200, 0.23);
-        outline-offset: 2px;
-      }
-
-      .body-map-stage {
-        position: relative;
-        display: grid;
-        flex: 1;
-        place-items: center;
-        min-height: 590px;
-        overflow: hidden;
-        border: 1px solid var(--map-border);
-        border-radius: 21px;
-        background:
-          radial-gradient(
-            circle at center,
-            rgba(22, 119, 200, 0.1),
-            transparent 54%
-          ),
-          linear-gradient(180deg, #fbfdff, #f2f8fd);
-      }
-
-      .body-map-stage::before {
-        position: absolute;
-        width: 330px;
-        height: 520px;
-        border: 1px solid rgba(22, 119, 200, 0.1);
-        border-radius: 50%;
-        content: "";
-      }
-
-      .body-view {
-        position: relative;
-        z-index: 2;
-        display: none;
-        width: min(100%, 360px);
-        height: 590px;
-      }
-
-      .body-view.is-active {
-        display: block;
-      }
-
-      .body-view svg {
-        display: block;
-        width: 100%;
-        height: 100%;
-        overflow: visible;
-      }
-
-      /* Base body shape */
-
-      .body-base {
-        fill: #dcebf7;
-        stroke: #80afd3;
-        stroke-width: 2;
-      }
-
-      .body-detail {
-        fill: none;
-        stroke: rgba(11, 63, 120, 0.23);
-        stroke-linecap: round;
-        stroke-width: 1.7;
-      }
-
-      /* Clickable regions */
-
-      .body-region {
-        fill: rgba(22, 119, 200, 0.18);
-        stroke: rgba(22, 119, 200, 0.72);
-        stroke-width: 1.5;
-        cursor: pointer;
-        opacity: 0.75;
-        transition:
-          fill 0.18s ease,
-          opacity 0.18s ease,
-          filter 0.18s ease,
-          stroke-width 0.18s ease;
-      }
-
-      .body-region:hover,
-      .body-region:focus {
-        fill: rgba(22, 119, 200, 0.42);
-        stroke-width: 2.5;
-        opacity: 1;
-        filter: drop-shadow(0 0 8px rgba(22, 119, 200, 0.38));
-        outline: none;
-      }
-
-      .body-region.is-selected {
-        fill: rgba(22, 119, 200, 0.66);
-        stroke: #075ea7;
-        stroke-width: 3;
-        opacity: 1;
-        filter: drop-shadow(0 0 10px rgba(22, 119, 200, 0.45));
-      }
-
-      .body-region-label {
-        fill: var(--map-blue-dark);
-        font-size: 12px;
-        font-weight: 800;
-        pointer-events: none;
-        text-anchor: middle;
-      }
-
-      .body-selector-help {
-        margin: 17px 0 0;
-        color: var(--map-muted);
-        font-size: 0.78rem;
+        font-size: 0.88rem;
         line-height: 1.55;
-        text-align: center;
       }
 
       /* =====================================================
-         INFORMATION PANEL
+         FRONT / BACK CONTROLS
          ===================================================== */
-
-      .body-information-panel {
-        min-height: 790px;
-        padding: 36px;
-      }
-
-      .selection-heading {
-        padding-bottom: 25px;
-        border-bottom: 1px solid var(--map-border);
-      }
-
-      .selection-eyebrow {
-        display: inline-flex;
-        margin-bottom: 12px;
-        padding: 7px 11px;
-        border-radius: 999px;
-        background: var(--map-blue-soft);
-        color: var(--map-blue);
-        font-size: 0.68rem;
-        font-weight: 900;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .selection-heading h2 {
-        margin: 0 0 12px;
-        color: var(--map-blue-dark);
-        font-size: clamp(2rem, 4vw, 2.9rem);
-        line-height: 1.12;
-      }
-
-      .selection-heading p {
-        margin: 0;
-        color: var(--map-muted);
-        line-height: 1.75;
-      }
-
-      .selection-sections {
-        display: grid;
-        gap: 18px;
-        margin-top: 24px;
-      }
-
-      .information-card {
-        padding: 23px;
-        border: 1px solid var(--map-border);
-        border-radius: 18px;
-        background: #fbfdff;
-      }
-
-      .information-card h3 {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        margin: 0 0 14px;
-        color: var(--map-blue-dark);
-        font-size: 1.15rem;
-      }
-
-      .information-number {
-        display: inline-grid;
-        width: 29px;
-        height: 29px;
-        flex: 0 0 29px;
-        place-items: center;
-        border-radius: 50%;
-        background: var(--map-blue-soft);
-        color: var(--map-blue);
-        font-size: 0.75rem;
-        font-weight: 900;
-      }
-
-      .information-list {
-        display: grid;
-        gap: 10px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .information-list li {
-        position: relative;
-        padding-left: 19px;
-        color: var(--map-muted);
-        line-height: 1.6;
-      }
-
-      .information-list li::before {
-        position: absolute;
-        top: 0.66em;
-        left: 0;
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: var(--map-blue);
-        content: "";
-      }
-
-      .link-list {
-        display: grid;
-        gap: 10px;
-      }
-
-      .information-link {
-        display: flex;
-        min-height: 46px;
-        align-items: center;
-        justify-content: space-between;
-        gap: 14px;
-        padding: 12px 14px;
-        border: 1px solid var(--map-border);
-        border-radius: 12px;
-        background: #ffffff;
-        color: var(--map-blue-dark);
-        font-weight: 750;
-        text-decoration: none;
-        transition:
-          transform 0.2s ease,
-          border-color 0.2s ease,
-          box-shadow 0.2s ease;
-      }
-
-      .information-link::after {
-        flex: 0 0 auto;
-        color: var(--map-blue);
-        content: "→";
-      }
-
-      .information-link:hover {
-        transform: translateX(3px);
-        border-color: #9bc7e8;
-        box-shadow: 0 7px 18px rgba(27, 67, 103, 0.08);
-      }
-
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      .service-chip {
-        display: flex;
-        min-height: 46px;
-        align-items: center;
-        padding: 11px 13px;
-        border: 1px solid var(--map-border);
-        border-radius: 13px;
-        background: #ffffff;
-        color: var(--map-blue-dark);
-        font-size: 0.86rem;
-        font-weight: 800;
-      }
-
-      .service-chip::before {
-        display: inline-grid;
-        width: 22px;
-        height: 22px;
-        flex: 0 0 22px;
-        place-items: center;
-        margin-right: 9px;
-        border-radius: 50%;
-        background: var(--map-blue-soft);
-        color: var(--map-blue);
-        content: "✓";
-        font-size: 0.7rem;
-      }
-
-      .medical-guidance {
-        border-color: #f0d6ac;
-        background: #fffaf2;
-      }
-
-      .medical-guidance h3 {
-        color: #7a4d13;
-      }
-
-      .medical-guidance p {
-        margin: 0;
-        color: #755d3d;
-        font-size: 0.86rem;
-        line-height: 1.7;
-      }
-
-      .selection-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 24px;
-      }
-
-      .flowmap-primary-button,
-      .flowmap-secondary-button {
-        display: inline-flex;
-        min-height: 47px;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        padding: 11px 19px;
-        border-radius: 999px;
-        font-weight: 850;
-        text-decoration: none;
-        transition:
-          transform 0.2s ease,
-          background 0.2s ease,
-          border-color 0.2s ease,
-          box-shadow 0.2s ease;
-      }
-
-      .flowmap-primary-button {
-        border: 1px solid var(--map-blue);
-        background: var(--map-blue);
-        color: #ffffff;
-        box-shadow: 0 8px 18px rgba(22, 119, 200, 0.2);
-      }
-
-      .flowmap-primary-button:hover {
-        transform: translateY(-2px);
-        border-color: var(--map-blue-hover);
-        background: var(--map-blue-hover);
-      }
-
-      .flowmap-secondary-button {
-        border: 1px solid var(--map-border);
-        background: #ffffff;
-        color: var(--map-blue);
-      }
-
-      .flowmap-secondary-button:hover {
-        transform: translateY(-2px);
-        border-color: var(--map-blue);
-        box-shadow: 0 8px 20px rgba(22, 119, 200, 0.09);
-      }
-
-      /* =====================================================
-         QUICK REGION BUTTONS
-         ===================================================== */
-
-      .quick-region-section {
-        margin-top: 30px;
-        padding: 30px;
-        border: 1px solid var(--map-border);
-        border-radius: 22px;
-        background: #ffffff;
-        box-shadow: var(--map-shadow);
-      }
-
-      .quick-region-heading {
-        margin-bottom: 20px;
-        text-align: center;
-      }
-
-      .quick-region-heading h2 {
-        margin: 0 0 8px;
-        color: var(--map-blue);
-        font-size: 1.7rem;
-      }
-
-      .quick-region-heading p {
-        margin: 0;
-        color: var(--map-muted);
-        line-height: 1.65;
-      }
-
-      .quick-region-grid {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      .quick-region-button {
-        min-height: 48px;
-        padding: 10px 12px;
-        border: 1px solid var(--map-border);
-        border-radius: 13px;
-        background: var(--map-blue-pale);
-        color: var(--map-blue-dark);
-        font-weight: 800;
-        cursor: pointer;
-        transition:
-          transform 0.2s ease,
-          background 0.2s ease,
-          border-color 0.2s ease;
-      }
-
-      .quick-region-button:hover,
-      .quick-region-button:focus-visible {
-        transform: translateY(-2px);
-        border-color: #9bc7e8;
-        outline: none;
-        background: #ffffff;
-      }
-
-      .quick-region-button.is-selected {
-        border-color: var(--map-blue);
-        background: var(--map-blue);
-        color: #ffffff;
-      }
-
-      /* =====================================================
-         RETURN LINK
-         ===================================================== */
-
-      .flowmap-back {
-        margin-top: 36px;
-        text-align: center;
-      }
-
-      .flowmap-back a {
-        color: var(--map-blue);
-        font-weight: 800;
-        text-decoration: none;
-      }
-
-      .flowmap-back a:hover {
-        text-decoration: underline;
-      }
-
-      /* =====================================================
-         RESPONSIVE
-         ===================================================== */
-
-      @media (max-width: 980px) {
-        .flowmap-workspace {
-          grid-template-columns: 1fr;
-        }
-
-        .body-selector-panel,
-        .body-information-panel {
-          min-height: auto;
-        }
-
-        .body-map-stage {
-          min-height: 620px;
-        }
-
-        .body-view {
-          height: 590px;
-        }
-
-        .quick-region-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-      }
-
-      @media (max-width: 680px) {
-        .flowmap-shell {
-          width: min(calc(100% - 20px), 1180px);
-          padding-top: 28px;
-        }
-
-        .flowmap-hero {
-          padding: 32px 23px;
-        }
-
-        .body-selector-panel,
-        .body-information-panel,
-        .quick-region-section {
-          padding: 23px;
-        }
-
-        .body-map-stage {
-          min-height: 550px;
-        }
-
-        .body-view {
-          width: min(100%, 320px);
-          height: 530px;
-        }
-
-        .services-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .quick-region-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .selection-actions {
-          align-items: stretch;
-          flex-direction: column;
-        }
-
-        .flowmap-primary-button,
-        .flowmap-secondary-button {
-          width: 100%;
-        }
-      }
-
-      @media (max-width: 440px) {
-        .body-selector-panel,
-        .body-information-panel,
-        .quick-region-section {
-          padding: 18px;
-          border-radius: 19px;
-        }
-
-        .body-map-stage {
-          min-height: 500px;
-        }
-
-        .body-view {
-          height: 480px;
-        }
-
-        .quick-region-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media print {
-        .body-selector-panel,
-        .quick-region-section,
-        .selection-actions,
-        .flowmap-back {
-          display: none !important;
-        }
-
-        .flowmap-workspace {
-          display: block;
-        }
-
-        .body-information-panel,
-        .flowmap-hero {
-          box-shadow: none;
-        }
-      }
-
-      /* =====================================================
-         CLEAN FRONT/BACK SILHOUETTE FLOWMAP
-         ===================================================== */
-
-      .body-map-key {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-        margin-bottom: 14px;
-        color: var(--map-blue-dark);
-        font-size: 0.82rem;
-        font-weight: 900;
-        letter-spacing: 0.06em;
-        text-align: center;
-        text-transform: uppercase;
-      }
-
-      .silhouette-map-stage {
-        min-height: auto;
-        padding: 18px;
-        background: linear-gradient(180deg, #ffffff, #f7fbff);
-      }
-
-      .silhouette-map-stage::before {
-        display: none;
-      }
-
-      .silhouette-map-wrap {
-        position: relative;
-        width: min(100%, 540px);
-        margin: 0 auto;
-      }
-
-      .silhouette-map-image {
-        display: block;
-        width: 100%;
-        height: auto;
-        mix-blend-mode: multiply;
-      }
-
-      .silhouette-hotspot {
-        position: absolute;
-        display: block;
-        box-sizing: border-box;
-        min-width: 0;
-        min-height: 0;
-        padding: 0;
-        border: 2px solid transparent;
-        border-radius: 38%;
-        background: rgba(22, 119, 200, 0);
-        cursor: pointer;
-        opacity: 1;
-        transition:
-          background 0.2s ease,
-          border-color 0.2s ease,
-          box-shadow 0.2s ease,
-          transform 0.2s ease;
-      }
-
-      .silhouette-hotspot:hover,
-      .silhouette-hotspot:focus-visible {
-        border-color: rgba(22, 119, 200, 0.82);
-        background: rgba(22, 119, 200, 0.22);
-        box-shadow: 0 0 0 5px rgba(22, 119, 200, 0.1);
-        transform: scale(1.025);
-        outline: none;
-      }
-
-      .silhouette-hotspot.is-selected {
-        border-color: #075ea7;
-        background: rgba(22, 119, 200, 0.38);
-        box-shadow: 0 0 0 5px rgba(22, 119, 200, 0.13);
-      }
-
-      /* Front figure: left side of image */
-
-      .front-head {
-        left: 10.3%;
-        top: 5.5%;
-        width: 15.8%;
-        height: 11.8%;
-        border-radius: 50%;
-      }
-      .front-neck {
-        left: 14%;
-        top: 15.5%;
-        width: 8.8%;
-        height: 8.4%;
-      }
-      .front-shoulders {
-        left: 4.7%;
-        top: 21%;
-        width: 27.2%;
-        height: 10.8%;
-      }
-      .front-chest {
-        left: 10.1%;
-        top: 27.3%;
-        width: 17%;
-        height: 27%;
-      }
-      .front-left-arm {
-        left: 1.4%;
-        top: 27.4%;
-        width: 10%;
-        height: 31.5%;
-      }
-      .front-right-arm {
-        left: 26.3%;
-        top: 27.4%;
-        width: 10%;
-        height: 31.5%;
-      }
-      .front-hips {
-        left: 10.3%;
-        top: 48.5%;
-        width: 17.2%;
-        height: 13.3%;
-      }
-      .front-left-knee {
-        left: 11%;
-        top: 68%;
-        width: 7%;
-        height: 7.8%;
-        border-radius: 50%;
-      }
-      .front-right-knee {
-        left: 20%;
-        top: 68%;
-        width: 7%;
-        height: 7.8%;
-        border-radius: 50%;
-      }
-      .front-left-leg {
-        left: 8.7%;
-        top: 56.2%;
-        width: 10%;
-        height: 34%;
-      }
-      .front-right-leg {
-        left: 19.2%;
-        top: 56.2%;
-        width: 10%;
-        height: 34%;
-      }
-      .front-feet {
-        left: 7.2%;
-        top: 88%;
-        width: 23%;
-        height: 7%;
-      }
-
-      /* Back figure: right side of image */
-
-      .back-head {
-        left: 62.5%;
-        top: 5.3%;
-        width: 15.5%;
-        height: 12%;
-        border-radius: 50%;
-      }
-      .back-neck {
-        left: 66%;
-        top: 15.2%;
-        width: 8.7%;
-        height: 8.5%;
-      }
-      .back-shoulders {
-        left: 56.7%;
-        top: 20.8%;
-        width: 27.8%;
-        height: 11%;
-      }
-      .back-upper {
-        left: 62%;
-        top: 27%;
-        width: 17.2%;
-        height: 20%;
-      }
-      .back-lower {
-        left: 63%;
-        top: 43%;
-        width: 15.2%;
-        height: 14.5%;
-      }
-      .back-left-arm {
-        left: 53.2%;
-        top: 27.2%;
-        width: 10%;
-        height: 31.8%;
-      }
-      .back-right-arm {
-        left: 78.4%;
-        top: 27.2%;
-        width: 10%;
-        height: 31.8%;
-      }
-      .back-hips {
-        left: 61.5%;
-        top: 49%;
-        width: 18%;
-        height: 13.5%;
-      }
-      .back-left-knee {
-        left: 62%;
-        top: 68.2%;
-        width: 7%;
-        height: 7.7%;
-        border-radius: 50%;
-      }
-      .back-right-knee {
-        left: 71%;
-        top: 68.2%;
-        width: 7%;
-        height: 7.7%;
-        border-radius: 50%;
-      }
-      .back-left-leg {
-        left: 59.5%;
-        top: 56.5%;
-        width: 10%;
-        height: 34%;
-      }
-      .back-right-leg {
-        left: 70.5%;
-        top: 56.5%;
-        width: 10%;
-        height: 34%;
-      }
-      .back-feet {
-        left: 58%;
-        top: 88%;
-        width: 23.5%;
-        height: 7%;
-      }
-
-      @media (max-width: 680px) {
-        .silhouette-map-stage {
-          padding: 8px;
-        }
-
-        .body-map-key {
-          gap: 8px;
-          font-size: 0.72rem;
-        }
-      }
-
-      /* SINGLE LARGE BODY WITH FRONT / BACK TOGGLE */
-      .body-selector-panel {
-        min-height: 0;
-        padding: 28px;
-      }
 
       .single-view-controls {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-        margin-bottom: 14px;
-        padding: 5px;
-        border: 1px solid var(--map-border);
+        gap: 6px;
+        margin-bottom: 12px;
+        padding: 4px;
+        border: 1px solid rgba(192, 222, 241, 0.8);
         border-radius: 999px;
-        background: var(--map-blue-pale);
+        background: rgba(239, 247, 252, 0.94);
       }
 
       .single-view-button {
-        min-height: 44px;
-        padding: 10px 16px;
+        min-height: 40px;
+        padding: 9px 14px;
         border: 0;
         border-radius: 999px;
         background: transparent;
         color: var(--map-blue);
         font-weight: 850;
         cursor: pointer;
+        transition:
+          background 180ms ease,
+          color 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .single-view-button:hover,
+      .single-view-button:focus-visible {
+        outline: none;
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: 0 0 10px rgba(89, 198, 244, 0.12);
       }
 
       .single-view-button.is-active {
-        background: var(--map-blue);
-        color: #fff;
-        box-shadow: 0 7px 17px rgba(22, 119, 200, 0.22);
-      }
-
-      .single-view-button:focus-visible {
-        outline: 3px solid rgba(22, 119, 200, 0.24);
-        outline-offset: 2px;
-      }
-
-      .single-svg-map-stage {
-        min-height: 0;
-        padding: 18px 18px 4px;
-        overflow: hidden;
-        background:
-          radial-gradient(
-            circle at center,
-            rgba(22, 119, 200, 0.08),
-            transparent 58%
-          ),
-          linear-gradient(180deg, #fff, #f7fbff);
-      }
-
-      .single-svg-map-stage::before {
-        display: none;
-      }
-      .single-svg-view {
-        display: none;
-        width: 100%;
-      }
-      .single-svg-view.is-active {
-        display: block;
-      }
-
-       .single-svg-figure {
-    position: relative;
-    width: min(100%, 430px);
-    margin: 12px auto 0;
-}
-
-      .single-svg-image {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-
-      .single-svg-hotspot {
-        position: absolute;
-        display: block;
-        min-width: 0;
-        min-height: 0;
-        padding: 0;
-        border: 2px solid transparent;
-        border-radius: 999px;
-        background: transparent;
-        cursor: pointer;
-        opacity: 1;
-        transition: 0.18s ease;
-      }
-
-      .single-svg-hotspot:hover,
-      .single-svg-hotspot:focus-visible {
-        border-color: rgba(22, 119, 200, 0.9);
-        background: rgba(22, 119, 200, 0.2);
-        box-shadow: 0 0 16px rgba(22, 119, 200, 0.22);
-        transform: scale(1.025);
-        outline: none;
-      }
-
-      .single-svg-hotspot.is-selected {
-        border-color: #075ea7;
-        background: rgba(22, 119, 200, 0.36);
-        box-shadow: 0 0 18px rgba(22, 119, 200, 0.28);
-      }
-
-      .region-head {
-        left: 34%;
-        top: 0.5%;
-        width: 32%;
-        height: 14%;
-        border-radius: 50%;
-      }
-      .region-neck {
-        left: 41%;
-        top: 12%;
-        width: 18%;
-        height: 9%;
-      }
-      .region-shoulders {
-        left: 15%;
-        top: 17%;
-        width: 70%;
-        height: 12%;
-      }
-      .region-chest {
-        left: 28%;
-        top: 23%;
-        width: 44%;
-        height: 26%;
-        border-radius: 30%;
-      }
-      .region-upper-back {
-        left: 27%;
-        top: 22%;
-        width: 46%;
-        height: 22%;
-        border-radius: 30%;
-      }
-      .region-lower-back {
-        left: 31%;
-        top: 42%;
-        width: 38%;
-        height: 18%;
-        border-radius: 30%;
-      }
-      .region-left-arm {
-        left: 2%;
-        top: 24%;
-        width: 27%;
-        height: 38%;
-      }
-      .region-right-arm {
-        left: 71%;
-        top: 24%;
-        width: 27%;
-        height: 38%;
-      }
-      .region-hips {
-        left: 27%;
-        top: 50%;
-        width: 46%;
-        height: 16%;
-        border-radius: 35%;
-      }
-      .region-left-leg {
-        left: 24%;
-        top: 61%;
-        width: 24%;
-        height: 34%;
-      }
-      .region-right-leg {
-        left: 52%;
-        top: 61%;
-        width: 24%;
-        height: 34%;
-      }
-      .region-left-knee {
-        left: 27%;
-        top: 76%;
-        width: 19%;
-        height: 9%;
-        border-radius: 50%;
-      }
-      .region-right-knee {
-        left: 54%;
-        top: 76%;
-        width: 19%;
-        height: 9%;
-        border-radius: 50%;
-      }
-      .region-feet {
-        left: 21%;
-        top: 93%;
-        width: 58%;
-        height: 7%;
-      }
-
-      @media (max-width: 980px) {
-        .single-svg-map-stage {
-          min-height: 0;
-        }
-
-        .single-svg-figure {
-          width: min(100%, 500px);
-        }
+        background: linear-gradient(
+          135deg,
+          #1da3e4 0%,
+          #167fc4 52%,
+          #0f6cad 100%
+        );
+        color: #ffffff;
+        box-shadow:
+          0 0 8px rgba(79, 198, 248, 0.44),
+          0 0 18px rgba(37, 160, 221, 0.2),
+          0 7px 16px rgba(8, 62, 96, 0.16);
       }
 
       /* =====================================================
-         FLOWMAP FINAL POLISH
-         Subtle body hover, anatomy-shaped hotspots, and a
-         smooth front/back transition.
+         SINGLE BODY MAP
          ===================================================== */
 
-      /* Smoothly stack both views so opacity can animate. */
+      .body-map-stage,
       .single-svg-map-stage {
+        position: relative;
         display: grid;
         place-items: start center;
+        min-height: 0;
+        overflow: hidden;
+        padding: 14px 14px 12px;
+        border: 1px solid rgba(197, 226, 243, 0.82);
+        border-radius: 18px 8px 18px 8px;
+        background:
+          radial-gradient(
+            circle at 50% 42%,
+            rgba(82, 186, 229, 0.08),
+            transparent 58%
+          ),
+          linear-gradient(180deg, #ffffff 0%, #f5faff 100%);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92);
+      }
+
+      .body-map-stage::before,
+      .single-svg-map-stage::before {
+        display: none;
       }
 
       .single-svg-view {
@@ -1232,10 +319,8 @@
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transform: translateY(8px) scale(0.985);
         transition:
           opacity 220ms ease,
-          transform 220ms ease,
           visibility 0s linear 220ms;
       }
 
@@ -1243,18 +328,16 @@
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-        transform: translateY(0) scale(1);
         transition:
           opacity 220ms ease,
-          transform 220ms ease,
           visibility 0s linear 0s;
       }
 
-      /* A slight response from the body when a region is explored. */
       .single-svg-figure {
-        transition:
-          filter 180ms ease,
-          transform 180ms ease;
+        position: relative;
+        width: min(100%, 430px);
+        margin: 10px auto 0;
+        transition: filter 180ms ease;
       }
 
       .single-svg-figure:hover {
@@ -1262,48 +345,68 @@
       }
 
       .single-svg-image {
+        display: block;
+        width: 100%;
+        height: auto;
         transition:
           opacity 180ms ease,
           filter 180ms ease;
       }
 
       .single-svg-figure:hover .single-svg-image {
-        opacity: 0.95;
-        filter: brightness(1.04);
+        opacity: 0.96;
+        filter: brightness(1.03);
       }
 
-      /* Keep hotspots calm until hovered or selected. */
+      .body-selector-help {
+        margin: 14px 0 0;
+        color: var(--map-muted);
+        font-size: 0.76rem;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      /* =====================================================
+         HOTSPOTS
+         ===================================================== */
+
+      .body-region,
       .single-svg-hotspot {
-        border-color: transparent;
+        position: absolute;
+        display: block;
+        min-width: 0;
+        min-height: 0;
+        padding: 0;
+        border: 2px solid transparent;
         background: transparent;
         box-shadow: none;
+        cursor: pointer;
+        opacity: 1;
+        transition:
+          background 180ms ease,
+          border-color 180ms ease,
+          box-shadow 180ms ease;
       }
 
       .single-svg-hotspot:hover,
       .single-svg-hotspot:focus-visible {
-        border-color: rgba(22, 119, 200, 0.78);
-        background: rgba(22, 119, 200, 0.15);
+        border-color: rgba(22, 119, 200, 0.68);
+        outline: none;
+        background: rgba(22, 119, 200, 0.11);
         box-shadow:
-          0 0 0 4px rgba(22, 119, 200, 0.08),
-          0 8px 20px rgba(22, 119, 200, 0.15),
-          inset 0 0 10px rgba(22, 119, 200, 0.1);
-        transform: scale(1.018);
+          0 0 0 3px rgba(22, 119, 200, 0.06),
+          0 7px 17px rgba(22, 119, 200, 0.12),
+          inset 0 0 8px rgba(22, 119, 200, 0.07);
       }
 
       .single-svg-hotspot.is-selected {
-        border-color: rgba(7, 94, 167, 0.92);
-        background: rgba(22, 119, 200, 0.3);
+        border-color: rgba(7, 94, 167, 0.82);
+        background: rgba(22, 119, 200, 0.24);
         box-shadow:
-          0 0 0 4px rgba(22, 119, 200, 0.09),
-          0 8px 22px rgba(22, 119, 200, 0.2),
-          inset 0 0 10px rgba(22, 119, 200, 0.12);
+          0 0 0 3px rgba(22, 119, 200, 0.07),
+          0 8px 19px rgba(22, 119, 200, 0.16),
+          inset 0 0 9px rgba(22, 119, 200, 0.08);
       }
-
-      /*
-       * More anatomical hotspot silhouettes.
-       * clip-path shapes the visible highlight while the buttons
-       * remain comfortably large and accessible.
-       */
 
       .region-head {
         left: 35%;
@@ -1395,47 +498,64 @@
       }
 
       .region-left-arm {
-        left: 6%;
+        left: 7.5%;
         top: 24%;
-        width: 23%;
-        height: 38%;
-        border-radius: 50%;
+        width: 21%;
+        height: 34.5%;
+        border-radius: 48%;
         clip-path: polygon(
-          48% 0,
-          78% 4%,
-          94% 24%,
-          80% 54%,
-          100% 92%,
-          76% 100%,
-          49% 66%,
-          30% 100%,
-          5% 90%,
-          24% 54%,
-          8% 24%,
-          22% 5%
+          45% 0,
+          73% 5%,
+          91% 22%,
+          80% 47%,
+          68% 69%,
+          61% 89%,
+          52% 100%,
+          39% 100%,
+          32% 88%,
+          24% 69%,
+          9% 47%,
+          15% 22%
         );
       }
 
       .region-right-arm {
-        left: 71%;
+        left: 71.5%;
         top: 24%;
-        width: 23%;
-        height: 38%;
-        border-radius: 50%;
+        width: 21%;
+        height: 34.5%;
+        border-radius: 48%;
         clip-path: polygon(
-          52% 0,
-          78% 5%,
-          92% 24%,
-          76% 54%,
-          95% 90%,
-          70% 100%,
-          51% 66%,
-          24% 100%,
-          0 92%,
-          20% 54%,
-          6% 24%,
-          22% 4%
+          55% 0,
+          85% 22%,
+          91% 47%,
+          76% 69%,
+          68% 88%,
+          61% 100%,
+          48% 100%,
+          39% 89%,
+          32% 69%,
+          20% 47%,
+          9% 22%,
+          27% 5%
         );
+      }
+
+      .region-left-elbow,
+      .region-right-elbow {
+        top: 36.5%;
+        width: 9%;
+        height: 7%;
+        border-radius: 50%;
+        clip-path: ellipse(46% 44% at 50% 50%);
+      }
+
+      .region-left-elbow {
+        left: 10%;
+      }
+
+      .region-right-elbow {
+        left: 81%;
       }
 
       .region-hips {
@@ -1492,20 +612,20 @@
       }
 
       .region-left-knee {
-    left: 28%;
-    top: 70%;
-    width: 17%;
-    height: 8.5%;
-    clip-path: ellipse(48% 45% at 50% 50%);
-}
+        left: 28%;
+        top: 70%;
+        width: 17%;
+        height: 8.5%;
+        clip-path: ellipse(48% 45% at 50% 50%);
+      }
 
-.region-right-knee {
-    left: 55%;
-    top: 70%;
-    width: 17%;
-    height: 8.5%;
-    clip-path: ellipse(48% 45% at 50% 50%);
-}
+      .region-right-knee {
+        left: 55%;
+        top: 70%;
+        width: 17%;
+        height: 8.5%;
+        clip-path: ellipse(48% 45% at 50% 50%);
+      }
 
       .region-feet {
         left: 23%;
@@ -1529,21 +649,497 @@
         );
       }
 
-      /* Gentle button motion reinforces the view change. */
-      .single-view-button {
+      /* =====================================================
+         INFORMATION PANEL
+         ===================================================== */
+
+      .selection-heading {
+        padding-bottom: 18px;
+        border-bottom: 1px solid rgba(195, 223, 241, 0.78);
+      }
+
+      .selection-eyebrow {
+        display: inline-flex;
+        margin-bottom: 10px;
+        padding: 7px 11px;
+        border-radius: 999px;
+        background: var(--map-blue-soft);
+        color: var(--map-blue);
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .selection-heading h2 {
+        margin: 0 0 10px;
+        color: var(--map-blue-dark);
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        line-height: 1.08;
+        letter-spacing: -0.025em;
+      }
+
+      .selection-heading p {
+        margin: 0;
+        color: var(--map-muted);
+        line-height: 1.7;
+      }
+
+      .selection-sections {
+        display: grid;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .information-card {
+        position: relative;
+        padding: 18px 19px;
+        border: 1px solid rgba(200, 226, 242, 0.82);
+        border-radius: 16px 7px 16px 7px;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fbfd 100%);
+        box-shadow: 0 8px 20px rgba(8, 53, 82, 0.05);
+      }
+
+      .information-card h3 {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin: 0 0 12px;
+        color: var(--map-blue-dark);
+        font-size: 1.05rem;
+      }
+
+      .information-number {
+        display: inline-grid;
+        width: 27px;
+        height: 27px;
+        flex: 0 0 27px;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--map-blue-soft);
+        color: var(--map-blue);
+        font-size: 0.72rem;
+        font-weight: 900;
+      }
+
+      .information-list {
+        display: grid;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .information-list li {
+        position: relative;
+        padding-left: 18px;
+        color: var(--map-muted);
+        line-height: 1.55;
+      }
+
+      .information-list li::before {
+        position: absolute;
+        top: 0.65em;
+        left: 0;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--map-blue);
+        content: "";
+      }
+
+      .link-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .information-link {
+        display: flex;
+        min-height: 40px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 9px 12px;
+        border: 1px solid rgba(198, 226, 243, 0.84);
+        border-radius: 12px 6px 12px 6px;
+        background: linear-gradient(145deg, #ffffff 0%, #f7fbfe 100%);
+        color: var(--map-blue-dark);
+        font-weight: 750;
+        text-decoration: none;
+        box-shadow: 0 5px 14px rgba(8, 53, 82, 0.04);
         transition:
-          color 180ms ease,
-          background 180ms ease,
-          box-shadow 180ms ease,
-          transform 180ms ease;
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
       }
 
-      .single-view-button:hover {
-        transform: translateY(-1px);
+      .information-link:hover,
+      .information-link:focus-visible {
+        border-color: rgba(122, 202, 239, 0.95);
+        outline: none;
+        box-shadow:
+          0 0 12px rgba(87, 199, 246, 0.16),
+          0 7px 18px rgba(8, 53, 82, 0.07);
       }
 
-      .single-view-button.is-active {
-        transform: translateY(0);
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .service-chip {
+        display: flex;
+        min-height: 42px;
+        align-items: center;
+        padding: 9px 11px;
+        border: 1px solid rgba(198, 226, 243, 0.84);
+        border-radius: 12px 6px 12px 6px;
+        background: #ffffff;
+        color: var(--map-blue-dark);
+        font-size: 0.84rem;
+        font-weight: 800;
+      }
+
+      .service-chip::before {
+        display: inline-grid;
+        width: 21px;
+        height: 21px;
+        flex: 0 0 21px;
+        place-items: center;
+        margin-right: 8px;
+        border-radius: 50%;
+        background: var(--map-blue-soft);
+        color: var(--map-blue);
+        content: "✓";
+        font-size: 0.68rem;
+      }
+
+      .medical-guidance {
+        border-color: rgba(232, 199, 143, 0.8);
+        background: linear-gradient(145deg, #fffdf8 0%, #fff8ed 100%);
+      }
+
+      .medical-guidance h3 {
+        color: #7a4d13;
+      }
+
+      .medical-guidance p {
+        margin: 0;
+        color: #755d3d;
+        font-size: 0.86rem;
+        line-height: 1.65;
+      }
+
+      /* =====================================================
+         ACTION BUTTONS
+         ===================================================== */
+
+      .selection-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .flowmap-primary-button,
+      .flowmap-secondary-button {
+        display: inline-flex;
+        min-height: 45px;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 10px 18px;
+        border-radius: 999px;
+        font-weight: 850;
+        text-decoration: none;
+        transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .flowmap-primary-button {
+        border: 1px solid rgba(126, 218, 255, 0.82);
+        background: linear-gradient(
+          135deg,
+          #1da3e4 0%,
+          #167fc4 48%,
+          #0d68a5 100%
+        );
+        color: #ffffff;
+        box-shadow:
+          0 0 8px rgba(78, 195, 247, 0.44),
+          0 0 20px rgba(38, 158, 220, 0.2),
+          0 9px 20px rgba(5, 48, 78, 0.16);
+      }
+
+      .flowmap-primary-button:hover,
+      .flowmap-primary-button:focus-visible {
+        border-color: rgba(145, 224, 255, 0.96);
+        outline: none;
+        background: linear-gradient(
+          135deg,
+          #28afea 0%,
+          #198bd0 48%,
+          #0e72ae 100%
+        );
+        box-shadow:
+          0 0 10px rgba(111, 214, 255, 0.62),
+          0 0 24px rgba(47, 179, 238, 0.32),
+          0 10px 24px rgba(5, 48, 78, 0.2);
+      }
+
+      .flowmap-secondary-button {
+        border: 1px solid rgba(177, 216, 240, 0.95);
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--map-blue);
+      }
+
+      .flowmap-secondary-button:hover,
+      .flowmap-secondary-button:focus-visible {
+        border-color: rgba(113, 202, 241, 0.96);
+        outline: none;
+        box-shadow: 0 0 14px rgba(87, 199, 246, 0.16);
+      }
+
+      /* =====================================================
+         QUICK REGION BUTTONS
+         ===================================================== */
+
+      .quick-region-section {
+        position: relative;
+        overflow: hidden;
+        margin-top: 26px;
+        padding: 24px 26px;
+        border: 1px solid rgba(194, 224, 243, 0.78);
+        border-radius: 22px 10px 22px 10px;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.99) 0%,
+          rgba(247, 251, 254, 0.99) 100%
+        );
+        box-shadow: 0 14px 30px rgba(8, 53, 82, 0.08);
+      }
+
+      .quick-region-section::before {
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        width: 72px;
+        height: 2px;
+        transform: translateX(-50%);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(166, 226, 251, 0.28),
+          rgba(255, 255, 255, 0.95),
+          rgba(166, 226, 251, 0.28),
+          transparent
+        );
+        box-shadow: 0 0 8px rgba(102, 207, 250, 0.42);
+        content: "";
+        pointer-events: none;
+      }
+
+      .quick-region-heading {
+        margin-bottom: 18px;
+        text-align: center;
+      }
+
+      .quick-region-heading h2 {
+        margin: 0 0 7px;
+        color: var(--map-blue);
+        font-size: 1.65rem;
+      }
+
+      .quick-region-heading p {
+        margin: 0;
+        color: var(--map-muted);
+        line-height: 1.6;
+      }
+
+      .quick-region-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 9px;
+      }
+
+      .quick-region-button {
+        min-height: 42px;
+        padding: 9px 11px;
+        border: 1px solid rgba(198, 226, 243, 0.84);
+        border-radius: 12px 6px 12px 6px;
+        background: linear-gradient(145deg, #f9fcfe 0%, #eef7fc 100%);
+        color: var(--map-blue-dark);
+        font-weight: 800;
+        cursor: pointer;
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .quick-region-button:hover,
+      .quick-region-button:focus-visible {
+        border-color: rgba(123, 201, 238, 0.95);
+        outline: none;
+        background: #ffffff;
+        box-shadow: 0 0 10px rgba(89, 198, 244, 0.14);
+      }
+
+      .quick-region-button.is-selected {
+        border-color: rgba(126, 218, 255, 0.86);
+        background: linear-gradient(
+          135deg,
+          #1da3e4 0%,
+          #167fc4 50%,
+          #0f6cad 100%
+        );
+        color: #ffffff;
+        box-shadow:
+          0 0 8px rgba(78, 195, 247, 0.42),
+          0 0 18px rgba(38, 158, 220, 0.2);
+      }
+
+      /* =====================================================
+         RETURN LINK
+         ===================================================== */
+
+      .flowmap-back {
+        margin-top: 32px;
+        text-align: center;
+      }
+
+      .flowmap-back a {
+        color: #6fd3ff;
+        font-weight: 800;
+        text-decoration: none;
+        text-shadow: 0 0 12px rgba(77, 192, 240, 0.16);
+      }
+
+      .flowmap-back a:hover,
+      .flowmap-back a:focus-visible {
+        outline: none;
+        text-decoration: underline;
+      }
+
+      /* =====================================================
+         MOBILE FLOATING BODY-AREA BUTTON
+         ===================================================== */
+
+      .mobile-body-area-button {
+        display: none;
+      }
+
+      @media (max-width: 980px) {
+        .flowmap-workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .single-svg-figure {
+          width: min(100%, 500px);
+        }
+
+        .quick-region-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 680px) {
+        .flowmap-shell {
+          width: min(calc(100% - 20px), 1180px);
+          padding-top: 28px;
+        }
+
+        .flowmap-hero {
+          padding: 30px 22px;
+        }
+
+        .body-selector-panel,
+        .body-information-panel,
+        .quick-region-section {
+          padding: 22px;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .quick-region-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .selection-actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .flowmap-primary-button,
+        .flowmap-secondary-button {
+          width: 100%;
+        }
+
+        .mobile-body-area-button {
+          position: fixed;
+          right: 18px;
+          bottom: 18px;
+          z-index: 999;
+
+          display: inline-flex;
+          min-height: 48px;
+          align-items: center;
+          justify-content: center;
+
+          padding: 12px 18px;
+          border: 1px solid rgba(126, 218, 255, 0.82);
+          border-radius: 999px;
+
+          background: linear-gradient(
+            135deg,
+            #1da3e4 0%,
+            #167fc4 50%,
+            #0f6cad 100%
+          );
+          color: #ffffff;
+
+          box-shadow:
+            0 0 8px rgba(78, 195, 247, 0.4),
+            0 10px 26px rgba(22, 119, 200, 0.28);
+
+          font-size: 0.88rem;
+          font-weight: 850;
+          cursor: pointer;
+
+          transition:
+            opacity 180ms ease,
+            box-shadow 180ms ease;
+        }
+
+        .mobile-body-area-button:hover,
+        .mobile-body-area-button:focus-visible {
+          outline: none;
+          box-shadow:
+            0 0 12px rgba(111, 214, 255, 0.58),
+            0 12px 28px rgba(22, 119, 200, 0.3);
+        }
+
+        .mobile-body-area-button.is-hidden {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+
+      @media (max-width: 440px) {
+        .body-selector-panel,
+        .body-information-panel,
+        .quick-region-section {
+          padding: 18px;
+          border-radius: 18px 8px 18px 8px;
+        }
+
+        .quick-region-grid {
+          grid-template-columns: 1fr;
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -1551,168 +1147,30 @@
         .single-svg-figure,
         .single-svg-image,
         .single-svg-hotspot,
-        .single-view-button {
+        .single-view-button,
+        .mobile-body-area-button {
           transition: none !important;
-          transform: none !important;
         }
       }
 
-      /* =====================================================
-         FINAL ARM + PALM REFINEMENT
-         Tapered arm glow, rounded palm only, no glowing fingers.
-         ===================================================== */
+      @media print {
+        .body-selector-panel,
+        .quick-region-section,
+        .selection-actions,
+        .flowmap-back,
+        .mobile-body-area-button {
+          display: none !important;
+        }
 
-      .single-svg-hotspot:hover,
-      .single-svg-hotspot:focus-visible {
-        border-color: rgba(22, 119, 200, 0.68);
-        background: rgba(22, 119, 200, 0.11);
-        box-shadow:
-          0 0 0 3px rgba(22, 119, 200, 0.06),
-          0 7px 17px rgba(22, 119, 200, 0.12),
-          inset 0 0 8px rgba(22, 119, 200, 0.07);
+        .flowmap-workspace {
+          display: block;
+        }
+
+        .body-information-panel,
+        .flowmap-hero {
+          box-shadow: none;
+        }
       }
-
-      .single-svg-hotspot.is-selected {
-        border-color: rgba(7, 94, 167, 0.82);
-        background: rgba(22, 119, 200, 0.24);
-        box-shadow:
-          0 0 0 3px rgba(22, 119, 200, 0.07),
-          0 8px 19px rgba(22, 119, 200, 0.16),
-          inset 0 0 9px rgba(22, 119, 200, 0.08);
-      }
-
-      .region-left-arm {
-        left: 7.5%;
-        top: 24%;
-        width: 21%;
-        height: 34.5%;
-        border-radius: 48%;
-        clip-path: polygon(
-          45% 0,
-          73% 5%,
-          91% 22%,
-          80% 47%,
-          68% 69%,
-          61% 89%,
-          52% 100%,
-          39% 100%,
-          32% 88%,
-          24% 69%,
-          9% 47%,
-          15% 22%
-        );
-      }
-
-      .region-right-arm {
-        left: 71.5%;
-        top: 24%;
-        width: 21%;
-        height: 34.5%;
-        border-radius: 48%;
-        clip-path: polygon(
-          55% 0,
-          85% 22%,
-          91% 47%,
-          76% 69%,
-          68% 88%,
-          61% 100%,
-          48% 100%,
-          39% 89%,
-          32% 69%,
-          20% 47%,
-          9% 22%,
-          27% 5%
-        );
-      }
-
-      
-      /* Remove extra space beneath the FlowMap figure */
-.flowmap-workspace {
-  align-items: start;
-}
-
-.body-selector-panel {
-  align-self: start;
-}
-
-.single-svg-map-stage{
-    min-height:0;
-    padding-bottom:16px;
-}
-
-.single-svg-figure{
-    margin:10px auto 0;
-}
-/* =====================================================
-   MOBILE FLOATING BODY-AREA BUTTON
-   ===================================================== */
-
-.mobile-body-area-button {
-  display: none;
-}
-
-@media (max-width: 680px) {
-  .mobile-body-area-button {
-    position: fixed;
-    right: 18px;
-    bottom: 18px;
-    z-index: 999;
-
-    display: inline-flex;
-    min-height: 48px;
-    align-items: center;
-    justify-content: center;
-
-    padding: 12px 18px;
-    border: 1px solid var(--map-blue);
-    border-radius: 999px;
-
-    background: var(--map-blue);
-    color: #ffffff;
-
-    box-shadow: 0 10px 26px rgba(22, 119, 200, 0.3);
-
-    font-size: 0.88rem;
-    font-weight: 850;
-    cursor: pointer;
-
-    transition:
-      transform 180ms ease,
-      opacity 180ms ease,
-      background 180ms ease;
-  }
-
-  .mobile-body-area-button:hover,
-  .mobile-body-area-button:focus-visible {
-    transform: translateY(-2px);
-    background: var(--map-blue-hover);
-    outline: none;
-  }
-
-  .mobile-body-area-button.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(14px);
-  }
-}
-/* Elbow hotspots — repositioned over the actual elbow joints */
-
-.region-left-elbow,
-.region-right-elbow {
-  top: 36.5%;
-  width: 9%;
-  height: 7%;
-  border-radius: 50%;
-  clip-path: ellipse(46% 44% at 50% 50%);
-}
-
-.region-left-elbow {
-  left: 10%;
-}
-
-.region-right-elbow {
-  left: 81%;
-}
     </style>
   </head>
 
@@ -1827,19 +1285,19 @@
                   aria-label="Right arm, wrist, and hand"
                 ></button>
                 <button
-  class="body-region single-svg-hotspot region-left-elbow"
-  type="button"
-  data-region="elbows"
-  aria-label="Left elbow"
-></button>
+                  class="body-region single-svg-hotspot region-left-elbow"
+                  type="button"
+                  data-region="elbows"
+                  aria-label="Left elbow"
+                ></button>
 
-<button
-  class="body-region single-svg-hotspot region-right-elbow"
-  type="button"
-  data-region="elbows"
-  aria-label="Right elbow"
-></button>
-                
+                <button
+                  class="body-region single-svg-hotspot region-right-elbow"
+                  type="button"
+                  data-region="elbows"
+                  aria-label="Right elbow"
+                ></button>
+
                 <button
                   class="body-region single-svg-hotspot region-hips"
                   type="button"
@@ -1924,18 +1382,18 @@
                   aria-label="Back left arm, wrist, and hand"
                 ></button>
                 <button
-  class="body-region single-svg-hotspot region-left-elbow"
-  type="button"
-  data-region="elbows"
-  aria-label="Back of left elbow"
-></button>
+                  class="body-region single-svg-hotspot region-left-elbow"
+                  type="button"
+                  data-region="elbows"
+                  aria-label="Back of left elbow"
+                ></button>
 
-<button
-  class="body-region single-svg-hotspot region-right-elbow"
-  type="button"
-  data-region="elbows"
-  aria-label="Back of right elbow"
-></button>
+                <button
+                  class="body-region single-svg-hotspot region-right-elbow"
+                  type="button"
+                  data-region="elbows"
+                  aria-label="Back of right elbow"
+                ></button>
                 <button
                   class="body-region single-svg-hotspot region-right-arm"
                   type="button"
@@ -2145,12 +1603,12 @@
           </button>
 
           <button
-  class="quick-region-button"
-  type="button"
-  data-quick-region="elbows"
->
-  Elbows
-</button>
+            class="quick-region-button"
+            type="button"
+            data-quick-region="elbows"
+          >
+            Elbows
+          </button>
 
           <button
             class="quick-region-button"
@@ -2190,13 +1648,13 @@
         <a href="../index.html"> ← Return to FlowHub </a>
       </div>
       <button
-  class="mobile-body-area-button"
-  id="mobile-body-area-button"
-  type="button"
-  aria-controls="all-body-areas"
->
-  Browse Body Areas
-</button>
+        class="mobile-body-area-button"
+        id="mobile-body-area-button"
+        type="button"
+        aria-controls="all-body-areas"
+      >
+        Browse Body Areas
+      </button>
     </main>
 
     <!-- Shared footer generated by site-layout.js -->
@@ -2592,59 +2050,59 @@
             medical:
               "Seek medical evaluation for persistent numbness, progressive weakness, loss of grip, severe swelling, color changes, significant injury, or symptoms that interfere with daily use of the hand.",
           },
-elbows: {
-  title: "Elbows & Forearms",
+          elbows: {
+            title: "Elbows & Forearms",
 
-  introduction:
-    "Explore wellness guidance for repetitive gripping, lifting, racquet sports, golf, tool use, forearm fatigue, and discomfort around the inner or outer elbow.",
+            introduction:
+              "Explore wellness guidance for repetitive gripping, lifting, racquet sports, golf, tool use, forearm fatigue, and discomfort around the inner or outer elbow.",
 
-  concerns: [
-    "Outer-elbow discomfort associated with repetitive wrist extension",
-    "Inner-elbow discomfort associated with gripping or wrist flexion",
-    "Forearm muscle fatigue",
-    "Repetitive racquet sports, golf, lifting, or tool use",
-    "Reduced grip comfort or endurance",
-  ],
+            concerns: [
+              "Outer-elbow discomfort associated with repetitive wrist extension",
+              "Inner-elbow discomfort associated with gripping or wrist flexion",
+              "Forearm muscle fatigue",
+              "Repetitive racquet sports, golf, lifting, or tool use",
+              "Reduced grip comfort or endurance",
+            ],
 
-  flownotes: [
-    {
-      title: "Tennis Elbow vs. Golfer’s Elbow",
-      url: "../articles/tennis-elbow-vs-golfers-elbow.html",
-    },
-    {
-      title: "Can Massage Help Tennis or Golfer’s Elbow?",
-      url: "../articles/can-massage-help-elbow-tendinopathy.html",
-    },
-  ],
+            flownotes: [
+              {
+                title: "Tennis Elbow vs. Golfer’s Elbow",
+                url: "../articles/tennis-elbow-vs-golfers-elbow.html",
+              },
+              {
+                title: "Can Massage Help Tennis or Golfer’s Elbow?",
+                url: "../articles/can-massage-help-elbow-tendinopathy.html",
+              },
+            ],
 
-  resources: [
-    {
-      title: "Elbow Overuse: Inside vs. Outside Discomfort",
-      url: "flowresources-redesign.html",
-    },
-    {
-      title: "Forearm and Grip Recovery Guide",
-      url: "flowresources-redesign.html",
-    },
-  ],
+            resources: [
+              {
+                title: "Elbow Overuse: Inside vs. Outside Discomfort",
+                url: "flowresources-redesign.html",
+              },
+              {
+                title: "Forearm and Grip Recovery Guide",
+                url: "flowresources-redesign.html",
+              },
+            ],
 
-  services: [
-    "HandFlow",
-    "Focused Flow",
-    "Upper Body Flow",
-    "Cupping",
-  ],
+            services: [
+              "HandFlow",
+              "Focused Flow",
+              "Upper Body Flow",
+              "Cupping",
+            ],
 
-  aftercare: [
-    "Reduce or modify repetitive gripping when symptoms are irritated.",
-    "Use gentle wrist and forearm movement within a comfortable range.",
-    "Avoid repeatedly pressing directly into a sensitive tendon attachment.",
-    "Increase work, sport, or lifting demands gradually.",
-  ],
+            aftercare: [
+              "Reduce or modify repetitive gripping when symptoms are irritated.",
+              "Use gentle wrist and forearm movement within a comfortable range.",
+              "Avoid repeatedly pressing directly into a sensitive tendon attachment.",
+              "Increase work, sport, or lifting demands gradually.",
+            ],
 
-  medical:
-    "Seek medical evaluation for significant swelling, visible deformity, sudden weakness, persistent numbness, loss of grip, symptoms following trauma, or discomfort that continues to interfere with work, sleep, or normal daily use.",
-},
+            medical:
+              "Seek medical evaluation for significant swelling, visible deformity, sudden weakness, persistent numbness, loss of grip, symptoms following trauma, or discomfort that continues to interfere with work, sleep, or normal daily use.",
+          },
           hips: {
             title: "Hips & Glutes",
             introduction:
